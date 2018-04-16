@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-    test: () => { return {} }
+    test: () => { return {} },
+    access_token: () => { return null }
 })
