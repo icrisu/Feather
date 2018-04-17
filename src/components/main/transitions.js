@@ -3,11 +3,6 @@ import { MENU_WIDTH } from '../../config/constants';
 // app main transitions
 export const appTransitions = theme => {
 	return {
-		drawerPaper: {
-			position: 'fixed',
-            width: MENU_WIDTH,
-            border: 'none'
-		},
 		content: {
 			flexGrow: 1,
 			backgroundColor: theme.palette.background.default,

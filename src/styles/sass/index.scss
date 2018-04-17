@@ -1,5 +1,8 @@
 @import 'settings.scss';
-.page {
+@import 'colors.scss';
+@import 'menus.scss';
+
+.app-page {
     padding: 50px 20px;
 }
 .appbar {
@@ -8,31 +11,10 @@
     position: fixed;
     top: 0px; left: 0px;
     z-index: 100;
-    background: #f8f9fd;
-    border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #edf3f7;
+    background: #{ $appbarBackground };
+    border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #{ $appbarBorderColor };
 }
 .appbarOpen {
     width: calc(100% - #{($menuWidth) + 'px'});
 }
 
-.main-menu-container {
-    width: 100%; height: 100%;
-    background: -moz-linear-gradient(90deg, rgba(118,62,255,1) 0%, rgba(118,62,255,1) 13%, rgba(152,84,255,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(152,84,255,1)), color-stop(87%, rgba(118,62,255,1)), color-stop(100%, rgba(118,62,255,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(90deg, rgba(118,62,255,1) 0%, rgba(118,62,255,1) 13%, rgba(152,84,255,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(90deg, rgba(118,62,255,1) 0%, rgba(118,62,255,1) 13%, rgba(152,84,255,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(90deg, rgba(118,62,255,1) 0%, rgba(118,62,255,1) 13%, rgba(152,84,255,1) 100%); /* ie10+ */
-    background: linear-gradient(0deg, rgba(118,62,255,1) 0%, rgba(118,62,255,1) 13%, rgba(152,84,255,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9854ff', endColorstr='#763eff',GradientType=0 ); /* ie6-9 */
-
-    .main-logo-ui {
-        height: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom-style: solid; border-bottom-color: #9d5cfe; border-bottom-width: 1px;
-        img {
-            max-height: 70px;
-        }
-    }
-}

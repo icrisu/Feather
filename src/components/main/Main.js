@@ -53,7 +53,7 @@ class Main extends Component {
                 <MainMenu openedMenu={ openedMenu } appWidth={ appWidth } closeMenuRequest={ this._closeMenuRequest.bind(this) } />
                 <AppBar openedMenu={ openedMenu } toggleMenu={ this._toggleMenu.bind(this) } />
 				
-				<main className={ classNames('page', classes.content, classes['content-left'], {
+				<main className={ classNames('app-page', classes.content, classes['content-left'], {
 					[classes.contentShift]: openedMenu,
 					[classes[`contentShift-left`]]: openedMenu
 				}) }>
