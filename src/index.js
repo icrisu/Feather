@@ -10,9 +10,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import reducers from './reducers';
 
 import './styles/css/index.css';
-import RequireAuth from './components/auth/RequireAuth';
-import App from './App';
-const Authenticated = RequireAuth(App);
+// import RequireAuth from './components/auth/RequireAuth';
+import Main from './components/main/Main';
+// const Authenticated = RequireAuth(App);
 
 export const store = createStore(reducers, {}, compose(applyMiddleware(ReduxThunk)));
 
@@ -21,7 +21,7 @@ ReactDOM.render(
     <Fragment>
         <CssBaseline />
         <Router basename={`/`}>
-            <App />
+            <Main />
         </Router>
     </Fragment>
 </Provider>, document.getElementById('root'));
