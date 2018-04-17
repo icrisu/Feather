@@ -6,12 +6,9 @@ import { appTransitions } from './transitions';
 import ReactResizeDetector from 'react-resize-detector';
 import _ from 'lodash';
 import MainMenu from '../menus/MainMenu';
+import AppBar from '../topbar/AppBar';
 
-// to move
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-
-const styles = appTransitions
+const styles = appTransitions;
 
 class Main extends Component {
     
@@ -54,16 +51,7 @@ class Main extends Component {
 			<Fragment>
 
                 <MainMenu openedMenu={ openedMenu } appWidth={ appWidth } closeMenuRequest={ this._closeMenuRequest.bind(this) } />
-
-				<div className={ classNames('appbar', classes.appBarContent, classes.appBarLeft, {
-					[classes.appBarShift]: openedMenu,
-					[classes['app-bar-shift-left']]: openedMenu,
-					appbarOpen: openedMenu
-					}) }>
-					<IconButton color="inherit">
-                        <MenuIcon />
-                    </IconButton>
-				</div>
+                <AppBar openedMenu={ openedMenu } toggleMenu={ this._toggleMenu.bind(this) } />
 				
 				<main className={ classNames('page', classes.content, classes['content-left'], {
 					[classes.contentShift]: openedMenu,

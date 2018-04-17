@@ -3,7 +3,6 @@ import Drawer from 'material-ui/Drawer';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { MENU_WIDTH } from '../../config/constants';
-import _ from 'lodash';
 
 const styles = theme => ({
     drawerPaper: {
@@ -24,7 +23,6 @@ class MainMenu extends PureComponent {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log(nextProps.appWidth)
         return { drawerType: nextProps.appWidth < 750 && nextProps.appWidth !==0 ? 'temporary' : 'persistent' };
     }
 
@@ -35,7 +33,6 @@ class MainMenu extends PureComponent {
 
     render() {
         const { classes } = this.props;
-
         return(
             <Drawer variant={ this.state.drawerType } anchor="left" onClose={ this._onCloseRequest.bind(this) }
                 open={ this.props.openedMenu }
