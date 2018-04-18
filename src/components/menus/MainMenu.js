@@ -3,6 +3,7 @@ import Drawer from 'material-ui/Drawer';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { MENU_WIDTH } from '../../config/constants';
+import MainMenuItems from './MainMenuItems';
 
 const styles = theme => ({
     drawerPaper: {
@@ -42,6 +43,7 @@ class MainMenu extends PureComponent {
             >
                 <div className="main-menu-container">
                     <div className="main-logo-ui"><img src={process.env.PUBLIC_URL + '/assets/img/main-logo.png'} alt="" /></div>
+                    <MainMenuItems />
                 </div>
             </Drawer>
         )

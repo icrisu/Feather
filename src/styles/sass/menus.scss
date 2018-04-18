@@ -1,3 +1,4 @@
+@import 'settings.scss';
 @import 'colors.scss';
 
 // MAIN MENU
@@ -14,14 +15,31 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9854ff', endColorstr='#763eff',GradientType=0 ); /* ie6-9 */
 
     .main-logo-ui {
-        height: 90px;
+        height: #{ $mainLogoUIHeight + 'px' };
         display: flex;
         justify-content: center;
         align-items: center;
         border-bottom-style: solid; border-bottom-color: #{ $logoDelimiterColor }; border-bottom-width: 1px;
         img {
-            max-height: 70px;
+            max-height: #{ $mainLogoImageMaxHeight + 'px' };
         }
     }
 }
+.main-navigation-ui {
+    height: calc(100% - #{$mainLogoUIHeight + 'px'});
+    overflow-y: auto; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.main-navigation-ui::-webkit-scrollbar-track {
+    
+    background-color: rgba(118,62,255,.1);
+}
+.main-navigation-ui::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(118,62,255,.1);                            
+} 
+.main-navigation-ui::-webkit-scrollbar-thumb {
+    background-color: rgba(152,84,255,1);
+    border-radius: 2px;
+}  
 // END MAIN MENU
