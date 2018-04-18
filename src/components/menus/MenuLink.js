@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 const styles = theme => ({
     root: {
         color: '#dbc6fe'
-    } 
+    },
+    nested: {
+        paddingLeft: theme.spacing.unit * 4,
+    },    
 });
 
 class MenuLink extends PureComponent {
@@ -17,13 +21,14 @@ class MenuLink extends PureComponent {
         href: '',
         target: '_blank',
         Icon: null,
-        label: ''
+        label: '',
+        isSubmenu: false
     }
 
     _renderWithLink() {
         const { classes, Icon, to, label } = this.props;
         return(
-            <ListItem button component={Link} to={to}>
+            <ListItem className={ classNames({ [classes.nested]: this.props.isSubmenu }) } button component={Link} to={to}>
                 { Icon ? <ListItemIcon><Icon style={{ color: '#FFF' }} /></ListItemIcon> : null }                            
                 <ListItemText classes={{ primary: classes.root }} inset primary={label} />
             </ListItem>            
@@ -61,7 +66,8 @@ MenuLink.propTypes = {
     to: PropTypes.string,
     href: PropTypes.string,
     target: PropTypes.string,
-    label: PropTypes.string
+    label: PropTypes.string,
+    isSubmenu: PropTypes.bool
 };
 
 export default withStyles(styles)(MenuLink);

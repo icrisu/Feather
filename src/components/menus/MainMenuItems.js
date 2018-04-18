@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react';
 // import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
-import Collapse from 'material-ui/transitions/Collapse';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
 import { withStyles } from 'material-ui/styles';
 import classNames from 'classnames';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
@@ -12,6 +9,7 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import { Link } from 'react-router-dom';
 
 import MenuLink from './MenuLink';
+import Submenu from './Submenu';
 
 
 const styles = theme => ({
@@ -49,6 +47,11 @@ class MainMenuItems extends PureComponent {
                 <List component="nav">
                     <MenuLink Icon={ InboxIcon } to="/main" label="Hello menu" />
                     <MenuLink href="http://google.com" target="_self" label="Second menu" />
+                    
+                    <Submenu label="Expand" Icon={ InboxIcon }>
+                        <MenuLink Icon={ InboxIcon } to="/main" label="Submenu item" />
+                        <MenuLink Icon={ InboxIcon } to="/main" label="Submenu item" />
+                    </Submenu>
 
                      <ListItem button>
                          <ListItemText inset primary="Sent mail" />
