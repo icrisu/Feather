@@ -63,7 +63,7 @@ class Submenu extends Component {
             <Fragment>
                 <ListItem disableGutters className={ classNames(classes.root, { [classes.submenuBack]: this.state.open }) } button onClick={ this.handleClick.bind(this) }>
                     <div className={ classNames({ [classes.selectedIndicator]: this.state.open }) }></div>
-                    { Icon ? <ListItemIcon><Icon style={{ color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
+                    { Icon ? <ListItemIcon><Icon style={{ marginRight: 0, color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
                     <ListItemText classes={{ primary: classes.itemText }} inset primary={label} />
                     {this.state.open ? <ExpandLess style={{ color: MAIN_MENU_COLORS.itemColor }} /> : <ExpandMore style={{ color: MAIN_MENU_COLORS.itemColor }} />}
                 </ListItem>

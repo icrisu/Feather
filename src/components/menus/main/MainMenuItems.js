@@ -6,7 +6,6 @@ import Submenu from './Submenu';
 
 class MainMenuItems extends Component {
 
-    _subMenus = [];
     constructor(props) {
         super(props);
         this.state = { open: false };

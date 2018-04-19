@@ -63,17 +63,26 @@ class MenuLink extends Component {
         }
     }
 
+    _renderIconSpace() {
+        const { Icon } = this.props;
+        return(
+            <Fragment>
+                { Icon ? null : <div style={{ width: 24, marginRight: 0 }}></div> }
+            </Fragment>
+        )        
+    }
+
     _renderSelector() {
         const { classes, Icon } = this.props;
         if (this.props.isSubmenu === false && this.state.selectedItem === true) {
             return(
                 <Fragment>
                     <span className={ classes.selectedIndicator }></span>
-                    { Icon ? null : <div style={{ width: 24, marginRight: 16 }}></div> }
+                    { Icon ? null : <div style={{ width: 24, marginRight: 0 }}></div> }
                 </Fragment>
             )
         } else {
-            return null;
+            return this._renderIconSpace();
         }
     }    
 
@@ -82,7 +91,7 @@ class MenuLink extends Component {
         return(
             <ListItem disableGutters onClick={this._listItemClick.bind(this)} className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: (isSubmenu && submenuOpended) || this.state.selectedItem === true }) } button component={Link} to={to}>
                 { this._renderSelector() }
-                { Icon ? <ListItemIcon><Icon style={{ color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
+                { Icon ? <ListItemIcon><Icon style={{ marginRight: 0, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
             </ListItem>            
         )
@@ -96,7 +105,7 @@ class MenuLink extends Component {
         const { classes, Icon, href, target, label, isSubmenu, submenuOpended } = this.props;
         return(
             <ListItem className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
-                { Icon ? <ListItemIcon><Icon style={{ color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
+                { Icon ? <ListItemIcon><Icon style={{ color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : this._renderIconSpace() }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
             </ListItem>            
         )
