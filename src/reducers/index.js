@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
+import submenu from './submenu';
 
 export default combineReducers({
     test: () => { return {} },
-    access_token: () => { return null }
+    submenu,
+    access_token: () => { return null },
 })

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Drawer from 'material-ui/Drawer';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import { MENU_WIDTH } from '../../config/constants';
+import { MENU_WIDTH } from '../../../config/constants';
 import MainMenuItems from './MainMenuItems';
 
 const styles = theme => ({

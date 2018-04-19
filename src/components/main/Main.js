@@ -5,8 +5,9 @@ import classNames from 'classnames';
 import { appTransitions } from './transitions';
 import ReactResizeDetector from 'react-resize-detector';
 import _ from 'lodash';
-import MainMenu from '../menus/MainMenu';
+import MainMenu from '../menus/main/MainMenu';
 import AppBar from '../topbar/AppBar';
+import { Switch, Route } from 'react-router-dom';
 
 const styles = appTransitions;
 
@@ -58,6 +59,10 @@ class Main extends Component {
 					[classes[`contentShift-left`]]: openedMenu
 				}) }>
 						<a onClick={ e => this._toggleMenu() }>Open</a>		
+					<Switch>
+						<Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
+						<Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
+					</Switch>						
 					{ this._renderDummy() }
 				</main>
                 <ReactResizeDetector handleWidth handleHeight onResize={this._onResize.bind(this)} />
