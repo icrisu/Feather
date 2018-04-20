@@ -6,15 +6,17 @@ import { appTransitions } from '../main/transitions';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import CurrentUser from './CurrentUser';
+
 const styles = appTransitions;
 
 class AppBar extends PureComponent {
 
-    static defaultProps = { openedMenu: true, toggleMenu: () => {} };
+    static defaultProps = { openedMenu: true, toggleMenu: () => {} };    
 
     _toggleMenu() {
         this.props.toggleMenu();
-    }
+    }    
 
     render() {
         const { classes } = this.props;
@@ -28,6 +30,8 @@ class AppBar extends PureComponent {
                 <IconButton onClick={ this._toggleMenu.bind(this) } color="inherit" style={{ marginLeft: 6 }}>
                     <MenuIcon />
                 </IconButton>
+                
+                <CurrentUser />
             </header>            
         );
     }
