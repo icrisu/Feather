@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+// import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover';
 
 class PopOverHelper extends PureComponent {
@@ -43,8 +43,8 @@ class PopOverHelper extends PureComponent {
         this.setState({
             open: false,
         });
-    };      
-
+    };     
+    
     render() {
         const {
             open,
@@ -55,19 +55,14 @@ class PopOverHelper extends PureComponent {
             positionTop,
             positionLeft,
             anchorReference,
-          } = this.state;
+        } = this.state;
 
         return(
             <div style={{ display: 'inline-block' }}>
-                <Button
-                buttonRef={node => {
-                    this.anchorEl = node;
-                }}
-                variant="raised"
-                onClick={this.handleClickButton.bind(this)}
-                >
-                Open Popover
-                </Button> 
+                { React.cloneElement(this.props.Button, {
+                    buttonRef: node => { this.anchorEl = node },
+                    onClick: e => { this.handleClickButton(e) }
+                }) }
                 <Popover
                     open={open}
                     anchorEl={this.anchorEl}
@@ -96,7 +91,7 @@ PopOverHelper.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]),
-    Button: PropTypes.node    
+    Button: PropTypes.element.isRequired
 }
 
 export default PopOverHelper;

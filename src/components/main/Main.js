@@ -58,12 +58,13 @@ class Main extends Component {
 					[classes.contentShift]: openedMenu,
 					[classes[`contentShift-left`]]: openedMenu
 				}) }>
-						<a onClick={ e => this._toggleMenu() }>Open</a>		
+					<div className="page-content">	
 					<Switch>
 						<Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
 						<Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
 					</Switch>						
 					{ this._renderDummy() }
+					</div>
 				</main>
                 <ReactResizeDetector handleWidth handleHeight onResize={this._onResize.bind(this)} />
 			</Fragment>

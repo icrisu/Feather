@@ -27,11 +27,15 @@ class AppBar extends PureComponent {
                 [classes['app-bar-shift-left']]: this.props.openedMenu,
                 appbarOpen: this.props.openedMenu
                 }) }>
-                <IconButton onClick={ this._toggleMenu.bind(this) } color="inherit" style={{ marginLeft: 6 }}>
-                    <MenuIcon />
-                </IconButton>
+                <div className="controlls-left">
+                    <IconButton onClick={ this._toggleMenu.bind(this) } color="inherit" style={{ marginLeft: 6 }}>
+                        <MenuIcon />
+                    </IconButton>                
+                </div>
                 
-                <CurrentUser />
+                <div className="controlls-right">
+                    <CurrentUser />
+                </div>
             </header>            
         );
     }

@@ -2,8 +2,20 @@
 @import 'colors.scss';
 @import 'menus.scss';
 
+body, html, #root {
+    overflow: hidden;
+    height: 100%;
+    max-height: 100%;
+}
+
 .app-page {
-    padding: 50px 20px;
+    overflow-y: auto;
+    margin-top: #{ $appBarHeight + 'px' };
+    height: calc(100% - #{($appBarHeight) + 'px'});
+    -webkit-overflow-scrolling: touch;
+    .page-content {
+        padding: 0px 20px;
+    }
 }
 .appbar {
     width: 100%;
@@ -13,6 +25,17 @@
     z-index: 100;
     background: #{ $appbarBackground };
     border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #{ $appbarBorderColor };
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .controlls-left {
+        align-self: center;
+    }
+    .controlls-right {
+        align-self: center;
+    }
 }
 .appbarOpen {
     width: calc(100% - #{($menuWidth) + 'px'});
