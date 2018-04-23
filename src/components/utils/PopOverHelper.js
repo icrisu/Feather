@@ -1,12 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover';
+import _ from 'lodash';
 
-class PopOverHelper extends PureComponent {
+class PopOverHelper extends Component {
 
     static defaultProps = {
-        position: 'default'
+        position: 'default',
+        currentPath: null
     }
 
     state = {        
@@ -23,21 +24,23 @@ class PopOverHelper extends PureComponent {
     anchorEl = null;
 
     static getDerivedStateFromProps(nextProps, prevState) {
+        let layout = {};
         if (nextProps.position === 'bottom-right') {
-            return {
+            layout = {
                 anchorOriginVertical: 'bottom',
                 anchorOriginHorizontal: 'right',
                 transformOriginHorizontal: 'right'
             }
         }
         if (nextProps.position === 'top-right') {
-            return {
+            layout = {
                 anchorOriginVertical: 'top',
                 anchorOriginHorizontal: 'right',
                 transformOriginHorizontal: 'right'
             }
-        }        
-        return null;
+        }  
+        console.log('AAAA', nextProps)
+        return { ...layout, open: nextProps.open || false };
     }
 
     handleClickButton() {
@@ -98,7 +101,8 @@ PopOverHelper.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]),
-    Button: PropTypes.element.isRequired
+    Button: PropTypes.element.isRequired,
+    open: PropTypes.bool
 }
 
 export default PopOverHelper;

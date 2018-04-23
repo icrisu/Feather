@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import PopOverHelper from '../utils/PopOverHelper';
@@ -18,17 +18,28 @@ const styles = theme => ({
     }
 });
 
-class CurrentUser extends PureComponent {
+class CurrentUser extends Component {
     
     user = {
         firstName: 'Kara',
         lastName: 'Thrace',
         thumb: process.env.PUBLIC_URL + '/assets/dummy_imgs/user_1.jpg'
     }
+
+    constructor(props) {
+        super(props);
+        this.state = { open: false }
+        this._popoverClose = this._popoverClose.bind(this);
+    }
+
+    _popoverClose() {
+        this.setState({ open: false });
+    }
+
     render() {
         const { classes } = this.props;
         return(
-            <PopOverHelper position="top-right" Button={
+            <PopOverHelper position="top-right" open={ this.state.open } Button={
                     <IconButton>
                         <Avatar src={this.user.thumb} />
                     </IconButton>
@@ -42,19 +53,19 @@ class CurrentUser extends PureComponent {
                     </div>
 
                     <List component="nav" className={classes.list}>
-                        <ListItem disableGutters button component={Link} to={`/users`}>
+                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={`My profile`} />
                         </ListItem>
-                        <ListItem disableGutters button component={Link} to={`/users`}>
+                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={`My settings`} />
                         </ListItem>
-                        <ListItem disableGutters button component={Link} to={`/users`}>
+                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={`Notifications`} />
                         </ListItem>
-                        <ListItem disableGutters button component={Link} to={`/users`}>
+                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={`Logout`} />
                         </ListItem>                                                                          
-                    </List>
+                    </List>                     
 
                 </div>
             </PopOverHelper>

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -35,7 +36,7 @@ class AppBar extends PureComponent {
                 appbarOpen: this.props.openedMenu
                 }) }>
                 <div className="controlls-left">
-                    <IconButton onClick={ this._toggleMenu.bind(this) } color="inherit" style={{ marginLeft: 6 }}>
+                    <IconButton onClick={ this._toggleMenu.bind(this) } style={{ marginLeft: 6 }}>
                         <MenuIcon style={{ color: APP_BAR_COLORS.navigationItems }} />
                     </IconButton>                
                 </div>
@@ -48,7 +49,7 @@ class AppBar extends PureComponent {
                     </div>
                     <div className="separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control">
-                        <IconButton style={navItemsStyle}>
+                        <IconButton component={ Link } to="/email" style={navItemsStyle}>
                             <i className="far fa-envelope"></i>
                         </IconButton>
                     </div>
@@ -67,7 +68,7 @@ class AppBar extends PureComponent {
                     <div className="separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control control-large">
                         <CurrentUser />
-                    </div>                    
+                    </div>
                 </div>
             </header>            
         );
