@@ -1,0 +1,37 @@
+@import 'colors.scss';
+@import 'helpers/mixing.scss';
+
+/* custom badge */
+.custom-badge {
+    width: 18px; min-width: 18px; height: 18px; border-radius: 9px;
+    background: #{ $defaultBadgeBackground }; color: #{ $defaultBadgeColor }; overflow: hidden;
+    position: absolute; top: 0px; right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+}
+
+/* user popover */
+.app-bar-user-popover {
+    min-width: 220px; min-height: 50px;
+    @include linear-gradient(#{ $mainMenuGradientStart }, #{ $mainMenuGradientEnd });
+    .user {
+        padding: 10px 0px;
+        .large-avatar {
+            position: relative; margin: auto; margin-top: 15px; margin-bottom: 15px;
+            width: 80px; height: 80px; border-radius: 40px; overflow: hidden;
+            img { width: 100% };
+        }
+        .user-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: center;
+            color: #F2F2F2;
+            padding-bottom: 20px;
+            border-bottom-style: solid; border-bottom-color: #{ $logoDelimiterColor }; border-bottom-width: 1px;
+        } 
+    }
+    
+}

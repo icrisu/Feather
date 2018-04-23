@@ -30,6 +30,13 @@ class PopOverHelper extends PureComponent {
                 transformOriginHorizontal: 'right'
             }
         }
+        if (nextProps.position === 'top-right') {
+            return {
+                anchorOriginVertical: 'top',
+                anchorOriginHorizontal: 'right',
+                transformOriginHorizontal: 'right'
+            }
+        }        
         return null;
     }
 

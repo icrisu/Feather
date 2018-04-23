@@ -1,6 +1,8 @@
 @import 'settings.scss';
 @import 'colors.scss';
 @import 'menus.scss';
+@import 'widgets.scss';
+@import 'helpers/mixing.scss';
 
 body, html, #root {
     overflow: hidden;
@@ -27,17 +29,41 @@ body, html, #root {
     border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #{ $appbarBorderColor };
     
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     .controlls-left {
         align-self: center;
+        display: flex;
+        justify-content: flex-end;        
     }
     .controlls-right {
         align-self: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .control {
+        min-width: 50px;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .badge {
+            width: 18px; min-width: 18px; height: 18px; border-radius: 9px;
+            background: darkviolet; color: #FFF; overflow: hidden;
+            position: absolute; top: -10px; right: 0px;
+            text-align: center; font-size: 12px;
+        }
+    }    
+    .control-large {
+        min-width: 80px;
+    }
+    .separator {
+        height: #{ $appBarHeight + 'px' }; width: 1px; align-self: center;
     }
 }
 .appbarOpen {
     width: calc(100% - #{($menuWidth) + 'px'});
 }
+
 
