@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Popover from 'material-ui/Popover';
-import _ from 'lodash';
 
 class PopOverHelper extends Component {
 
@@ -39,7 +38,6 @@ class PopOverHelper extends Component {
                 transformOriginHorizontal: 'right'
             }
         }  
-        console.log('AAAA', nextProps)
         return { ...layout, open: nextProps.open || false };
     }
 

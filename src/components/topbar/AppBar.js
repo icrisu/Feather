@@ -1,17 +1,21 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { toggleMainSidebar } from '../../actions/ui-interact';
+import { APP_BAR_COLORS } from '../../config/colors';
 import { appTransitions } from '../main/transitions';
+import classNames from 'classnames';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { APP_BAR_COLORS } from '../../config/colors';
 import CustomBadge from '../widgets/CustomBadge';
 import ListIcon from '@material-ui/icons/List';
 import SearchIcon from '@material-ui/icons/Search';
 
 import CurrentUser from './CurrentUser';
+import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
+import FlagLangSelect from '../widgets/FlagLangSelect';
 
 const styles = appTransitions;
 const navItemsStyle = {
@@ -20,11 +24,16 @@ const navItemsStyle = {
 
 class AppBar extends PureComponent {
 
-    static defaultProps = { openedMenu: true, toggleMenu: () => {} };    
+    static defaultProps = { openedMenu: true, toggleMenu: () => {} };
+    state = { openNotificationSidebar: false }
 
     _toggleMenu() {
         this.props.toggleMenu();
     }    
+
+    _openNotificationSidebar() {
+        this.props.toggleMainSidebar(true);
+    }
 
     render() {
         const { classes } = this.props;
@@ -38,7 +47,7 @@ class AppBar extends PureComponent {
                 <div className="controlls-left">
                     <IconButton onClick={ this._toggleMenu.bind(this) } style={{ marginLeft: 6 }}>
                         <MenuIcon style={{ color: APP_BAR_COLORS.navigationItems }} />
-                    </IconButton>                
+                    </IconButton>              
                 </div>
                 
                 <div className="controlls-right">
@@ -47,6 +56,9 @@ class AppBar extends PureComponent {
                             <SearchIcon />
                         </IconButton>
                     </div>
+                    <div className="control">
+                        <FlagLangSelect />
+                    </div>                    
                     <div className="separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control">
                         <IconButton component={ Link } to="/email" style={navItemsStyle}>
@@ -60,7 +72,7 @@ class AppBar extends PureComponent {
                         </IconButton>
                     </div>
                     <div className="control">
-                        <IconButton style={navItemsStyle}>
+                        <IconButton style={navItemsStyle} onClick={ this._openNotificationSidebar.bind(this) }>
                             <CustomBadge content="22" />
                             <ListIcon />
                         </IconButton>
@@ -70,6 +82,7 @@ class AppBar extends PureComponent {
                         <CurrentUser />
                     </div>
                 </div>
+                <NotificationSidebar open={ this.state.openNotificationSidebar } />
             </header>            
         );
     }
@@ -82,4 +95,4 @@ AppBar.propTypes = {
     toggleMenu: PropTypes.func.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(AppBar);
+export default connect(null, { toggleMainSidebar })(withStyles(styles, { withTheme: true })(AppBar));

@@ -3,6 +3,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from 'material-ui/List';
 import MenuLink from './MenuLink';
 import Submenu from './Submenu';
+import { I18n } from 'react-redux-i18n';
 
 class MainMenuItems extends Component {
 
@@ -19,7 +20,7 @@ class MainMenuItems extends Component {
         return(
             <nav className="main-navigation-ui">
                 <List component="nav">
-                    <MenuLink Icon={ InboxIcon } to="/main1" label="Hello menu" />
+                    <MenuLink Icon={ InboxIcon } to="/main1" label={I18n.t('mainMenu.dashboards.dash1')} />
                     <MenuLink to="/main2" label="No icon" />
                     <MenuLink href="http://google.com" target="_self" label="External" />
                     

@@ -33,5 +33,24 @@
             border-bottom-style: solid; border-bottom-color: #{ $logoDelimiterColor }; border-bottom-width: 1px;
         } 
     }
-    
+}
+
+/* flags dropdown - lang select */
+.select-lang {
+    font-family: 'Roboto', sans-serif;
+    .selected--flag--option {
+        color: #{ $appbarItemsColor };
+    }
+    .country-flag {
+        font-size: 14px;
+    }
+    .arrow-down {
+        color: #{ $appbarItemsColor } !important;
+        padding: 6px;
+    }    
+    .flag-options {
+        border: 1px solid rgba($appbarItemsColor, .7) !important;
+        color: #{ $appbarItemsColor };
+        padding: 8px 5px !important;
+    }
 }

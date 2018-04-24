@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import PopOverHelper from '../utils/PopOverHelper';
@@ -7,7 +7,8 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import List, { ListItem, ListItemText }  from 'material-ui/List';
 import { Link } from 'react-router-dom';
-import { MAIN_MENU_COLORS } from '../../config/colors'
+import { MAIN_MENU_COLORS } from '../../config/colors';
+import { I18n } from 'react-redux-i18n';
 
 const styles = theme => ({
     list: {
@@ -47,23 +48,23 @@ class CurrentUser extends Component {
                 <div className="app-bar-user-popover">
                     <div className="user">
                         <div className="large-avatar">
-                            <img src={this.user.thumb} />
+                            <img src={this.user.thumb} alt="" />
                         </div>
                         <Typography className="user-name" variant="title" gutterBottom>{`${this.user.firstName} ${this.user.lastName}`}</Typography>
                     </div>
 
                     <List component="nav" className={classes.list}>
                         <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
-                            <ListItemText classes={{ primary: classes.listItem }} inset primary={`My profile`} />
+                            <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.profile')} />
                         </ListItem>
                         <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
-                            <ListItemText classes={{ primary: classes.listItem }} inset primary={`My settings`} />
+                            <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.settings')} />
                         </ListItem>
                         <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
-                            <ListItemText classes={{ primary: classes.listItem }} inset primary={`Notifications`} />
+                            <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.notifications')} />
                         </ListItem>
                         <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
-                            <ListItemText classes={{ primary: classes.listItem }} inset primary={`Logout`} />
+                            <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.logout')} />
                         </ListItem>                                                                          
                     </List>                     
 

@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
+import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { appTransitions } from './transitions';
@@ -7,20 +9,30 @@ import ReactResizeDetector from 'react-resize-detector';
 import _ from 'lodash';
 import MainMenu from '../menus/main/MainMenu';
 import AppBar from '../topbar/AppBar';
-import { Switch, Route } from 'react-router-dom';
+import { DEFAULT_LANG } from '../../config/constants';
 
 const styles = appTransitions;
 
 class Main extends Component {
-    
+
+    static defaultProps = {
+		language: DEFAULT_LANG
+	}
+
 	constructor(props) {
         super(props);
-        this.state = { openedMenu: true, appWidth: 0 };
+        this.state = { openedMenu: true, appWidth: 0, currentLang: DEFAULT_LANG };
 
         this._delayedResize = _.debounce((w, h) => {   
             this.setState({ openedMenu: _.isNumber(w) && w < 750 ? false: true, appWidth: w });
         }, 400);		
-    }
+	}
+
+	componentDidUpdate() {
+		if (this.props.language !== this.state.currentLang) {
+			this.setState({ currentLang: this.props.language });
+		}
+	}
 
 	_renderDummy() {
 		let a = [];
@@ -75,7 +87,14 @@ class Main extends Component {
 Main.propTypes = {
 	classes: PropTypes.object.isRequired,
 	theme: PropTypes.object.isRequired,
+	language: PropTypes.string
 };
 
-export default withStyles(styles, { withTheme: true })(Main);
+const mapStateToProps = ({ language }) => {
+    return {
+        language
+    }
+}
+
+export default connect(mapStateToProps)(withStyles(styles, { withTheme: true })(Main));
 
