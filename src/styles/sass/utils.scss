@@ -1,0 +1,15 @@
+.pretty-scroll {
+    overflow-y: auto; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.pretty-scroll::-webkit-scrollbar-track {
+    background-color: rgba(#dee2ee, .1);
+}
+.pretty-scroll::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(#dee2ee, .1);                            
+} 
+.pretty-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(#dee2ee, 1);
+    border-radius: 2px;
+}  

@@ -93,7 +93,7 @@ class MenuLink extends Component {
                 { this._renderSelector() }
                 { Icon ? <ListItemIcon><Icon style={{ marginRight: 0, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
-            </ListItem>            
+            </ListItem>
         )
     }
 
@@ -107,7 +107,7 @@ class MenuLink extends Component {
             <ListItem className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
                 { Icon ? <ListItemIcon><Icon style={{ color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : this._renderIconSpace() }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
-            </ListItem>            
+            </ListItem>
         )
     }    
 

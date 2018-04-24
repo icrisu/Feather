@@ -1,5 +1,6 @@
 @import 'colors.scss';
 @import 'helpers/mixing.scss';
+@import 'utils.scss';
 
 /* custom badge */
 .custom-badge {
@@ -35,6 +36,30 @@
     }
 }
 
+/* appbar - notifications - popover */
+.app-bar-notifications {
+    min-width: 270px; min-height: 50px;
+    .controls {
+        padding: 10px 10px;
+        border-bottom-style: solid; border-width: 1px; border-color: #eef2f5;
+    }
+    .content {
+        padding: 10px 10px;
+        max-height: 250px;
+        background: #f8f9fd;
+        .notification {
+            padding: 10px;
+            background: #FFF;
+            margin-bottom: 5px;
+        }
+    }
+    .bottom-controls {
+        border-top-style: solid; border-width: 1px; border-color: #eef2f5;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
 /* flags dropdown - lang select */
 .select-lang {
     font-family: 'Roboto', sans-serif;
@@ -46,7 +71,7 @@
     }
     .arrow-down {
         color: #{ $appbarItemsColor } !important;
-        padding: 6px;
+        padding-left: 6px !important;
     }    
     .flag-options {
         border: 1px solid rgba($appbarItemsColor, .7) !important;

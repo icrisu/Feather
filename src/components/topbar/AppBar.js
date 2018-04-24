@@ -13,6 +13,7 @@ import CustomBadge from '../widgets/CustomBadge';
 import ListIcon from '@material-ui/icons/List';
 import SearchIcon from '@material-ui/icons/Search';
 
+import Notifications from './Notifications';
 import CurrentUser from './CurrentUser';
 import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
 import FlagLangSelect from '../widgets/FlagLangSelect';
@@ -66,10 +67,7 @@ class AppBar extends PureComponent {
                         </IconButton>
                     </div>
                     <div className="control">
-                        <IconButton style={navItemsStyle}>
-                            <CustomBadge content="5" />
-                            <i className="far fa-bell"></i>
-                        </IconButton>
+                        <Notifications />
                     </div>
                     <div className="control">
                         <IconButton style={navItemsStyle} onClick={ this._openNotificationSidebar.bind(this) }>

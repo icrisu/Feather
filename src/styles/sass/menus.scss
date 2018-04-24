@@ -24,14 +24,14 @@
     -webkit-overflow-scrolling: touch;
 }
 .main-navigation-ui::-webkit-scrollbar-track {
-    background-color: rgba(118,62,255,.1);
+    background-color: rgba(118,62,255, .1);
 }
 .main-navigation-ui::-webkit-scrollbar {
     width: 6px;
-    background-color: rgba(118,62,255,.1);                            
+    background-color: rgba(118,62,255, .1);                            
 } 
 .main-navigation-ui::-webkit-scrollbar-thumb {
-    background-color: rgba(152,84,255,1);
+    background-color: rgba(152,84,255, 1);
     border-radius: 2px;
 }  
 // END MAIN MENU
