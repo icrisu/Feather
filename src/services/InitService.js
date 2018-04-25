@@ -1,4 +1,4 @@
-import { getNotifications } from '../actions';
+import { getNotifications, getSidebarActivity } from '../actions';
 import { store } from '../index';
 
 let instance;
@@ -17,7 +17,10 @@ class InitService {
     init() {
         setTimeout(() => {
             store.dispatch(getNotifications())
-        }, 1500)
+        }, 1500);
+        setTimeout(() => {
+            store.dispatch(getSidebarActivity())
+        }, 2000);        
     }
 
     static getInstance() {

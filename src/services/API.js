@@ -22,6 +22,10 @@ class API {
 		return axios.get(`${API_ROOT}/notifications.html`);
     }
 
+    getSidebarActivity() {
+        return axios.get(`${API_ROOT}/sidebar-activity.html`);
+    }
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

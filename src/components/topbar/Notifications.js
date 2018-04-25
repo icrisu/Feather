@@ -34,7 +34,6 @@ class Notifications extends Component {
         const href = e.target.getAttribute('href');
         const target = e.target.getAttribute('target');
         e.preventDefault();
-        console.log(href, target, e.currentTarget);
         if (_.isNil(target) && !_.isNil(href)) {
             e.preventDefault();
             this.props.history.push(href);
@@ -55,9 +54,7 @@ class Notifications extends Component {
                     <div className="controls">
                         <Typography className="user-name" variant="body2" gutterBottom>{I18n.t('topbar.notifications.title')}</Typography>
                     </div>
-                    <div className="content pretty-scroll" dangerouslySetInnerHTML={{ __html: this.props.notifications }} onClick={ this._captureClicks.bind(this) }>
-                        
-                    </div>
+                    <div className="content pretty-scroll" dangerouslySetInnerHTML={{ __html: this.props.notifications }} onClick={ this._captureClicks.bind(this) }></div>
                     <div className="bottom-controls">                        
                         <Button component={Link} to="/" style={{ textTransform: 'initial' }} variant="raised" size="small" color="primary">
                             {I18n.t('topbar.notifications.activity')}

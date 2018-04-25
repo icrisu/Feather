@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { I18n } from 'react-redux-i18n';
 import Drawer from 'material-ui/Drawer';
 import { toggleMainSidebar } from '../../../actions/ui-interact';
+import SwipeableViews from 'react-swipeable-views';
+import Tabs, { Tab } from 'material-ui/Tabs';
+import AppBar from 'material-ui/AppBar';
+import SidebarActivity from './SidebarActivity';
+import SidebarSales from './SidebarSales';
 
 class NotificationSidebar extends Component {
 
     state = {
-        drawerType: 'temporary', open: false
+        drawerType: 'temporary', open: false, tabValue: 0
+    }
+
+    _handleTabChange(event, tabValue) {
+        this.setState({ tabValue });
+    }
+
+    _handleChangeIndex(index) {
+        this.setState({ tabValue: index });
     }
     
     _onCloseRequest() {
@@ -18,24 +31,35 @@ class NotificationSidebar extends Component {
         return { open: nextProps.sidebarOpen };
     }   
 
-    _renderDummy() {
-        let m = [];
-        for (let i = 0; i < 200; i++) {
-            m.push(<p key={i}>ssss {i}</p>)  
-        }
-        return m;
-    }
-
     render() {
         return(
             <Drawer variant={ this.state.drawerType } anchor="right" onClose={ this._onCloseRequest.bind(this) }
                 open={ this.state.open }
             >
                 <div className="main-sidebar">
-                    <div className="sidebar-nav">
-                    </div>
+                    
+                    <AppBar position="static" color="default">
+                        <Tabs
+                            value={this.state.tabValue}
+                            onChange={this._handleTabChange.bind(this)}
+                            indicatorColor="primary"
+                            textColor="primary"
+                            fullWidth
+                            >
+                            <Tab label={I18n.t('sidebar.tabs.sales')} />
+                            <Tab label={I18n.t('sidebar.tabs.activity')} />
+                        </Tabs>
+                    </AppBar>                    
+                    
                     <div className="sidebar-content pretty-scroll">
-                        { this._renderDummy() }
+                        <SwipeableViews className="swipeable-views"
+                            axis="x"
+                            index={this.state.tabValue}
+                            onChangeIndex={this._handleChangeIndex.bind(this)}
+                            >
+                            <SidebarSales />
+                            <SidebarActivity />
+                        </SwipeableViews>
                     </div>
                     
                 </div>

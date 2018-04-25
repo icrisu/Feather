@@ -38,13 +38,38 @@
 
 // main sidebar 
 .main-sidebar {
-    width: 290px; height: 100%;   
-    .sidebar-nav {
-        overflow: hidden; height: #{$sidebarTopNavHeight}px;
-    }
+    width: 390px; height: 100%;
+    display: flex;   
+    flex-direction: column;
     .sidebar-content {
-        height: calc(100% - #{($sidebarTopNavHeight) + 'px'});
+        flex: 1; background: #{ $appbarBackground };
     }
+    .swipeable-views {
+        height: 100%;
+        .react-swipeable-view-container {
+            height: 100%;
+        }
+    }
+    .sidebar-activity, .sidebar-sales {
+        height: 100%; overflow-y: auto;
+        .group-content {
+            .notification {
+                margin-bottom: 12px;
+            }
+        }        
+    }
+    .sidebar-group {
+        .group-title {
+            padding: 10px 15px;
+            background: #eaedfb;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 500;                
+        }
+        .group-content {
+            padding: 15px;
+        }
+    }    
 }
 @media screen and (max-width: 767px) {
     .main-sidebar {
