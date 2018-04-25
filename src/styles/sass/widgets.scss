@@ -29,7 +29,7 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             text-align: center;
-            color: #F2F2F2;
+            color: #{ $appBarUserNameColor };
             padding-bottom: 20px;
             border-bottom-style: solid; border-bottom-color: #{ $logoDelimiterColor }; border-bottom-width: 1px;
         } 
@@ -41,12 +41,12 @@
     min-width: 270px; min-height: 50px;
     .controls {
         padding: 10px 10px;
-        border-bottom-style: solid; border-width: 1px; border-color: #eef2f5;
+        border-bottom-style: solid; border-width: 1px; border-color: #{ $appBarNotificationBorder };
     }
     .content {
         padding: 10px 10px;
         max-height: 250px;
-        background: #f8f9fd;
+        background: #{ $appbarBackground };
         .notification {
             padding: 10px;
             background: #FFF;
@@ -54,7 +54,7 @@
         }
     }
     .bottom-controls {
-        border-top-style: solid; border-width: 1px; border-color: #eef2f5;
+        border-top-style: solid; border-width: 1px; border-color: #{ $appBarNotificationBorder };
         padding: 10px;
         text-align: center;
     }

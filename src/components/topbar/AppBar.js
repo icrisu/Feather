@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import { toggleMainSidebar } from '../../actions/ui-interact';
-import { APP_BAR_COLORS } from '../../config/colors';
+import { APP_BAR_COLORS } from '../../theme/Customize';
 import { appTransitions } from '../main/transitions';
 import classNames from 'classnames';
 import IconButton from 'material-ui/IconButton';

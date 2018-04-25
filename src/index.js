@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import CssBaseline from 'material-ui/CssBaseline';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider } from 'material-ui/styles';
 import { Fragment } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { loadTranslations, syncTranslationWithStore } from 'react-redux-i18n';
 import { TRANSLATION_DATA } from './config/translation';
 import { changeLang } from './actions/ui-interact';
+import { theme } from './theme/Customize';
 
 import reducers from './reducers';
 
@@ -25,22 +26,6 @@ store.dispatch(loadTranslations(TRANSLATION_DATA));
 const { language } = store.getState();
 changeLang(language);
 
-// override theme 
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#8e55fb',
-            main: '#8450fb',
-            dark: '#7042f4',
-            contrastText: '#fff'
-        }
-    },
-    typography: {
-        body2: {
-            color: '#394163'
-        }
-    }
-});
 
 ReactDOM.render(
 <Provider store={ store }>

@@ -1,14 +1,23 @@
-$logoDelimiterColor: #9d5cfe;
 
+// appbar
 $appbarBackground: #f8f9fd;
 $appbarBorderColor: #edf3f7;
 $appbarItemsColor: #99a5c8;
-
-$mainMenuGradientStart: #9854ff;
-$mainMenuGradientEnd: #763eff;
-
 $appBarUserWidgetGradientStart: #9854ff;
 $appBarUserWidgetEnd: #763eff;
 
+// menu
+$logoDelimiterColor: #9d5cfe;
+$mainMenuGradientStart: #9854ff;
+$mainMenuGradientEnd: #763eff;
+
+// badge
 $defaultBadgeBackground: #763eff;
 $defaultBadgeColor: #FFFFFF;
+
+// WIDGETS
+// app-bar notifications
+$appBarNotificationBorder: #eef2f5;
+
+// app-bar user
+$appBarUserNameColor: #F2F2F2;

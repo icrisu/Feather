@@ -8,7 +8,7 @@ import Collapse from 'material-ui/transitions/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import classNames from 'classnames';
-import { MAIN_MENU_COLORS } from '../../../config/colors';
+import { MAIN_MENU_COLORS } from '../../../theme/Customize';
 import uniqid from 'uniqid';
 import _ from 'lodash';
 

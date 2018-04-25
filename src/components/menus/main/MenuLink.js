@@ -7,7 +7,7 @@ import { withStyles } from 'material-ui/styles';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { MAIN_MENU_COLORS } from '../../../config/colors';
+import { MAIN_MENU_COLORS } from '../../../theme/Customize';
 import safe from 'undefsafe';
 import _ from 'lodash';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import PopOverHelper from '../utils/PopOverHelper';
 import { Link } from 'react-router-dom';
-import { APP_BAR_COLORS } from '../../config/colors';
+import { APP_BAR_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';
 import IconButton from 'material-ui/IconButton';
 import CustomBadge from '../widgets/CustomBadge';

@@ -7,7 +7,7 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import List, { ListItem, ListItemText }  from 'material-ui/List';
 import { Link } from 'react-router-dom';
-import { MAIN_MENU_COLORS } from '../../config/colors';
+import { MAIN_MENU_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';
 
 const styles = theme => ({
