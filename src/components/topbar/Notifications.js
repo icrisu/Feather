@@ -48,7 +48,7 @@ class Notifications extends Component {
             }>    
                 <div className="app-bar-notifications">
                     <div className="controls">
-                        <Typography className="user-name" variant="body2" gutterBottom>Notifications</Typography>
+                        <Typography className="user-name" variant="body2" gutterBottom>{I18n.t('topbar.notifications.title')}</Typography>
                     </div>
                     <div className="content pretty-scroll" onClick={ this._captureClicks.bind(this) }>
 
@@ -95,7 +95,7 @@ class Notifications extends Component {
                     </div>
                     <div className="bottom-controls">                        
                         <Button component={Link} to="/" style={{ textTransform: 'initial' }} variant="raised" size="small" color="primary">
-                            See all activity
+                            {I18n.t('topbar.notifications.activity')}
                         </Button>                        
                     </div>
                 </div>

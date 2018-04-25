@@ -11,6 +11,10 @@ export const TRANSLATION_DATA = {
                 settings: 'My settings',
                 notifications: 'Notifications',
                 logout: 'Logout'
+            },
+            notifications: {
+                title: 'Notifications',
+                activity: 'See all activity'
             }
         }
     },
@@ -22,11 +26,15 @@ export const TRANSLATION_DATA = {
         },
         topbar: {
             currentUser: {
-                profile: 'My profile 2',
+                profile: 'My profile',
                 settings: 'My settings',
                 notifications: 'Notifications',
                 logout: 'Logout'
+            },
+            notifications: {
+                title: 'Notifications',
+                activity: 'See all activity'
             }
-        }        
+        }     
     }
 }
