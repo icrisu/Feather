@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import { Switch, Route } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { appTransitions } from './transitions';
@@ -96,5 +97,5 @@ const mapStateToProps = ({ language }) => {
     }
 }
 
-export default connect(mapStateToProps)(withStyles(styles, { withTheme: true })(Main));
+export default withRouter(connect(mapStateToProps)(withStyles(styles, { withTheme: true })(Main)));
 
