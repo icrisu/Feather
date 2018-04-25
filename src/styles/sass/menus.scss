@@ -35,3 +35,19 @@
     border-radius: 2px;
 }  
 // END MAIN MENU
+
+// main sidebar 
+.main-sidebar {
+    width: 290px; height: 100%;   
+    .sidebar-nav {
+        overflow: hidden; height: #{$sidebarTopNavHeight}px;
+    }
+    .sidebar-content {
+        height: calc(100% - #{($sidebarTopNavHeight) + 'px'});
+    }
+}
+@media screen and (max-width: 767px) {
+    .main-sidebar {
+        width: 270px;
+    }
+} 

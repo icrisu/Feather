@@ -24,7 +24,7 @@ class CurrentUser extends Component {
     user = {
         firstName: 'Kara',
         lastName: 'Thrace',
-        thumb: process.env.PUBLIC_URL + '/assets/dummy_imgs/user_1.jpg'
+        thumb: process.env.PUBLIC_URL + '/assets/dummy_data/imgs/user_1.jpg'
     }
 
     constructor(props) {

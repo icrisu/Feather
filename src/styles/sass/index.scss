@@ -1,8 +1,9 @@
+@import 'helpers/mixing.scss';
 @import 'settings.scss';
 @import 'colors.scss';
 @import 'menus.scss';
 @import 'widgets.scss';
-@import 'helpers/mixing.scss';
+@import 'misc.scss';
 
 body, html, #root {
     overflow: hidden;
