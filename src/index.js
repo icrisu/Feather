@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import CssBaseline from 'material-ui/CssBaseline';
 import { MuiThemeProvider } from 'material-ui/styles';
 import { Fragment } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { loadTranslations, syncTranslationWithStore } from 'react-redux-i18n';
 import { TRANSLATION_DATA } from './config/translation';
 import { changeLang } from './actions/ui-interact';
@@ -26,6 +26,8 @@ store.dispatch(loadTranslations(TRANSLATION_DATA));
 const { language } = store.getState();
 changeLang(language);
 
+// ONLY USED FOR DEMOS ( remove in production )
+window.DUMMY_IMGS_FOLDER = `${process.env.PUBLIC_URL}/assets/dummy_imgs/`;
 
 ReactDOM.render(
 <Provider store={ store }>

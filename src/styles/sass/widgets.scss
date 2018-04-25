@@ -38,7 +38,7 @@
 
 /* appbar - notifications - popover */
 .app-bar-notifications {
-    min-width: 270px; min-height: 50px;
+    width: 270px; min-height: 50px;
     .controls {
         padding: 10px 10px;
         border-bottom-style: solid; border-width: 1px; border-color: #{ $appBarNotificationBorder };
@@ -48,9 +48,45 @@
         max-height: 250px;
         background: #{ $appbarBackground };
         .notification {
-            padding: 10px;
+            padding: 10px; position: relative;
             background: #FFF;
             margin-bottom: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            line-height: 150%;
+            color: #{ $defaultTextColor };
+            display: flex;
+            a {
+                font-weight: 500;
+                color: #{ $defaultTextColor };
+                text-decoration: none;
+            }
+            .n-icon-ui {
+                $avatarSize: 30;
+                width: #{$avatarSize}px; height: #{$avatarSize}px; overflow: hidden; border-radius: #{$avatarSize / 2}px; margin-right: 10px;
+                img { width: 100% }
+            }
+            .n-content {
+                flex: 1;
+                .time-ago {
+                    font-size: 12px; color: #6d79a3;
+                }
+                .task {
+                    padding: 1px 5px;
+                    border-radius: 9px;
+                    color: #FFF;                    
+                    &.done {
+                        background: #37d88a;
+                    }
+                    &.progress {
+                        background: #ffca59;
+                    }
+                    &.urgent {
+                        background: #ff4f3d;
+                    }                    
+                }
+                
+            }
         }
     }
     .bottom-controls {
