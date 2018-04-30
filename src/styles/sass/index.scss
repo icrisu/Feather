@@ -64,6 +64,33 @@ body, html, #root {
     .separator {
         height: #{ $appBarHeight + 'px' }; width: 1px; align-self: center;
     }
+    .topbar-search {
+        margin-left: 8px;
+        display: flex;
+        align-items: center;
+    }
+    .topbar-search {
+        @media screen and (max-width: 970px) {
+            .search-input {
+                width: 270px;
+            }
+        }
+        @media screen and (max-width: 900px) {
+            .search-input {
+                width: 200px;
+            }
+        }        
+    }
+    @media screen and (max-width: 500px) {
+        .topbar-search {
+            display: none;
+        }
+    }     
+    @media screen and (max-width: 800px) {
+        .select-language-control, .select-language-separator {
+            display: none;
+        }
+    } 
 }
 .appbarOpen {
     width: calc(100% - #{($menuWidth) + 'px'});

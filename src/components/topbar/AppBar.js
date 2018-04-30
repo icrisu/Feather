@@ -11,12 +11,11 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CustomBadge from '../widgets/CustomBadge';
 import ListIcon from '@material-ui/icons/List';
-import SearchIcon from '@material-ui/icons/Search';
-
 import Notifications from './Notifications';
 import CurrentUser from './CurrentUser';
 import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
 import FlagLangSelect from '../widgets/FlagLangSelect';
+import SearchWidget from '../widgets/search/SearchWidget';
 
 const styles = appTransitions;
 const navItemsStyle = {
@@ -48,22 +47,20 @@ class AppBar extends PureComponent {
                 <div className="controlls-left">
                     <IconButton onClick={ this._toggleMenu.bind(this) } style={{ marginLeft: 6 }}>
                         <MenuIcon style={{ color: APP_BAR_COLORS.navigationItems }} />
-                    </IconButton>              
+                    </IconButton>
+                    <div className="topbar-search">
+                        <SearchWidget />
+                    </div>              
                 </div>
                 
                 <div className="controlls-right">
-                    <div className="control">
-                        <IconButton style={navItemsStyle}>
-                            <SearchIcon />
-                        </IconButton>
-                    </div>
-                    <div className="control">
+                    <div className="control select-language-control">
                         <FlagLangSelect />
                     </div>                    
-                    <div className="separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
+                    <div className="separator select-language-separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control">
-                        <IconButton component={ Link } to="/email" style={navItemsStyle}>
-                            <i className="far fa-envelope"></i>
+                        <IconButton component={ Link } to="/shopping/cart" style={navItemsStyle}>
+                            <i className="fas fa-shopping-cart"></i>
                         </IconButton>
                     </div>
                     <div className="control">

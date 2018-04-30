@@ -8,7 +8,7 @@ import _ from 'lodash';
 class SidebarActivity extends Component {
 
     // route internal clicks from HTML
-    _captureClicks(e) {        
+    _captureClicks(e) {
         const href = e.target.getAttribute('href');
         const target = e.target.getAttribute('target');
         e.preventDefault();
@@ -17,13 +17,7 @@ class SidebarActivity extends Component {
             this.props.history.push(href);
             this.props.toggleMainSidebar(false);
         }
-        // default click behavior
     }    
-
-    // you can call getSidebarActivity from here also
-    // componentDidMount() {
-    //     this.props.getSidebarActivity();
-    // }
 
     render() {
         return(

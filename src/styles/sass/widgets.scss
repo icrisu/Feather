@@ -74,3 +74,35 @@
         padding: 8px 5px !important;
     }
 }
+
+// search widget
+.search-widget {
+    position: relative;
+    .search-input {
+        padding: 8px 11px;
+        padding-left: 30px;
+        font-size: 14px;  
+        outline: none;
+        border: none;
+        border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgba($appBarSearchTextColor, .5);
+        color: #{ $appBarSearchTextColor };
+        background: none;
+        width: 300px;
+    }                 
+    .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-style: italic;
+        color: #CCCCCC;
+    }
+    .search-input::-moz-placeholder { /* Firefox 19+ */
+        font-style: italic;
+    }
+    .search-input:-ms-input-placeholder { /* IE 10+ */
+        font-style: italic;
+    }
+    .search-input:-moz-placeholder { /* Firefox 18- */
+        font-style: italic;
+    }      
+    .search-icon {
+        position: absolute; left: 2px; top: 4px;
+    }
+}
