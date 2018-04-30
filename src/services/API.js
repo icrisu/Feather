@@ -1,6 +1,6 @@
 import axios from 'axios';
-import safe from 'undefsafe';
-import _ from 'lodash';
+// import safe from 'undefsafe';
+// import _ from 'lodash';
 import { API_ROOT } from '../config/constants';
 
 
@@ -25,6 +25,14 @@ class API {
     getSidebarActivity() {
         return axios.get(`${API_ROOT}/sidebar-activity.html`);
     }
+
+    getRecentSales() {
+        return axios.get(`${API_ROOT}/recent-sales.json`);
+    }
+
+    getRecentSalesByChannel() {
+        return axios.get(`${API_ROOT}/recent-sales-by-chanel.json`);
+    }    
 
     static getInstance() {
         if (!instance) {

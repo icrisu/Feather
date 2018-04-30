@@ -69,6 +69,34 @@
         .group-content {
             padding: 15px;
         }
+        .entry-title {
+            display: flex; 
+            align-items: flex-end; 
+            justify-content: space-between;
+            margin-top: 10px; margin-bottom: 25px;
+            color: #{ $defaultTextColor };
+            .title {
+                font-size: 20px;
+                font-weight: 400;
+            }
+            .info {
+                font-size: 13px;
+            }
+        }
+        .entry-sales-channel {
+            padding: 17px 0px;
+            .channel-name {
+                font-size: 13px; margin-bottom: 6px;
+            }
+            .entry-title {
+                margin: 0;
+            }
+            &.separator {
+                border-bottom-style: solid;
+                border-color: #CCC;
+                border-width: 1px;
+            }
+        }
     }    
 }
 @media screen and (max-width: 767px) {

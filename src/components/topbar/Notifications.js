@@ -37,6 +37,7 @@ class Notifications extends Component {
         if (_.isNil(target) && !_.isNil(href)) {
             e.preventDefault();
             this.props.history.push(href);
+            this.setState({ open: false })
         }
         // default click behavior
     }

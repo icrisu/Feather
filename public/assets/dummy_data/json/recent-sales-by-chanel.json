@@ -1,0 +1,18 @@
+{
+    "labels": ["7am", "8am", "9am", "10am", "11am", "1pm", "2pm"],
+    "datasets": [{
+        "label": "Amazon",
+        "data": [120, 130, 180, 220, 190, 160, 130],
+        "backgroundColor": "rgba(254, 189, 109, .1)",
+        "borderColor": "rgba(254, 189, 109, 1)",
+        "borderWidth": 2
+    },
+    {
+        "label": "Shopify",
+        "data": [20, 50, 95, 150, 70, 30, 40],
+        "backgroundColor": "rgba(153, 102, 255, .1)",
+        "borderColor": "rgba(153, 102, 255, 1)",
+        "borderWidth": 2
+    }    
+]    
+}

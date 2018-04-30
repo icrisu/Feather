@@ -14,7 +14,13 @@ export const theme = createMuiTheme({
     typography: {
         body2: {
             color: '#394163'
-        }
+        },
+        headline: {
+            color: '#394163'
+        },
+        title: {
+            color: '#394163'
+        }        
     }
 });
 

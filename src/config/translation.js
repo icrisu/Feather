@@ -21,7 +21,10 @@ export const TRANSLATION_DATA = {
             tabs: {
                 sales: 'Sales',
                 activity: 'Recent activity'
-            } 
+            },
+            recent_sales: 'Recent sales',
+            salesByChannel: 'Recent sales by channel',
+            orders: 'orders'
         }    
     },    
     US: {

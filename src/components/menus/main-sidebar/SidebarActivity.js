@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Typography from 'material-ui/Typography';
 import { getSidebarActivity } from '../../../actions';
 import { toggleMainSidebar } from '../../../actions/ui-interact';
 import _ from 'lodash';
