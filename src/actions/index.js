@@ -1,4 +1,4 @@
-import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL } from './types';
+import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS } from './types';
 import API from '../services/API';
 import _ from 'lodash';
 
@@ -55,6 +55,24 @@ export const getRecentSalesByChannel = cb => {
             }
             dispatch({
                 type: RECENT_SALES_BY_CHANEL,
+                payload: data.data	
+            })        
+        })
+        .catch(err => { console.log(err) });
+    }
+}
+
+// you can create multiple search actions
+// pass a search action to SearchWidget
+export const search = (term, cb) => {
+	return (dispatch, getState) => {   
+        API.getInstance().searchForAnything()
+        .then(data => {
+            if (_.isFunction(cb)) {
+                cb(data.data);
+            }
+            dispatch({
+                type: GLOBAL_SEARCH_RESULTS,
                 payload: data.data	
             })        
         })

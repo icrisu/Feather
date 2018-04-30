@@ -25,9 +25,10 @@ class Notifications extends Component {
         this.state = { open: false, redirect: null }
     }
 
-    componentDidMount() {
-        // this.props.getNotifications();
-    }
+    // also can retrive notifications like this
+    // componentDidMount() {
+    //     // this.props.getNotifications();
+    // }
     
     // route internal clicks from HTML
     _captureClicks(e) {        
@@ -59,7 +60,7 @@ class Notifications extends Component {
                     <div className="bottom-controls">                        
                         <Button component={Link} to="/" style={{ textTransform: 'initial' }} variant="raised" size="small" color="primary">
                             {I18n.t('topbar.notifications.activity')}
-                        </Button>                        
+                        </Button>     
                     </div>
                 </div>
             </PopOverHelper>

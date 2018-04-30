@@ -32,6 +32,10 @@ class API {
 
     getRecentSalesByChannel() {
         return axios.get(`${API_ROOT}/recent-sales-by-chanel.json`);
+    } 
+    
+    searchForAnything(term) {
+        return axios.get(`${API_ROOT}/search-results.html`);
     }    
 
     static getInstance() {

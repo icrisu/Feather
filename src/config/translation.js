@@ -15,7 +15,8 @@ export const TRANSLATION_DATA = {
             notifications: {
                 title: 'Notifications',
                 activity: 'See all activity'
-            }
+            },
+            searchLabel: "Search anything..."
         },
         sidebar: {
             tabs: {

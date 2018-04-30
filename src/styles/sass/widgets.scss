@@ -105,4 +105,47 @@
     .search-icon {
         position: absolute; left: 2px; top: 4px;
     }
+    .search-results {
+        position: absolute; left: 0px; top: 40px;
+        background: #FFFFFF; width: 100%; min-width: 300px; max-height: 350px;
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(122,122,122,0.4);
+        -moz-box-shadow: 1px 1px 5px 0px rgba(122,122,122,0.4);
+        box-shadow: 1px 1px 5px 0px rgba(122,122,122,0.4);     
+        .result {
+            padding: 20px 10px;
+            display: flex;
+            border-width: 1px;
+            border-bottom-style: solid; border-color: rgba($searchResultBorder, .2);
+            text-decoration: none;
+            cursor: pointer;
+            .icon {
+                $avatarSize: 30;
+                width: #{$avatarSize}px; height: #{$avatarSize}px; overflow: hidden; border-radius: #{$avatarSize / 2}px; margin-right: 10px;
+                display: flex;
+                justify-content: center; align-items: center; font-size: 14px; color: #FFFFFF;
+                img { width: 100% }                
+            }
+            .content {
+                flex: 1;
+                .title {
+                    font-size: 14px;
+                    font-weight: 500;                    
+                    margin-bottom: 3px;
+                    color: #{ $defaultTextColor };
+                }
+                .result-info {
+                    font-size: 13px;
+                    color: #696969;
+                }
+                .result-timestamp {
+                    margin-top: 5px;
+                    font-size: 12px;
+                    color: #696969;
+                }
+            }
+        }
+        .result:hover {
+            background: rgba(242, 242, 242, .3);
+        }
+    }
 }

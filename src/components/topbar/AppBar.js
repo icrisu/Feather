@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import { toggleMainSidebar } from '../../actions/ui-interact';
+import { search } from '../../actions';
 import { APP_BAR_COLORS } from '../../theme/Customize';
 import { appTransitions } from '../main/transitions';
 import classNames from 'classnames';
@@ -16,6 +17,7 @@ import CurrentUser from './CurrentUser';
 import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
 import FlagLangSelect from '../widgets/FlagLangSelect';
 import SearchWidget from '../widgets/search/SearchWidget';
+import { I18n } from 'react-redux-i18n';
 
 const styles = appTransitions;
 const navItemsStyle = {
@@ -49,7 +51,7 @@ class AppBar extends PureComponent {
                         <MenuIcon style={{ color: APP_BAR_COLORS.navigationItems }} />
                     </IconButton>
                     <div className="topbar-search">
-                        <SearchWidget />
+                        <SearchWidget searchAction={ this.props.search } placeholder={I18n.t('topbar.searchLabel')} />
                     </div>              
                 </div>
                 
@@ -90,4 +92,4 @@ AppBar.propTypes = {
     toggleMenu: PropTypes.func.isRequired
 };
 
-export default connect(null, { toggleMainSidebar })(withStyles(styles, { withTheme: true })(AppBar));
+export default connect(null, { toggleMainSidebar, search })(withStyles(styles, { withTheme: true })(AppBar));
