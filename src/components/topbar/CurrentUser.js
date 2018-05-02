@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import PopOverHelper from '../utils/PopOverHelper';
 import Avatar from 'material-ui/Avatar';
@@ -9,6 +10,7 @@ import List, { ListItem, ListItemText }  from 'material-ui/List';
 import { Link } from 'react-router-dom';
 import { MAIN_MENU_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';
+import { logOut } from '../../actions';
 
 const styles = theme => ({
     list: {
@@ -25,6 +27,10 @@ class CurrentUser extends Component {
         firstName: 'Kara',
         lastName: 'Thrace',
         thumb: process.env.PUBLIC_URL + '/assets/dummy_data/imgs/user_1.jpg'
+    }
+
+    static propTypes = {
+        logOut: () => {}
     }
 
     constructor(props) {
@@ -63,7 +69,7 @@ class CurrentUser extends Component {
                         <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.notifications')} />
                         </ListItem>
-                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
+                        <ListItem onClick={ e => this.props.logOut() } disableGutters button>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.logout')} />
                         </ListItem>                                                                          
                     </List>                     
@@ -75,8 +81,9 @@ class CurrentUser extends Component {
 }
 
 CurrentUser.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    logOut: PropTypes.func
 };
 
-export default withStyles(styles)(CurrentUser);
+export default connect(null, { logOut })(withStyles(styles)(CurrentUser));
 

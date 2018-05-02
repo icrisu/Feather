@@ -1,5 +1,7 @@
 import { getNotifications, getSidebarActivity } from '../actions';
 import { store } from '../index';
+import StorageService from './StorageService';
+import _ from 'lodash';
 
 let instance;
 const instanceKey = '@&^#*(';
@@ -15,6 +17,9 @@ class InitService {
     }
     
     init() {
+        if (_.isNil(StorageService.getToken())) {
+            return;
+        }
         setTimeout(() => {
             store.dispatch(getNotifications())
         }, 1500);

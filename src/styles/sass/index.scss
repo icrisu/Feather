@@ -4,13 +4,21 @@
 @import 'menus.scss';
 @import 'widgets.scss';
 @import 'misc.scss';
+@import 'sections.scss';
 
 body, html, #root {
     overflow: hidden;
     height: 100%;
     max-height: 100%;
+}
+body, html, #root, input {
     color: #{ $defaultTextColor };
     font-family: 'Roboto', sans-serif;
+}
+
+.public-page {
+    overflow-y: auto;
+    height: 100%; padding: 20px 0px;
 }
 
 .app-page {

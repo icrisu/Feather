@@ -1,5 +1,8 @@
-import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS } from './types';
+import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
+    ACCESS_TOKEN } from './types';
 import API from '../services/API';
+import StorageService from '../services/StorageService';
+import InitService from '../services/InitService';
 import _ from 'lodash';
 
 // retrive notifications
@@ -78,4 +81,34 @@ export const search = (term, cb) => {
         })
         .catch(err => { console.log(err) });
     }
+}
+
+// authenticate
+export const authenticate = (credentials, cb) => {
+	return (dispatch, getState) => {   
+        API.getInstance().authenticate(credentials)
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }
+            // save user data & token to local storage
+            StorageService.setUser(data.data);
+            // load initial data
+            InitService.getInstance().init();
+            dispatch({
+                type: ACCESS_TOKEN,
+                payload: data.data.access_token	
+            })
+        })
+        .catch(err => { console.log(err) });
+    }
+}
+
+// logout
+export const logOut = () => {
+    StorageService.setUser(null);
+    return {
+        type: ACCESS_TOKEN,
+        payload: null
+    };
 }

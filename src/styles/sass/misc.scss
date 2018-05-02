@@ -47,3 +47,29 @@
     background: #FFFFFF;
     padding: 10px; position: relative;
 }
+
+// custom form elements
+.custom-input {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    label {
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 14px;        
+    }
+    input {
+        width: 100%;
+        outline: none;
+        padding: 10px 20px;
+        padding-left: 10px; padding-right: 30px;
+        font-size: 15px;
+        border-radius: 3px;
+        border-width: 1px; border-style: solid; border-color: #edecf1;        
+    }
+    .input-field::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-style: italic;
+        color: #cdd7e1;
+    }    
+}

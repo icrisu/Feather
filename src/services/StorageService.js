@@ -3,8 +3,6 @@ const STORAGE_KEY = 'admin28328_*@&';
 
 class StorageService {
 
-	constructor() {}
-
 	static isStorageSupported() {
 		return typeof(Storage) !== 'undefined';
 	}
@@ -68,7 +66,10 @@ class StorageService {
 
 	static getToken() {		
 		const userData = StorageService.getUser();
-		return userData.token || null;
+		if (_.isNil(userData)) {
+			return null;
+		}
+		return userData.access_token || null;
 	}
 
 	static removeUser() {

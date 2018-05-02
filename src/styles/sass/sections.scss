@@ -1,1 +1,46 @@
 // Login
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f8fe;
+    .auth-window {
+        position: relative;
+        background: #ffffff; border-radius: 3px;
+        max-width: 370px; 
+        padding: 30px;
+        padding-top: 0px;
+        -webkit-box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);
+        -moz-box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);
+        box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);     
+        .logo-ui {
+            text-align: center;
+            .login-logo {
+                display: inline-block;
+                width: 176px;
+                img { width: 100% };
+            }
+        }
+        .title {
+            font-weight: 400;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 34px;
+            margin-top: 25px;
+        } 
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;            
+        } 
+        .separator {
+            height: 1px;
+            background: #cdd7e1;
+            margin: 26px 0px;            
+        } 
+        .loader {
+            position: absolute; left: 0; top: 0;
+            height: 2px; width: 100%;
+        }           
+    }
+}

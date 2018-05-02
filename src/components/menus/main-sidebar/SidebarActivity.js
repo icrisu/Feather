@@ -7,6 +7,12 @@ import _ from 'lodash';
 
 class SidebarActivity extends Component {
 
+    // you can also trigger get notifications like so
+    // it's also being triggerd from @InitService
+    // componentDidMount() {
+    //     this.props.getSidebarActivity();
+    // }
+
     // route internal clicks from HTML
     _captureClicks(e) {
         const href = e.target.getAttribute('href');

@@ -26,6 +26,7 @@ class Notifications extends Component {
     }
 
     // also can retrive notifications like this
+    // it's also being triggerd from @InitService
     // componentDidMount() {
     //     // this.props.getNotifications();
     // }

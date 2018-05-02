@@ -11,6 +11,8 @@ import _ from 'lodash';
 import MainMenu from '../menus/main/MainMenu';
 import AppBar from '../topbar/AppBar';
 import { DEFAULT_LANG } from '../../config/constants';
+import PrivateRoutes from '../../routes/PrivateRoutes';
+import PublicRoutes from '../../routes/PublicRoutes';
 // import StorageService from '../utils/StorageService';
 
 const styles = appTransitions;
@@ -18,7 +20,8 @@ const styles = appTransitions;
 class Main extends Component {
 
     static defaultProps = {
-		language: DEFAULT_LANG
+		language: DEFAULT_LANG,
+		access_token: null
 	}
 
 	constructor(props) {
@@ -58,12 +61,13 @@ class Main extends Component {
     _onResize(w, h) {
         this._delayedResize(w, h);
 	}
-	
-	// _checkAuth() {
-	// 	if
-	// }
 
 	render() {
+		// public routes
+		if (_.isNil(this.props.access_token)) {
+			return <PublicRoutes />;
+		}
+		// private routes
 		const { classes } = this.props;
 		const { openedMenu, appWidth } = this.state;
 		return(
@@ -77,11 +81,7 @@ class Main extends Component {
 						[classes[`contentShift-left`]]: openedMenu
 					}) }>
 					<div className="page-content">	
-						<Switch>
-							<Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
-							<Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
-							<Route path={`/signin`} component={ () => <p>ssss sign in </p>} />
-						</Switch>
+						<PrivateRoutes />
 						{ this._renderDummy() }
 					</div>
 				</main>
@@ -95,12 +95,13 @@ class Main extends Component {
 Main.propTypes = {
 	classes: PropTypes.object.isRequired,
 	theme: PropTypes.object.isRequired,
-	language: PropTypes.string
+	language: PropTypes.string,
+	access_token: PropTypes.string
 };
 
-const mapStateToProps = ({ language }) => {
+const mapStateToProps = ({ language, access_token }) => {
     return {
-        language
+        language, access_token
     }
 }
 

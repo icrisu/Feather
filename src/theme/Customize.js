@@ -9,6 +9,9 @@ export const theme = createMuiTheme({
             main: '#8450fb',
             dark: '#7042f4',
             contrastText: '#fff'
+        },
+        text: {
+            primary: '#394163'
         }
     },
     typography: {
@@ -20,7 +23,7 @@ export const theme = createMuiTheme({
         },
         title: {
             color: '#394163'
-        }        
+        }      
     }
 });
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -13,19 +12,20 @@ import { TRANSLATION_DATA } from './config/translation';
 import { changeLang } from './actions/ui-interact';
 import { theme } from './theme/Customize';
 import InitService from './services/InitService';
-import RequireAuth from './components/auth/RequireAuth';
+import StorageService from './services/StorageService';
+import RequireAuth from './components/utils/RequireAuth';
 
 import reducers from './reducers';
 import './styles/css/index.css';
 
 import Main from './components/main/Main';
-// const WithAuthentication = RequireAuth(Main);
+const WithAuthentication = RequireAuth(Main);
 
 // ONLY USED FOR DEMOS ( remove in production )
 // window.DUMMY_DTA_FOLDER = `${process.env.PUBLIC_URL}/assets/dummy_data`;
 
 
-export const store = createStore(reducers, {}, compose(applyMiddleware(ReduxThunk)));
+export const store = createStore(reducers, { access_token: StorageService.getToken() }, compose(applyMiddleware(ReduxThunk)));
 
 // translation
 syncTranslationWithStore(store);
@@ -38,8 +38,8 @@ ReactDOM.render(
     <MuiThemeProvider theme={ theme }>
         <Fragment>
             <CssBaseline />
-            <Router basename={`/`}>
-                <Route to="*" component={ RequireAuth(Main) } />
+            <Router basename={`/`}>                
+                <WithAuthentication />
             </Router>
         </Fragment>
     </MuiThemeProvider>
