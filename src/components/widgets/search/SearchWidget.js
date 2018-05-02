@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import enhanceWithClickOutside from 'react-click-outside';
 import SearchIcon from '@material-ui/icons/Search';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from 'material-ui/IconButton';
 import { APP_BAR_COLORS } from '../../../theme/Customize';
 import _ from 'lodash';
 import safe from 'undefsafe';
@@ -67,10 +69,21 @@ class SearchWidget extends Component {
         )
     }
 
+    _clearResults() {
+        this.setState({results: '', children: null, searchKey: ''});
+    }
+
+    _renderClear() {
+        if (this.state.searchKey !== '') {
+            return <IconButton onClick={this._clearResults.bind(this)} className="close-btn" size="small" style={{ color: APP_BAR_COLORS.navigationItems, width: 30, height: 30 }}><CloseIcon style={{ fontSize: 18 }} /></IconButton>
+        }
+    }
+
     render() {
         return(
             <div className="search-widget">
                 <SearchIcon className="search-icon" style={{ color: APP_BAR_COLORS.navigationItems }}/>
+                { this._renderClear() }
                 <input placeholder={ this.props.placeholder } value={this.state.searchKey} onChange={ this._onChange.bind(this) } className="search-input" type="text" />
                 <div className="search-results pretty-scroll"></div>
                 { this._renderResults() }

@@ -79,7 +79,7 @@
 .search-widget {
     position: relative;
     .search-input {
-        padding: 8px 11px;
+        padding: 8px 30px;
         padding-left: 30px;
         font-size: 14px;  
         outline: none;
@@ -104,6 +104,9 @@
     }      
     .search-icon {
         position: absolute; left: 2px; top: 4px;
+    }
+    .close-btn {
+        position: absolute; right: 0px; top: 2px;
     }
     .search-results {
         position: absolute; left: 0px; top: 40px;

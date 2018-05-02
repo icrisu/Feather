@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -12,13 +13,13 @@ import { TRANSLATION_DATA } from './config/translation';
 import { changeLang } from './actions/ui-interact';
 import { theme } from './theme/Customize';
 import InitService from './services/InitService';
+import RequireAuth from './components/auth/RequireAuth';
 
 import reducers from './reducers';
 import './styles/css/index.css';
-// import RequireAuth from './components/auth/RequireAuth';
 
 import Main from './components/main/Main';
-// const Authenticated = RequireAuth(App);
+// const WithAuthentication = RequireAuth(Main);
 
 // ONLY USED FOR DEMOS ( remove in production )
 // window.DUMMY_DTA_FOLDER = `${process.env.PUBLIC_URL}/assets/dummy_data`;
@@ -38,7 +39,7 @@ ReactDOM.render(
         <Fragment>
             <CssBaseline />
             <Router basename={`/`}>
-                <Main />
+                <Route to="*" component={ RequireAuth(Main) } />
             </Router>
         </Fragment>
     </MuiThemeProvider>

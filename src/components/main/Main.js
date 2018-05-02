@@ -11,6 +11,7 @@ import _ from 'lodash';
 import MainMenu from '../menus/main/MainMenu';
 import AppBar from '../topbar/AppBar';
 import { DEFAULT_LANG } from '../../config/constants';
+// import StorageService from '../utils/StorageService';
 
 const styles = appTransitions;
 
@@ -26,7 +27,7 @@ class Main extends Component {
 
         this._delayedResize = _.debounce((w, h) => {   
             this.setState({ openedMenu: _.isNumber(w) && w < 750 ? false: true, appWidth: w });
-        }, 400);		
+        }, 350);		
 	}
 
 	componentDidUpdate() {
@@ -56,7 +57,11 @@ class Main extends Component {
     
     _onResize(w, h) {
         this._delayedResize(w, h);
-    }
+	}
+	
+	// _checkAuth() {
+	// 	if
+	// }
 
 	render() {
 		const { classes } = this.props;
@@ -68,17 +73,19 @@ class Main extends Component {
                 <AppBar openedMenu={ openedMenu } toggleMenu={ this._toggleMenu.bind(this) } />
 				
 				<main className={ classNames('app-page', classes.content, classes['content-left'], {
-					[classes.contentShift]: openedMenu,
-					[classes[`contentShift-left`]]: openedMenu
-				}) }>
+						[classes.contentShift]: openedMenu,
+						[classes[`contentShift-left`]]: openedMenu
+					}) }>
 					<div className="page-content">	
-					<Switch>
-						<Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
-						<Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
-					</Switch>						
-					{ this._renderDummy() }
+						<Switch>
+							<Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
+							<Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
+							<Route path={`/signin`} component={ () => <p>ssss sign in </p>} />
+						</Switch>
+						{ this._renderDummy() }
 					</div>
 				</main>
+
                 <ReactResizeDetector handleWidth handleHeight onResize={this._onResize.bind(this)} />
 			</Fragment>
 		)
