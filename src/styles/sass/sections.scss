@@ -1,46 +1,82 @@
+@import 'colors.scss';
+@import 'helpers/mixing.scss';
+
 // Login
 .auth-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #f9f8fe;
+    background: #f9f8fe;  
     .auth-window {
         position: relative;
         background: #ffffff; border-radius: 3px;
-        max-width: 370px; 
-        padding: 30px;
-        padding-top: 0px;
+        // max-width: 370px; 
         -webkit-box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);
         -moz-box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);
-        box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3);     
-        .logo-ui {
-            text-align: center;
-            .login-logo {
-                display: inline-block;
-                width: 176px;
-                img { width: 100% };
-            }
-        }
-        .title {
-            font-weight: 400;
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 34px;
-            margin-top: 25px;
-        } 
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;            
-        } 
-        .separator {
-            height: 1px;
-            background: #cdd7e1;
-            margin: 26px 0px;            
-        } 
-        .loader {
+        box-shadow: 0px 0px 28px 0px rgba(140,138,140,0.3); 
+        overflow: hidden;
+        
+        $promoWidth: 200;
+        .promo {
             position: absolute; left: 0; top: 0;
-            height: 2px; width: 100%;
-        }           
+            width: #{$promoWidth}px; height: 100%;
+            @include linear-gradient(#{ $mainMenuGradientStart }, #{ $mainMenuGradientEnd });
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .auth-logo {
+                width: 170px;
+                img { width: 100% };
+            }              
+            .promo-text {
+                color: #fbf9fd;
+                font-weight: 400;
+                font-size: 12px;
+                letter-spacing: 1px;
+                text-align: center;
+                padding: 0px 15px;
+                line-height: 143%; 
+                margin: 0px 0px;               
+            }
+        }      
+        .right-content {
+            padding-left: #{ $promoWidth}px;
+            position: relative;  
+            .content {          
+                padding: 30px;
+                padding-top: 0px;                        
+                .title {
+                    font-weight: 400;
+                    font-size: 20px;
+                    text-align: center;
+                    margin-bottom: 34px;
+                    margin-top: 25px;
+                } 
+                .controls {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;            
+                } 
+                .separator {
+                    height: 1px;
+                    background: #cdd7e1;
+                    margin: 26px 0px;            
+                }             
+            }
+            .loader {               
+                height: 2px; width: 100%;
+            }                         
+        }
+        
+        @media screen and (max-width: 760px) {
+            .promo {
+                display: none;
+            }
+            .right-content {
+                padding-left: 30px;
+            }
+        }          
     }
 }
