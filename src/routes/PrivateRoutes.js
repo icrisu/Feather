@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ROUTES } from './Routes';
-import DynamicLoader from '../components/utils/DynamicLoader';
+import AsyncLoader from '../components/utils/AsyncLoader';
 
-const MainDashboard = DynamicLoader.load({ importPath: import('../components/pages/dashboards/MainDashboard') });
+const MainDashboard = AsyncLoader.load({ importPath: import('../components/pages/dashboards/MainDashboard') });
 
 export default props => {
     return(

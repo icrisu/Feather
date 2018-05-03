@@ -16,20 +16,7 @@ body, html, #root, input {
     font-family: 'Roboto', sans-serif;
 }
 
-.public-page {
-    overflow-y: auto;
-    height: 100%; padding: 20px 0px;
-}
-
-.app-page {
-    overflow-y: auto;
-    margin-top: #{ $appBarHeight + 'px' };
-    height: calc(100% - #{($appBarHeight) + 'px'});
-    -webkit-overflow-scrolling: touch;
-    .page-content {
-        padding: 0px 20px;
-    }
-}
+// appbar
 .appbar {
     width: 100%;
     height: #{ $appBarHeight + 'px' };
@@ -102,6 +89,38 @@ body, html, #root, input {
 }
 .appbarOpen {
     width: calc(100% - #{($menuWidth) + 'px'});
+}
+
+.public-page {
+    overflow-y: auto;
+    height: 100%; padding: 20px 0px;
+}
+
+// app page
+.app-page {
+    background: #{ $pageBackground } !important;
+    overflow-y: auto;
+    margin-top: #{ $appBarHeight + 'px' };
+    height: calc(100% - #{($appBarHeight) + 'px'});
+    -webkit-overflow-scrolling: touch;
+    .page-content {
+        .page-header {
+            padding: 0px 40px;
+            border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #{ $appbarBorderColor };
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+            .page-title {
+                align-self: flex-end;
+                font-weight: 400;
+                font-size: 23px;                
+            }
+        }
+        .content {
+            padding: 25px 40px;
+        }
+    }
 }
 
 

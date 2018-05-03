@@ -2,7 +2,7 @@ import React from 'react';
 import Loadable from 'react-loadable';
 import PageLoader from './PageLoader';
 
-class DynamicLoader {
+class AsyncLoader {
     static load(pathCallback) {
         const { importPath } = pathCallback;
         return Loadable({
@@ -14,5 +14,4 @@ class DynamicLoader {
     }
 }
 
-
-export default DynamicLoader;
+export default AsyncLoader;
