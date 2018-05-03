@@ -38,14 +38,6 @@ class Main extends Component {
 		}
 	}
 
-	_renderDummy() {
-		let a = [];
-		for (let index = 0; index < 200; index++) {
-			a.push(<p key={index}>test { index }</p>);
-		}
-		return a;
-	}
-
     _toggleMenu() {
         this.setState(prevState => {
             return {
@@ -81,7 +73,6 @@ class Main extends Component {
 					}) }>
 					<div className="page-content">	
 						<PrivateRoutes />
-						{ this._renderDummy() }
 					</div>
 				</main>
 

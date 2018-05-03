@@ -73,3 +73,10 @@
         color: #cdd7e1;
     }    
 }
+
+// page loader
+.page-loader { 
+    position: fixed !important; left: 0; top: 0;
+    height: 2px !important; width: 100%;
+    z-index: 999999;
+}  

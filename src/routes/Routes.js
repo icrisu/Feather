@@ -3,8 +3,8 @@ import _ from 'lodash';
 export const ROUTES = {
     signin: { path: '/signin', isPublic: true },
     signup: { path: '/signup', isPublic: true },
-    recoverPass: { path: '/recover-password', isPublic: true },
     dashboard: { path: '/dashboard' },
+    home: { path: '/' },
     shop: { path: '/shop' }
 }
 

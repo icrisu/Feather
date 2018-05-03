@@ -1,13 +1,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import Routes from './Routes';
+import { ROUTES } from './Routes';
+import DynamicLoader from '../components/utils/DynamicLoader';
+
+const MainDashboard = DynamicLoader.load({ importPath: import('../components/pages/dashboards/MainDashboard') });
 
 export default props => {
     return(
         <Switch>
+            <Route path={ ROUTES.dashboard.path } component={ MainDashboard } />
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
             <Route path={`/signin`} component={ () => <p>ssss sign in </p>} />
+            <Route path={ ROUTES.dashboard.path } component={ MainDashboard } />
         </Switch>
     )
 }
