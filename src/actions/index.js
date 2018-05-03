@@ -104,6 +104,27 @@ export const authenticate = (credentials, cb) => {
     }
 }
 
+// register user
+export const redisterUser = (credentials, cb) => {
+	return (dispatch, getState) => {   
+        API.getInstance().registerUser(credentials)
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }
+            // save user data & token to local storage
+            StorageService.setUser(data.data);
+            // load initial data
+            InitService.getInstance().init();
+            dispatch({
+                type: ACCESS_TOKEN,
+                payload: data.data.access_token	
+            })
+        })
+        .catch(err => { console.log(err) });
+    }
+}
+
 // logout
 export const logOut = () => {
     StorageService.setUser(null);

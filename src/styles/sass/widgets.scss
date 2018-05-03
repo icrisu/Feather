@@ -152,3 +152,16 @@
         }
     }
 }
+
+// social links list
+.social-links-list {
+    list-style-type: none;
+    padding: 0; margin: 0;
+    li {
+        display: inline-block;
+        margin: 3px;
+        a {
+            padding: 5px;
+        }
+    }
+}

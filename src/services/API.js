@@ -35,6 +35,24 @@ class API {
         })
     }
 
+    // register user
+    registerUser(credentials) {
+        // simulate API delay & API user response
+        // const { email, password } = credentials;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    data: {
+                        access_token: 'JWT_ACCESS_TOKEN',
+                        firstName: 'Kara',
+                        lastName: 'Thrace',
+                        thumb: process.env.PUBLIC_URL + '/assets/dummy_data/imgs/user_1.jpg'
+                    }
+                })
+            }, 1500);
+        })
+    }    
+
     // retrive notifications
     getNotifications() {
 		return axios.get(`${API_ROOT}/notifications.html`);

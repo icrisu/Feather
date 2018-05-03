@@ -11,8 +11,6 @@ import { FormControlLabel } from 'material-ui/Form';
 import { ROUTES } from '../../../routes/Routes';
 import { I18n } from 'react-redux-i18n';
 
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from 'material-ui/IconButton';
 
 class SignIn extends Component {
 
@@ -46,24 +44,31 @@ class SignIn extends Component {
 
     _renderSocial() {
         return(
-            <div>
-                <IconButton size="small" style={{ color: '#FFFFFF', fontSize: 18 }}><i class="fab fa-facebook-f"></i></IconButton>
-                <IconButton size="small" style={{ color: '#FFFFFF', fontSize: 18 }}><i class="fab fa-instagram"></i></IconButton>
+            <ul className="social-links-list">
+                <li><a href="/"><span><i className="fab fa-facebook-f"></i></span></a></li>
+                <li><a href="/"><span><i className="fab fa-linkedin-in"></i></span></a></li>
+                <li><a href="/"><span><i className="fab fa-google-plus-g"></i></span></a></li>
+            </ul>
+        )
+    }
+
+    _renderLeftContent() {
+        return(
+            <div className="promo">
+                <div className="auth-logo">
+                    <img src={process.env.PUBLIC_URL + '/assets/img/main-logo.png'} alt="" />
+                </div> 
+                { this._renderSocial() }
+                <h3 className="promo-text">{I18n.t('pages.auth.terms')}</h3>                
             </div>
         )
     }
 
-    render() {     
+    render() {         
         return( 
             <div className="public-page auth-wrapper"> 
                 <div className="auth-window">
-                    <div className="promo">
-                        <div className="auth-logo">
-                            <img src={process.env.PUBLIC_URL + '/assets/img/main-logo.png'} alt="" />
-                        </div> 
-                        { this._renderSocial() }
-                        <h3 className="promo-text">By logging in you agree with our terms &amp; conditions</h3>
-                    </div>
+                    { this._renderLeftContent() }
                     <div className="right-content">
                         <div style={{ height: 2 }}>
                             { this._renderProgress() }
@@ -84,7 +89,7 @@ class SignIn extends Component {
                                     }
                                     label={I18n.t('pages.auth.login.rememberMe')}
                                 />                    
-                                <Button onClick={ this._login.bind(this) } variant="raised" color="primary" disabled={ this.state.isLoading }>{I18n.t('pages.auth.login.login')}</Button>                        
+                                <Button onClick={ this._login.bind(this) } variant="raised" color="primary" disabled={ this.state.isLoading }>{I18n.t('pages.auth.login.btn')}</Button>                        
                             </div>
                             <div className="separator"></div>
                             <div style={{ fontSize: 14 }}>{I18n.t('pages.auth.login.haveAccount')} <Link to={ ROUTES.signup.path } style={{ textDecoration: 'none' }}>{I18n.t('pages.auth.login.registerNow')}</Link></div>                    

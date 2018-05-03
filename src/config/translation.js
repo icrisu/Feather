@@ -36,10 +36,19 @@ export const TRANSLATION_DATA = {
                     password: 'Password',
                     passwordPlaceholder: 'Password',
                     rememberMe: 'Remember me',
-                    login: 'Login',
+                    btn: 'Login',
                     haveAccount: 'Don\'t have an account?',
                     registerNow: 'Register now'
-                }
+                },
+                register: {
+                    title: 'Create new account',
+                    email: 'Email',
+                    emailPlaceholder: 'Your email',
+                    password: 'Password',
+                    passwordPlaceholder: 'Password',                    
+                    btn: 'Create account'
+                },
+                terms: 'By logging in you agree with our terms & conditions'
             }
         }
     },    
