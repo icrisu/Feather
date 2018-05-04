@@ -81,13 +81,16 @@
     z-index: 999999;
 }  
 
-// custom paper 
-.custom-paper {
-    background: #FFFFFF;
-    padding: 15px;
-    border-radius: 2px;
-    $opacity: .15;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
-    box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);    
+
+// trend
+.trend {
+    &.trend-up {
+        color: #46b39d;
+    }
+    &.trend-down {
+        color: #e16e9f;
+    }
+    &.trend-flat {
+        color: #febd6d;
+    }
 }

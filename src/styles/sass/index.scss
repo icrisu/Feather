@@ -105,6 +105,7 @@ body, html, #root, input {
     -webkit-overflow-scrolling: touch;
     .page-content {
         .page-header {
+            min-height: 60px;
             padding: 0px 40px;
             border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #{ $appbarBorderColor };
             display: flex;
@@ -114,7 +115,8 @@ body, html, #root, input {
             .page-title {
                 align-self: flex-end;
                 font-weight: 400;
-                font-size: 23px;                
+                font-size: 23px; 
+                margin: 0px;               
             }
         }
         .content {
