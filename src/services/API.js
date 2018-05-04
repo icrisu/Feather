@@ -66,7 +66,11 @@ class API {
         return axios.get(`${API_ROOT}/recent-sales.json`);
     }
 
-    getRecentSalesByChannel() {
+    getRecentSalesByChannel(options = {}) {
+        const { fillColors } = options;
+        if (fillColors) {
+            return axios.get(`${API_ROOT}/recent-sales-by-chanel-fill-colors.json`);
+        }
         return axios.get(`${API_ROOT}/recent-sales-by-chanel.json`);
     } 
     

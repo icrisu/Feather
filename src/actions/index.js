@@ -49,9 +49,9 @@ export const getRecentSales = cb => {
     }
 }
 
-export const getRecentSalesByChannel = cb => {
+export const getRecentSalesByChannel = (cb, options = {}) => {
 	return (dispatch, getState) => {   
-        API.getInstance().getRecentSalesByChannel()
+        API.getInstance().getRecentSalesByChannel(options)
         .then(data => {
             if (_.isFunction(cb)) {
                 cb(data.data);

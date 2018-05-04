@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import shortid from 'shortid';
 import Chart from 'chart.js';
 import { CircularProgress } from 'material-ui/Progress';
+import { WIDGET_LOADER_COLOR } from '../../../theme/Customize';
 
 class BaseChart extends PureComponent {
     _canvasID;
@@ -34,7 +35,7 @@ class BaseChart extends PureComponent {
         if (this.state.showLoader) {
             return(
                 <div style={{ width: 40,  margin: 'auto', marginTop: 30 }}>
-                    <CircularProgress style={{ color: '#eaedfc' }} />
+                    <CircularProgress style={{ color: WIDGET_LOADER_COLOR }} />
                 </div>
             )
         }

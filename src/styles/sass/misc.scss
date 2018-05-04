@@ -94,3 +94,37 @@
         color: #febd6d;
     }
 }
+
+// base chart
+.base-chart {
+    position: relative;
+}
+
+// horizontal list item
+.horizontal-list-item {
+    padding: 10px 15px;
+    .avatar {
+        margin-right: 15px;
+    }
+    .title {
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+    .info {
+        color: #{ $infoTextColor };
+        font-size: 12px;
+    }
+    .value {
+        font-size: 13px;
+    }
+    &.border-bottom {
+        border-bottom-style: solid; border-width: 1px; border-bottom-color: rgba($infoTextColor, .1);
+    }
+    &.has-url {
+        cursor: pointer;
+    }
+    &.has-url:hover {
+        background: rgba(242, 242, 242, .3);
+    }    
+}

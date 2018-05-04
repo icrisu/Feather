@@ -171,7 +171,7 @@
     border-left-style: solid; border-width: 1px; border-color: #CCCCCC;
     padding: 0px 15px;
     .additional-info {
-        color: #7d8298;
+        color: #{ $infoTextColor };
         font-size: 13px;    
     }
     .main-value {
@@ -195,7 +195,21 @@
     .paper-content {
         padding: 15px;
     }    
-    .header {
-        
+    .paper-header {
+        padding: 0px 15px;
+        border-bottom-style: solid; border-width: 1px; border-color: rgba(204, 204, 204, .3);
+        min-height: 45px;
+        background: rgb(253, 253, 253);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+            margin: 0;           
+        }
     }
+}
+
+// best saling widget
+.best-saling-widget {
+
 }
