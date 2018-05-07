@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { MAIN_MENU_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';
 import { logOut } from '../../actions';
+import StorageService from '../../services/StorageService';
 
 const styles = theme => ({
     list: {
@@ -22,12 +23,6 @@ const styles = theme => ({
 });
 
 class CurrentUser extends Component {
-    
-    user = {
-        firstName: 'Kara',
-        lastName: 'Thrace',
-        thumb: process.env.PUBLIC_URL + '/assets/dummy_data/imgs/user_1.jpg'
-    }
 
     static propTypes = {
         logOut: () => {}
@@ -35,7 +30,11 @@ class CurrentUser extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { open: false }
+        const { firstName, lastName, thumb } = StorageService.getUser();
+        this.state = {
+            user: { firstName, lastName, thumb },
+            open: false 
+        }          
         this._popoverClose = this._popoverClose.bind(this);
     }
 
@@ -48,15 +47,15 @@ class CurrentUser extends Component {
         return(
             <PopOverHelper position="top-right" open={ this.state.open } Button={
                     <IconButton>
-                        <Avatar src={this.user.thumb} />
+                        <Avatar src={this.state.user.thumb} />
                     </IconButton>
                 }>    
                 <div className="app-bar-user-popover">
                     <div className="user">
                         <div className="large-avatar">
-                            <img src={this.user.thumb} alt="" />
+                            <img src={this.state.user.thumb} alt="" />
                         </div>
-                        <Typography className="user-name" variant="title" gutterBottom>{`${this.user.firstName} ${this.user.lastName}`}</Typography>
+                        <Typography className="user-name" variant="title" gutterBottom>{`${this.state.user.firstName} ${this.state.user.lastName}`}</Typography>
                     </div>
 
                     <List component="nav" className={classes.list}>

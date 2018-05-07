@@ -23,7 +23,7 @@ class HorizontalListItem extends Component {
         }
         if (this.props._target) {
             window.open(this.props.link, this.props._target);
-        } else {
+        } else if (this.props.link) {
             this.props.history.push(this.props.link);
         }
     }

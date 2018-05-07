@@ -1,5 +1,5 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
-    ACCESS_TOKEN } from './types';
+    ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -132,4 +132,36 @@ export const logOut = () => {
         type: ACCESS_TOKEN,
         payload: null
     };
+}
+
+// get best selling
+export const getBestSelling = cb => {
+    return (dispatch, getState) => {
+        API.getInstance().getBestSelling()
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }         
+            dispatch({
+                type: BEST_SELLING_ITEMS,
+                payload: data.data
+            })        
+        });
+    }
+}
+
+// get recent balance
+export const getRecentBalance = cb => {
+    return (dispatch, getState) => {
+        API.getInstance().getRecentBalance()
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }         
+            dispatch({
+                type: RECENT_BALANCE,
+                payload: data.data
+            })        
+        });
+    }
 }

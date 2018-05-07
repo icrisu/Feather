@@ -19,8 +19,8 @@ export default props => {
     }
     const { maxheight } = props;
     const contentStyle = maxheight ? { maxHeight: maxheight } : {}; 
-    const { noContentPadding } = props;
-    if (noContentPadding) {
+    const { removepadding } = props;
+    if (removepadding === 'true') {
         contentStyle.padding = 0;
     }
     return(

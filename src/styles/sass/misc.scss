@@ -93,6 +93,15 @@
     &.trend-flat {
         color: #febd6d;
     }
+    &.trend-up-back {
+        background: #46b39d;
+    }
+    &.trend-down-back {
+        background: #e16e9f;
+    }
+    &.trend-flat-back {
+        background: #febd6d;
+    }    
 }
 
 // base chart
@@ -107,13 +116,13 @@
         margin-right: 15px;
     }
     .title {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 400;
         margin-bottom: 5px;
     }
     .info {
         color: #{ $infoTextColor };
-        font-size: 12px;
+        font-size: 14px;
     }
     .value {
         font-size: 13px;
@@ -127,4 +136,20 @@
     &.has-url:hover {
         background: rgba(242, 242, 242, .3);
     }    
+}
+
+// ballance indicator
+.balance {
+    width: 20px; height: 20px;
+    border-radius: 10px; overflow: hidden;
+    display: flex; justify-content: center; align-items: center;
+    &.trend-up {
+        background: rgba($trendUpRGB, .1)
+    }
+    &.trend-down {
+        background: rgba($trendDownRGB, .1)
+    }    
+    .dot {
+        width: 8px; height: 8px; border-radius: 4px;
+    }
 }

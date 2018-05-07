@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "title": "Payment from invoice #6235",
+            "info": "Jun 20 2018",
+            "value": "+$2.137,00",
+            "trend": "up",
+            "link": "/"
+        },
+        {
+            "title": "Subscription renewal",
+            "info": "Jun 20 2018",
+            "value": "-$1.370,00",
+            "trend": "down",
+            "link": "/"
+        },
+        {
+            "title": "Payment from invoice #6235",
+            "info": "Jun 20 2018",
+            "value": "+$2.137,00",
+            "trend": "up",
+            "link": "/"
+        },
+        {
+            "title": "Payment from invoice #6235",
+            "info": "Jun 20 2018",
+            "value": "+$2.137,00",
+            "trend": "up",
+            "link": "/"
+        }
+    ]
+}

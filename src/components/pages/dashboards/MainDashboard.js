@@ -5,23 +5,24 @@ import Grid from 'material-ui/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import QuickDashInfo from '../../common/info/QuickDashInfo';
 import ChannelSalesBar from '../../common/charts/ChannelSalesBar';
-import BestSalingWidget from '../../common/BestSalingWidget';
+import BestSellingWidget from '../../common/BestSellingWidget';
+import BalanceHistory from '../../common/BalanceHistory';
 
 class MainDashboard extends Component {
     
     _renderQuickInfo() {
         return(
             <Fragment>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                     <QuickDashInfo title="Total transactions" info="Jun 23 - Jun24" value="232" />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                     <QuickDashInfo title="Total revenue" info="May 18 - Jun24" value="$12,340.00" trend="up" />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                     <QuickDashInfo title="Visits" info="Today's visits" value="857" trend="down" />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                     <QuickDashInfo title="Orders" info="Today" value="349" trend="up" />
                 </Grid>
             </Fragment>              
@@ -48,22 +49,23 @@ class MainDashboard extends Component {
                     <Grid container spacing={24}>
                         { this._renderQuickInfo() }                
 
-                        <Grid item sm={12} md={6}>
+                        <Grid item xs={12} sm={12} md={6}>
                             <CustomPaper title="Sales by channel">
                                 <ChannelSalesBar />
                             </CustomPaper>
                         </Grid>
-                        <Grid item sm={12} md={6}>
-                            <CustomPaper title="Best selling items" maxheight={300} noContentPadding>
-                                <BestSalingWidget />
+                        <Grid item xs={12} sm={12} md={6}>
+                            <CustomPaper style={{ marginBottom: 24 }} title="Balance history" maxheight={300} removepadding="true">
+                                <BalanceHistory />
+                            </CustomPaper>                        
+                            <CustomPaper title="Best selling items" maxheight={300} removepadding="true">
+                                <BestSellingWidget />
                             </CustomPaper>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <CustomPaper style={{ marginBottom: 24 }} title="Balance history" maxheight={300}>
-                                users
-                            </CustomPaper>
+
                             <CustomPaper title="Balance history" maxheight={300}>
-                                users
+                                user
                             </CustomPaper>                            
                         </Grid>                        
 
