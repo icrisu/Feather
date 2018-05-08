@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from 'react';
+import { getExpences } from '../../../actions';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import QuickDashInfo from '../../common/info/QuickDashInfo';
 import ChannelSalesBar from '../../common/charts/ChannelSalesBar';
-import BestSellingWidget from '../../common/BestSellingWidget';
-import BalanceHistory from '../../common/BalanceHistory';
-import LinearInfoProgress from '../../common/LinearInfoProgress';
+import BestSellingWidget from '../../common/lists/BestSellingWidget';
+import BalanceHistory from '../../common/lists/BalanceHistory';
+import StatsList from '../../common/lists/StatsList';
 
 class MainDashboard extends Component {
     
@@ -55,11 +56,7 @@ class MainDashboard extends Component {
                                 <ChannelSalesBar />
                             </CustomPaper>
                             <CustomPaper title="Expenses stat">
-                                <LinearInfoProgress label="Financial operations" percent={90} primaryColor="#e14660" />
-                                <LinearInfoProgress label="Dev ops" percent={70} primaryColor="#dc8392" />
-                                <LinearInfoProgress label="Multimedia" percent={50} primaryColor="#e7d764" />
-                                <LinearInfoProgress label="Server maintenance" percent={40} primaryColor="#00a8e8" />
-                                <LinearInfoProgress label="Hypermarket" percent={20} primaryColor="#46b39d" />
+                                <StatsList retriveAction={ getExpences } />
                             </CustomPaper>                            
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>

@@ -1,0 +1,29 @@
+{
+    "expenses": [
+        {
+            "label": "Financial operations",
+            "percent": 90,
+            "primaryColor": "#e14660"
+        },
+        {
+            "label": "Dev ops",
+            "percent": 70,
+            "primaryColor": "#dc8392"
+        },
+        {
+            "label": "Multimedia",
+            "percent": 50,
+            "primaryColor": "#e7d764"
+        },
+        {
+            "label": "Server maintenance",
+            "percent": 40,
+            "primaryColor": "#00a8e8"
+        },
+        {
+            "label": "Hyperdrive",
+            "percent": 20,
+            "primaryColor": "#46b39d"
+        }                                
+    ]
+}

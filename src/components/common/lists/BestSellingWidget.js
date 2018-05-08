@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CircularProgress } from 'material-ui/Progress';
-import { WIDGET_LOADER_COLOR } from '../../theme/Customize';
+import { WIDGET_LOADER_COLOR } from '../../../theme/Customize';
 import Typography from 'material-ui/Typography';
-import HorizontalListItem from './lists/HorizontalListItem';
-import { getRecentBalance } from '../../actions';
+import HorizontalListItem from './HorizontalListItem';
+import { getBestSelling } from '../../../actions';
 import _ from 'lodash';
 import uniqid from 'uniqid';
-import classNames from 'classnames';
+
+import Avatar from 'material-ui/Avatar';
 
 const avatarStyle = {
     bigAvatar: {
@@ -16,14 +17,14 @@ const avatarStyle = {
     }
 }
 
-class BalanceHistory extends Component {
+class BestSellingWidget extends Component {
     state = {
         isLoading: false,
         items: []
     }
 
     componentDidMount() {
-        this.props.getRecentBalance(result => {
+        this.props.getBestSelling(result => {
             if (_.isArray(result.items)) {
                 this.setState({ items: result.items })
             }
@@ -41,25 +42,11 @@ class BalanceHistory extends Component {
     }
 
     _renderItems() {
-        // 'dot trend trend-up-back': obj.trend === 'up',
-        // 'dot trend trend-down-back': obj.trend === 'down'        
         return this.state.items.map(obj => {
-            const isTrendUp = obj.trend === 'up';
             return(
                 <HorizontalListItem onClick={ e => this._listItemClick({ link: obj.link, target: obj.target }) } key={ uniqid() } 
-                    title={ obj.title } value={
-                        <div className={ classNames( { 'trend trend-up': isTrendUp, 'trend trend-down': !isTrendUp } ) }>{ obj.value }</div>
-                    } info={ obj.info } 
-                    avatar={
-                    <div className={ classNames({
-                        'avatar balance trend-up': isTrendUp,
-                        'avatar balance trend-down': !isTrendUp    
-                    }) }>
-                        <div className={ classNames({
-                            'dot trend trend-up-back': isTrendUp,
-                            'dot trend trend-down-back': !isTrendUp 
-                        }) }></div>
-                    </div> } 
+                    title={ obj.title } value={obj.value} info={ obj.info } 
+                    avatar={ <Avatar className="avatar" src={ obj.thumb } /> } 
                     link={ obj.link } _target={ obj._target }
                 />                 
             )
@@ -77,4 +64,4 @@ class BalanceHistory extends Component {
     }
 }
 
-export default connect(null, { getRecentBalance })(BalanceHistory);
+export default connect(null, { getBestSelling })(BestSellingWidget);

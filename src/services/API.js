@@ -86,6 +86,10 @@ class API {
         return axios.get(`${API_ROOT}/recent-balance.json`);
     }    
 
+    getExpenses() {
+        return axios.get(`${API_ROOT}/expenses.json`);
+    }
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);
