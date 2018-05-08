@@ -23,6 +23,7 @@ export default props => {
     if (removepadding === 'true') {
         contentStyle.padding = 0;
     }
+    
     return(
         <div { ...props } className="custom-paper">
             { renderHeader() }

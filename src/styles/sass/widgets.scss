@@ -189,6 +189,7 @@
 .custom-paper {
     background: #FFFFFF;
     border-radius: 2px;
+    margin-bottom: 24px;
     $opacity: .15;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
     -moz-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
@@ -210,6 +211,46 @@
     }
 }
 
+.document-paper {
+    background: #FFFFFF;
+    border-radius: 2px;
+    $opacity: .15;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
+    box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);  
+    overflow: hidden;
+    padding: 15px 15px;
+    padding-bottom: 20px;
+    position: relative;
+    .info {
+        color: #{ $infoTextColor };
+        font-size: 13px;
+        line-height: 147%;
+        margin-bottom: 35px;
+    }
+    .bottom-bar {
+        position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
+    }
+    .document-type {
+        position: absolute; right: 0; bottom: 0; padding: 5px 5px;
+        font-size: 13px;
+        color: #FFF;
+        font-weight: 500;
+        border-radius: 2px;    
+        display: flex;
+        align-items: center;            
+    }
+    .date {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 10px 15px;
+        margin: 0;
+        display: flex;
+        align-items: center;        
+    }
+}
+
 // best saling widget
 .linear-info-progress {
     margin-bottom: 20px;
@@ -227,5 +268,11 @@
         .bar {
             position: absolute; left: 0; top: 0; height: 100%;
         }
+    }
+}
+
+.notifications-widget {
+    .notification {
+        background: #F8F8F8;
     }
 }

@@ -9,6 +9,9 @@ import ChannelSalesBar from '../../common/charts/ChannelSalesBar';
 import BestSellingWidget from '../../common/lists/BestSellingWidget';
 import BalanceHistory from '../../common/lists/BalanceHistory';
 import StatsList from '../../common/lists/StatsList';
+import DocumentPaper from '../../common/paper/DocumentPaper';
+import NotificationWidget from '../../common/NotificationWidget';
+
 
 class MainDashboard extends Component {
     
@@ -30,6 +33,24 @@ class MainDashboard extends Component {
             </Fragment>              
         )
     }
+
+    _renderRecentDocs() {
+        const dummyText = 'Since your last visit, there are 50 documents to sign. In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic';
+        return(
+            <Fragment>
+                <Grid item xs={6} sm={4}>
+                    <DocumentPaper title="Documents" info={dummyText} date="Ten minutes ago" doctype="PDF" color="#ea6278" />
+                </Grid>
+                <Grid item xs={6} sm={4}>
+                    <DocumentPaper title="22 new contracts" info={dummyText} date="20 Jun 2018" doctype="DOC" color="#4ea0ea" />
+                </Grid> 
+                <Grid item xs={6} sm={4}>
+                    <DocumentPaper title="Business analysis" info={dummyText} date="22 Jul 2018" doctype="XLS" color="#46b39d" />
+                </Grid>                               
+            </Fragment>              
+        )
+    }    
+
     render() {
     //     <Typography style={{ fontWeight: 400 }} variant="title" gutterBottom>
     //     Good evening, Kara Thrace.
@@ -50,29 +71,43 @@ class MainDashboard extends Component {
                 <div className="content">
                     <Grid container spacing={24}>
                         { this._renderQuickInfo() }                
+                        { this._renderRecentDocs() }
+                        
 
-                        <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper style={{ marginBottom: 24 }} title="Sales by channel">
+                        <Grid item xs={12} sm={12} md={6}>           
+                                <Grid container spacing={24}>
+                                    <Grid item xs={6} sm={6} md={6}>
+                                        <CustomPaper removepadding>
+                                        </CustomPaper>                                 
+                                    </Grid>
+                                    <Grid item xs={6} sm={6} md={6}>
+                                        <CustomPaper removepadding>
+                                        </CustomPaper>                                   
+                                    </Grid>
+
+                                    <Grid item xs={6} sm={6} md={6}>
+                                        <CustomPaper removepadding>
+                                        </CustomPaper>                                 
+                                    </Grid>
+                                </Grid>                                    
+                            <CustomPaper title="Sales by channel">
                                 <ChannelSalesBar />
                             </CustomPaper>
                             <CustomPaper title="Expenses stat">
                                 <StatsList retriveAction={ getExpences } />
-                            </CustomPaper>                            
+                            </CustomPaper>        
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper style={{ marginBottom: 24 }} title="Balance history" maxheight={300} removepadding="true">
+                            <CustomPaper title="Balance history" maxheight={300} removepadding="true">
                                 <BalanceHistory />
                             </CustomPaper>
+                            <CustomPaper title="Recent activity">
+                                <NotificationWidget />
+                            </CustomPaper>                              
                             <CustomPaper title="Best selling items" maxheight={300} removepadding="true">
                                 <BestSellingWidget />
-                            </CustomPaper>
+                            </CustomPaper>                          
                         </Grid>
-                        <Grid item xs={12} sm={6}>
-
-                            <CustomPaper title="Balance history" maxheight={300}>
-                                user
-                            </CustomPaper>                            
-                        </Grid>                        
 
                     </Grid>                                                          
                 </div>

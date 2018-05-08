@@ -35,7 +35,6 @@ class Notifications extends Component {
     _captureClicks(e) {        
         const href = e.target.getAttribute('href');
         const target = e.target.getAttribute('target');
-        e.preventDefault();
         if (_.isNil(target) && !_.isNil(href)) {
             e.preventDefault();
             this.props.history.push(href);
