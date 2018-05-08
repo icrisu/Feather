@@ -189,7 +189,6 @@
 .custom-paper {
     background: #FFFFFF;
     border-radius: 2px;
-    margin-bottom: 24px;
     $opacity: .15;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
     -moz-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
@@ -224,7 +223,7 @@
     position: relative;
     .info {
         color: #{ $infoTextColor };
-        font-size: 13px;
+        font-size: 14px;
         line-height: 147%;
         margin-bottom: 35px;
     }
@@ -271,8 +270,39 @@
     }
 }
 
+// dashboar notification widget
 .notifications-widget {
     .notification {
         background: #F8F8F8;
+    }
+}
+
+// dashboar activity card info
+.activity-info-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+    .info {
+        font-size: 14px;
+        text-align: center;
+        line-height: 140%;
+        color: #7d8298;
+    }
+    .value-info {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 4px 6px;
+        background: #f1f6fb;
+        font-size: 14px;
+        font-weight: 500;
+        color: #e16e9f;
+        border-radius: 2px;
+    }
+    .icon {
+        font-size: 48px;
     }
 }
