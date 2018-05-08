@@ -122,10 +122,10 @@
     }
     .info {
         color: #{ $infoTextColor };
-        font-size: 14px;
+        font-size: 13px;
     }
     .value {
-        font-size: 13px;
+        font-size: 14px;
     }
     &.border-bottom {
         border-bottom-style: solid; border-width: 1px; border-bottom-color: rgba($infoTextColor, .1);

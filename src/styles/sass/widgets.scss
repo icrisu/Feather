@@ -211,6 +211,21 @@
 }
 
 // best saling widget
-.lanalnce {
-
+.linear-info-progress {
+    margin-bottom: 20px;
+    .labels {
+        display: flex;
+        justify-content: space-between;
+        .label {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 500;            
+        }
+    }
+    .bar-ui {
+        position: relative;
+        .bar {
+            position: absolute; left: 0; top: 0; height: 100%;
+        }
+    }
 }

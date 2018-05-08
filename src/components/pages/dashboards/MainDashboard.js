@@ -7,6 +7,7 @@ import QuickDashInfo from '../../common/info/QuickDashInfo';
 import ChannelSalesBar from '../../common/charts/ChannelSalesBar';
 import BestSellingWidget from '../../common/BestSellingWidget';
 import BalanceHistory from '../../common/BalanceHistory';
+import LinearInfoProgress from '../../common/LinearInfoProgress';
 
 class MainDashboard extends Component {
     
@@ -50,14 +51,21 @@ class MainDashboard extends Component {
                         { this._renderQuickInfo() }                
 
                         <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper title="Sales by channel">
+                            <CustomPaper style={{ marginBottom: 24 }} title="Sales by channel">
                                 <ChannelSalesBar />
                             </CustomPaper>
+                            <CustomPaper title="Expenses stat">
+                                <LinearInfoProgress label="Financial operations" percent={90} primaryColor="#e14660" />
+                                <LinearInfoProgress label="Dev ops" percent={70} primaryColor="#dc8392" />
+                                <LinearInfoProgress label="Multimedia" percent={50} primaryColor="#e7d764" />
+                                <LinearInfoProgress label="Server maintenance" percent={40} primaryColor="#00a8e8" />
+                                <LinearInfoProgress label="Hypermarket" percent={20} primaryColor="#46b39d" />
+                            </CustomPaper>                            
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>
                             <CustomPaper style={{ marginBottom: 24 }} title="Balance history" maxheight={300} removepadding="true">
                                 <BalanceHistory />
-                            </CustomPaper>                        
+                            </CustomPaper>
                             <CustomPaper title="Best selling items" maxheight={300} removepadding="true">
                                 <BestSellingWidget />
                             </CustomPaper>

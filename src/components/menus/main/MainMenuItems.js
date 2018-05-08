@@ -22,6 +22,21 @@ class MainMenuItems extends Component {
             <nav className="main-navigation-ui">
                 <List component="nav">
                     <MenuLink Icon={ InboxIcon } to={ ROUTES.dashboard.path } label={I18n.t('mainMenu.dashboards.dash1')} />
+                    <Submenu label="Dashboard" Icon={ InboxIcon }>
+                        <MenuLink Icon={ InboxIcon } to="/dashboard" label="Dashboard 1" />
+                        <MenuLink Icon={ InboxIcon } to="/dashboard2" label="Dashboard 2" />
+                    </Submenu>
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="Activity timeline" />
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="My account" />
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="Scrum app" />
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="Users" />
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="Invoices" />
+                    <MenuLink Icon={ InboxIcon } to="/activity" label="Chat app" />
+                    <Submenu label="Email app" Icon={ InboxIcon }>
+                        <MenuLink Icon={ InboxIcon } to="/activity" label="Inbox" />
+                        <MenuLink Icon={ InboxIcon } to="/activity" label="Sent" />
+                        <MenuLink Icon={ InboxIcon } to="/activity" label="Draft" />
+                    </Submenu>                    
                     <MenuLink to="/main2" label="No icon" />
                     <MenuLink href="http://google.com" target="_self" label="External" />
                     
