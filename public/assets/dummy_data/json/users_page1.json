@@ -1,0 +1,62 @@
+{
+    "total": 20,
+    "currentPage": 1,    
+    "users": [
+        {
+            "name": "Anna Hamilton",
+            "company": "Blisk Inc",
+            "email": "anna@company.co",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_2.jpg"
+        },
+        {
+            "name": "Jason Bourne",
+            "company": "ShopIT Inc",
+            "email": "anna@company.co",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_3.jpg"
+        },
+        {
+            "name": "Mark Robertson",
+            "company": "Robertson Inc",
+            "email": "mark.rob@company.co",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_4.jpg"
+        }, 
+        {
+            "name": "Jack Martin",
+            "company": "Company LTD",
+            "email": "jack.m@company.co",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_5.jpg"
+        }, 
+        {
+            "name": "Jesica Fisher",
+            "company": "Jessica Shop",
+            "email": "jessica@dave.com",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_11.jpg"
+        },
+        {
+            "name": "Anna Dale",
+            "company": "HPSS Inc",
+            "email": "anna@dave.com",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_8.jpg"
+        },
+        {
+            "name": "Robert Gale",
+            "company": "Gale inc",
+            "email": "robert@dave.com",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_9.jpg"
+        },
+        {
+            "name": "Antonia June",
+            "company": "Quantum Inc",
+            "email": "antonia@dave.com",
+            "phone": "(541) 754-3010",
+            "thumb": "assets/dummy_data/imgs/user_10.jpg"
+        }                                                        
+    ]
+}

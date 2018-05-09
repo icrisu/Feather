@@ -6,6 +6,7 @@ import { i18nReducer } from 'react-redux-i18n';
 import notifications from './notifications';
 import sidebarActivity from './sidebarActivity';
 import access_token from './access_token';
+import users from './users';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
     language,
     notifications,
     sidebarActivity,
-    access_token
+    access_token,
+    users
 })

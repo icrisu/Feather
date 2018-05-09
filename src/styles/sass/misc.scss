@@ -153,3 +153,32 @@
         width: 8px; height: 8px; border-radius: 4px;
     }
 }
+
+// tables
+.table {
+    thead {
+        tr {
+            th {
+                color: #{ $defaultTextColor };
+                border: none;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background: #FFF;
+            border-bottom-style: solid; border-width: 2px; border-color: #{ $pageBackground };
+            td {
+                border: none;
+            }
+        }
+    }         
+}
+
+// avatar
+.avatar-small {
+    $avatarSize: 30;
+    width: #{$avatarSize}px; height: #{$avatarSize}px; overflow: hidden; border-radius: #{$avatarSize / 2}px; margin-right: 10px;
+    display: inline-block;
+    img { width: 100% }
+}

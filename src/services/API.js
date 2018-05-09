@@ -90,6 +90,10 @@ class API {
         return axios.get(`${API_ROOT}/expenses.json`);
     }
 
+    getUsers(page = 1) {
+        return axios.get(`${API_ROOT}/users_page${page}.json`);
+    }    
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

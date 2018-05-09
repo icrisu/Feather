@@ -1,25 +1,58 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { getUsers } from '../../../actions';
+import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Loader from '../../common/misc/Loader';
 import { I18n } from 'react-redux-i18n';
+import uniqid from 'uniqid';
+import UserListItem from './UserListItem';
 
-
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-  id += 1;
-  return { id, name, calories, fat, carbs, protein };
-}
-
-const data = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 class UsersPage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { users: [], currentPage: 1, total: 0 }
+    }
+
+    componentDidMount() {
+        this.props.getUsers(1);
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return { users: nextProps.users }
+    }    
+
+    _renderUsersData() {
+        return this.state.users.map(user => {
+            return (
+                <UserListItem user={ user } key={uniqid()} />
+            );
+        });
+    }
+
+    _renderUsers() {
+        return(
+            <Table className="table" style={{ minWidth: 300 }}>
+                <TableHead>
+                    <TableRow style={{ color: '#000' }}>
+                        <TableCell>NAME</TableCell>
+                        <TableCell>COMPANY</TableCell>
+                        <TableCell>EMAIL</TableCell>
+                        <TableCell>PHONE</TableCell>
+                    </TableRow>
+                </TableHead>
+
+                <TableBody>
+                { this._renderUsersData() }
+                </TableBody>        
+            </Table>             
+        )        
+    }
+
     render() {
         return(
             <Fragment>
@@ -32,35 +65,30 @@ class UsersPage extends Component {
                     </div>
                 </div> 
                 <div className="content">
-<Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>NAME</TableCell>
-            <TableCell style={{ display: 'none' }} numeric>COMPANY</TableCell>
-            <TableCell numeric>PLAN</TableCell>
-            <TableCell numeric>Carbs (g)</TableCell>
-            <TableCell numeric>LAST LOGIN</TableCell>
-          </TableRow>
-        </TableHead>
-
-        <TableBody>
-          {data.map(n => {
-            return (
-              <TableRow key={n.id}>
-                <TableCell style={{ background: '#CCC' }}>{n.name}</TableCell>
-                <TableCell style={{ display: 'none' }} numeric><div style={{ paddingBottom: 150, display: 'none' }}>hello</div></TableCell>
-                <TableCell numeric>{n.fat}</TableCell>
-                <TableCell numeric>{n.carbs}</TableCell>
-                <TableCell numeric>{n.protein}</TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>        
-</Table>                            
+                    <Loader showloader={false} pageloader />
+                    <Grid container spacing={24}>
+                        <Grid item xs={12} sm={12} md={12}>
+                            { this._renderUsers() }
+                        </Grid>                      
+                    </Grid>                           
                 </div>
             </Fragment>           
         )
     }
 }
 
-export default UsersPage;
+const mapStateToProps = ({ users }) => {
+    console.log(users)
+    return { 
+        users: users.users || [],
+        total: users.total || 0,
+        currentPage: users.currentPage || 1,
+    }
+}
+
+UsersPage.propTypes = {
+    users: PropTypes.array,
+    getUsers: PropTypes.func
+}
+
+export default connect(mapStateToProps, { getUsers })(UsersPage);

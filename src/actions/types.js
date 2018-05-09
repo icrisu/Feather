@@ -9,3 +9,5 @@ export const GLOBAL_SEARCH_RESULTS = 'GLOBAL_SEARCH_RESULTS';
 export const ACCESS_TOKEN = 'ACCESS_TOKEN';
 export const BEST_SELLING_ITEMS = 'BEST_SELLING_ITEMS';
 export const RECENT_BALANCE = 'RECENT_BALANCE';
+export const USERS = 'USERS';
+export const ADD_USER = 'ADD_USER';

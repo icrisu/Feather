@@ -39,4 +39,5 @@ export const APP_BAR_COLORS = {
 }
 
 export const WIDGET_LOADER_COLOR = '#eaedfc';
+export const PAGE_LOADER_COLOR = 'rgba(152, 165, 200, .2)';
 
