@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Typography from 'material-ui/Typography';
 import InboxIcon from '@material-ui/icons/DateRange';
-import Button from 'material-ui/Button';
 
 const MAX_CHARS = 100;
 

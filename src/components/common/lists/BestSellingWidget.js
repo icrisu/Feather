@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CircularProgress } from 'material-ui/Progress';
 import { WIDGET_LOADER_COLOR } from '../../../theme/Customize';
-import Typography from 'material-ui/Typography';
 import HorizontalListItem from './HorizontalListItem';
 import { getBestSelling } from '../../../actions';
 import _ from 'lodash';
@@ -10,12 +9,6 @@ import uniqid from 'uniqid';
 
 import Avatar from 'material-ui/Avatar';
 
-const avatarStyle = {
-    bigAvatar: {
-        width: 60,
-        height: 60
-    }
-}
 
 class BestSellingWidget extends Component {
     state = {

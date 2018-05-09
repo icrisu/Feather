@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import CloudDone from '@material-ui/icons/CloudDone';
 
 class ActivityInfoCard extends PureComponent {
     

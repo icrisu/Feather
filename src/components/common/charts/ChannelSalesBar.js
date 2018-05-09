@@ -44,7 +44,6 @@ class ChannelSalesBar extends Component {
 
     componentDidMount() {
         this.props.getRecentSalesByChannel(result => {
-            console.log(result);
             if (!_.isNil(safe(this._salesByChannnelChart, 'current'))) {
                 let opts = { ...chartOptions };
                 opts.legend.display = true;

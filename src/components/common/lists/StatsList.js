@@ -16,7 +16,6 @@ class StatsList extends PureComponent {
     }
 
     _renderList() {
-        let items = [];
         return this.state.list.map(obj => {
             return <LinearInfoProgress key={ uniqid() } label={ obj.label } percent={ obj.percent } primaryColor={ obj.primaryColor } />
         });

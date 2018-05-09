@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { Redirect } from 'react-router-dom';
 import classNames from 'classnames';
 
 class HorizontalListItem extends Component {

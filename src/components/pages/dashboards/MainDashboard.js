@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { getExpences } from '../../../actions';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import QuickDashInfo from '../../common/info/QuickDashInfo';
@@ -80,10 +78,10 @@ class MainDashboard extends Component {
                         { this._renderRecentDocs() }
                         
                         <Grid item xs={12} sm={12} md={6}>                                               
-                            <CustomPaper title="Sales by channel">
+                            <CustomPaper title="Sales by channel" hasMarginBottom>
                                 <ChannelSalesBar />
                             </CustomPaper>
-                            <CustomPaper title="Expenses stat">
+                            <CustomPaper title="Expenses stat" hasMarginBottom>
                                 <StatsList retriveAction={ getExpences } />
                             </CustomPaper>        
                             <Grid container spacing={24}>
@@ -120,10 +118,10 @@ class MainDashboard extends Component {
                                 </Grid>                            
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper title="Balance history" maxheight={300} removepadding="true">
+                            <CustomPaper title="Balance history" maxheight={300} removepadding="true" hasMarginBottom>
                                 <BalanceHistory />
                             </CustomPaper>
-                            <CustomPaper title="Recent activity">
+                            <CustomPaper title="Recent activity" hasMarginBottom>
                                 <NotificationWidget />
                             </CustomPaper>                              
                             <CustomPaper title="Best selling items" maxheight={300} removepadding="true">

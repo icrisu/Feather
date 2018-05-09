@@ -3,9 +3,8 @@ import _ from 'lodash';
 export const ROUTES = {
     signin: { path: '/signin', isPublic: true },
     signup: { path: '/signup', isPublic: true },
-    dashboard: { path: '/dashboard' },
+    shop: { path: '/shop' },
     home: { path: '/' },
-    shop: { path: '/shop' }
 }
 
 // check if a route is public

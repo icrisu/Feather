@@ -21,7 +21,7 @@ class MainMenuItems extends Component {
         return(
             <nav className="main-navigation-ui">
                 <List component="nav">
-                    <MenuLink Icon={ InboxIcon } to={ ROUTES.dashboard.path } label={I18n.t('mainMenu.dashboards.dash1')} />
+                    <MenuLink Icon={ InboxIcon } to={ ROUTES.home.path } label={I18n.t('mainMenu.dashboards.dash1')} />
                     <Submenu label="Dashboard" Icon={ InboxIcon }>
                         <MenuLink Icon={ InboxIcon } to="/dashboard" label="Dashboard 1" />
                         <MenuLink Icon={ InboxIcon } to="/dashboard2" label="Dashboard 2" />
