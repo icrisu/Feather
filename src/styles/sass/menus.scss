@@ -17,6 +17,12 @@
             max-height: #{ $mainLogoImageMaxHeight + 'px' };
         }
     }
+
+    // used for font awsome icons
+    .menu-icon {
+        font-size: 20px;
+        padding-left: 3px;        
+    }
 }
 .main-navigation-ui {
     height: calc(100% - #{$mainLogoUIHeight + 'px'});

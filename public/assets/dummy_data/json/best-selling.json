@@ -4,49 +4,49 @@
             "title": "Black leather watch",
             "info": "$28,00",
             "value": "$5.237,00",
-            "thumb": "/assets/dummy_data/imgs/products/1_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/1_small.jpg",
             "link": "/"
         },
         {
             "title": "Fancy flower",
             "info": "$10,00",
             "value": "$4.607,00",
-            "thumb": "/assets/dummy_data/imgs/products/2_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/2_small.jpg",
             "link": "/"
         },
         {
             "title": "Cotton bag",
             "info": "$32,00",
             "value": "$4.448,00",
-            "thumb": "/assets/dummy_data/imgs/products/3_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/3_small.jpg",
             "link": "/"
         },
         {
             "title": "White earpods",
             "info": "$128,00",
             "value": "$4.129,00",
-            "thumb": "/assets/dummy_data/imgs/products/4_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/4_small.jpg",
             "link": "/"
         },
         {
             "title": "Gold like watch",
             "info": "$282,00",
             "value": "$3.917,00",
-            "thumb": "/assets/dummy_data/imgs/products/7_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/7_small.jpg",
             "link": "/"
         },
         {
             "title": "Virtual assistant",
             "info": "$180,00",
             "value": "$3.887,00",
-            "thumb": "/assets/dummy_data/imgs/products/6_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/6_small.jpg",
             "link": "/"
         },
         {
             "title": "Headphones noise canceling",
             "info": "$280,00",
             "value": "$3.000,00",
-            "thumb": "/assets/dummy_data/imgs/products/5_small.jpg",
+            "thumb": "assets/dummy_data/imgs/products/5_small.jpg",
             "link": "/"
         }
     ]

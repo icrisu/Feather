@@ -285,6 +285,7 @@
     flex-direction: column;
     padding: 15px;
     position: relative;
+    cursor: pointer;
     .info {
         font-size: 14px;
         text-align: center;
@@ -305,4 +306,7 @@
     .icon {
         font-size: 48px;
     }
+}
+.activity-info-card:hover {
+    background: rgba(242, 242, 242, .25);
 }

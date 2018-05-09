@@ -1,9 +1,8 @@
 export const TRANSLATION_DATA = {
     GB: {
         mainMenu: {
-            dashboards: {
-                dash1: 'Dashboard 1 GB'
-            }
+            dashboard: 'Dashboard',
+            users: 'Users',
         },
         topbar: {
             currentUser: {
@@ -49,6 +48,17 @@ export const TRANSLATION_DATA = {
                     btn: 'Create account'
                 },
                 terms: 'By logging in you agree with our terms & conditions'
+            },
+            dashboard: {
+                title: 'Dashboard',
+                salesByChannel: 'Sales by channel',
+                balanceHistory: 'Balance history',
+                espensesStats: 'Expenses stat',
+                recentActivity: 'Recent activity',
+                bestSellingItems: 'Best selling items'
+            },
+            users: {
+                title: 'Platform users'
             }
         }
     },    

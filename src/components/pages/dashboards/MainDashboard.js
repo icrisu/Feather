@@ -9,13 +9,8 @@ import BalanceHistory from '../../common/lists/BalanceHistory';
 import StatsList from '../../common/lists/StatsList';
 import DocumentPaper from '../../common/paper/DocumentPaper';
 import NotificationWidget from '../../common/NotificationWidget';
-import ActivityInfoCard from '../../common/info/ActivityInfoCard';
-
-import CloudDone from '@material-ui/icons/CloudDone';
-import CartIcon from '@material-ui/icons/ShoppingCart';
-import WorkIcon from '@material-ui/icons/Work';
-import EventIcon from '@material-ui/icons/Event';
-
+import ActivityCards from './ActivityCards';
+import { I18n } from 'react-redux-i18n';
 
 class MainDashboard extends Component {
     
@@ -66,7 +61,7 @@ class MainDashboard extends Component {
             <Fragment>
                 <div className="page-header">
                     <div className="left">
-                        <h1 className="page-title">Dashboard</h1>
+                        <h1 className="page-title">{I18n.t('pages.dashboard.title')}</h1>
                     </div>
                     <div className="right">
                         right
@@ -78,53 +73,22 @@ class MainDashboard extends Component {
                         { this._renderRecentDocs() }
                         
                         <Grid item xs={12} sm={12} md={6}>                                               
-                            <CustomPaper title="Sales by channel" hasMarginBottom>
+                            <CustomPaper title={I18n.t('pages.dashboard.salesByChannel')} hasMarginBottom>
                                 <ChannelSalesBar />
                             </CustomPaper>
-                            <CustomPaper title="Expenses stat" hasMarginBottom>
+                            <CustomPaper title={I18n.t('pages.dashboard.espensesStats')} hasMarginBottom>
                                 <StatsList retriveAction={ getExpences } />
                             </CustomPaper>        
-                            <Grid container spacing={24}>
-                                    <Grid item xs={6} sm={6} md={6}>
-                                        <CustomPaper removepadding="true">
-                                            <ActivityInfoCard color="#46b39d" value="22"
-                                            icon={ <CloudDone className="icon" style={{ color: '#7f87a9' }} /> }
-                                            about="New files have been added to the cloud from external sources" />
-                                        </CustomPaper>                                 
-                                    </Grid>
-                                    <Grid item xs={6} sm={6} md={6}>
-                                        <CustomPaper removepadding="true">
-                                            <ActivityInfoCard color="#46b39d" value="6"
-                                            icon={ <CartIcon className="icon" style={{ color: '#7f87a9' }} /> }
-                                            about="You have 6 items in your cart. Buy now and get 10% a discount" />
-                                        </CustomPaper>                                   
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={6} md={6}>
-                                        <CustomPaper removepadding="true">
-                                            <ActivityInfoCard color="#e16e9f" value="18"
-                                            icon={ <WorkIcon className="icon" style={{ color: '#7f87a9' }} /> }
-                                            about="Tasks have been moved from 'Done' pipeline to 'R&D' pipeline" />
-                                        </CustomPaper>                                   
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={6} md={6}>
-                                        <CustomPaper removepadding="true" color="#e16e9f">
-                                            <ActivityInfoCard color="#46b39d" value="11"
-                                            icon={ <EventIcon className="icon" style={{ color: '#7f87a9' }} /> }
-                                            about="There are 11 events that require your attention. Action is required" />
-                                        </CustomPaper>                                   
-                                    </Grid>                                    
-                                </Grid>                            
+                            <ActivityCards />
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper title="Balance history" maxheight={300} removepadding="true" hasMarginBottom>
+                            <CustomPaper title={I18n.t('pages.dashboard.balanceHistory')} maxheight={300} removepadding="true" hasMarginBottom>
                                 <BalanceHistory />
                             </CustomPaper>
-                            <CustomPaper title="Recent activity" hasMarginBottom>
+                            <CustomPaper title={I18n.t('pages.dashboard.recentActivity')} hasMarginBottom>
                                 <NotificationWidget />
                             </CustomPaper>                              
-                            <CustomPaper title="Best selling items" maxheight={300} removepadding="true">
+                            <CustomPaper title={I18n.t('pages.dashboard.bestSellingItems')} maxheight={300} removepadding="true">
                                 <BestSellingWidget />
                             </CustomPaper>                          
                         </Grid>

@@ -84,14 +84,26 @@ class MenuLink extends Component {
         } else {
             return this._renderIconSpace();
         }
-    }    
+    }
+    
+    _renderIcon(Icon, isInternalLink = true) {
+        if (isInternalLink) {
+            return React.cloneElement(Icon, {
+                style: { marginRight: 0, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }
+            })
+        } else {
+            return React.cloneElement(Icon, {
+                style: { color: MAIN_MENU_COLORS.itemColor }
+            })        
+        }
+    }
 
     _renderWithLink() {
         const { classes, Icon, to, label, isSubmenu, submenuOpended } = this.props;
         return(
             <ListItem disableGutters onClick={this._listItemClick.bind(this)} className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: (isSubmenu && submenuOpended) || this.state.selectedItem === true }) } button component={Link} to={to}>
                 { this._renderSelector() }
-                { Icon ? <ListItemIcon><Icon style={{ marginRight: 0, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : null }                            
+                { Icon ? <ListItemIcon>{ this._renderIcon(Icon) }</ListItemIcon> : null }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
             </ListItem>
         )
@@ -105,7 +117,7 @@ class MenuLink extends Component {
         const { classes, Icon, href, target, label, isSubmenu, submenuOpended } = this.props;
         return(
             <ListItem className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
-                { Icon ? <ListItemIcon><Icon style={{ color: MAIN_MENU_COLORS.itemColor }} /></ListItemIcon> : this._renderIconSpace() }                            
+                { Icon ? <ListItemIcon>{ this._renderIcon(Icon, false) }</ListItemIcon> : this._renderIconSpace() }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
             </ListItem>
         )
@@ -124,7 +136,11 @@ class MenuLink extends Component {
 
 MenuLink.propTypes = {
     classes: PropTypes.object.isRequired,
-    Icon: PropTypes.any,
+    // Icon: PropTypes.any,
+    Icon: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),     
     to: PropTypes.string,
     href: PropTypes.string,
     target: PropTypes.string,
