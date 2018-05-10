@@ -83,6 +83,24 @@ export const search = (term, cb) => {
     }
 }
 
+// you can create multiple search actions
+// pass a search action to SearchWidget
+export const searchUser = (term, cb) => {
+	return (dispatch, getState) => {   
+        API.getInstance().searchUser()
+        .then(data => {
+            if (_.isFunction(cb)) {
+                cb(data.data);
+            }
+            dispatch({
+                type: GLOBAL_SEARCH_RESULTS,
+                payload: data.data	
+            })        
+        })
+        .catch(err => { console.log(err) });
+    }
+}
+
 // authenticate
 export const authenticate = (credentials, cb) => {
 	return (dispatch, getState) => {   

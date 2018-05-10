@@ -26,6 +26,9 @@ class SearchWidget extends Component {
     }
 
     _handleSearch(term) {
+        if (_.isNil(this.props.searchAction)) {
+            return;
+        }
         this.props.searchAction(term, result => {
             this.setState({resultsHTML: result}, () => {                
                 if (!_.isNil(safe(this.resultsUI, 'current.childNodes'))) {

@@ -16,7 +16,8 @@ import Notifications from './Notifications';
 import CurrentUser from './CurrentUser';
 import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
 import FlagLangSelect from '../widgets/FlagLangSelect';
-import SearchWidget from '../widgets/search/SearchWidget';
+import SearchWidget from '../common/search/SearchWidget';
+
 import { I18n } from 'react-redux-i18n';
 
 const styles = appTransitions;

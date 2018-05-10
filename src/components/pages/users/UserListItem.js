@@ -83,7 +83,7 @@ class UserListItem extends PureComponent {
                 <TableCell style={{  padding: '17px 15px' }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         { this.props.user.thumb ? this._renderImageAvatar() : this._renderTextAvatar() }
-                        <Link className="user-link" style={{ fontWeight: 500, textDecoration: 'none' }} to={ this.props.user.link }>{ this.props.user.first_name } { this.props.user.last_name }</Link>                           
+                        <Link className="table-link-bold" style={{ fontWeight: 500, textDecoration: 'none' }} to={ this.props.user.link }>{ this.props.user.first_name } { this.props.user.last_name }</Link>                           
                     </div>
                 </TableCell>
                 <TableCell>{this.props.user.company}</TableCell>

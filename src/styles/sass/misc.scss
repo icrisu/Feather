@@ -156,6 +156,12 @@
 
 // tables
 .table {
+    .table-link-bold:link, .table-link-bold:visited {
+        color: #{ $tableBoldLinkColor };
+    }
+    .table-link-bold:hover {
+        color: #{ $tableBoldLinkHoverColor };
+    }
     thead {
         tr {
             th {

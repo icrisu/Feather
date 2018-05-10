@@ -76,7 +76,11 @@ class API {
     
     searchForAnything(term) {
         return axios.get(`${API_ROOT}/search-results.html`);
-    }  
+    }
+
+    searchUser(term) {
+        return axios.get(`${API_ROOT}/search-user-results.html`);
+    }    
     
     getBestSelling() {
         return axios.get(`${API_ROOT}/best-selling.json`);

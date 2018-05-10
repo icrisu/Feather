@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { getUsers } from '../../../actions';
+import { getUsers, searchUser } from '../../../actions';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import CustomPaper from '../../common/paper/CustomPaper';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Loader from '../../common/misc/Loader';
 import { I18n } from 'react-redux-i18n';
@@ -11,6 +10,7 @@ import uniqid from 'uniqid';
 import UserListItem from './UserListItem';
 import Button from 'material-ui/Button';
 import Pagination from '../../common/misc/Pagination';
+import SearchWidget from '../../common/search/SearchWidget';
 
 
 class UsersPage extends Component {
@@ -73,9 +73,12 @@ class UsersPage extends Component {
                 <div className="content">
                     <Loader showloader={false} pageloader />
                     <Grid container spacing={24}>
-                        <Grid item xs={12} sm={12} md={12}>
+                        <Grid className="page-actions" item xs={12} sm={12} md={12}>
+                            <div style={{ display: 'flex' }}>
+                                <Button variant="raised" color="secondary" style={{ textTransform: 'initial', marginRight: 25 }}>Add new user</Button>
+                                <SearchWidget searchAction={ this.props.searchUser } placeholder="Search user..." />
+                            </div>
                             <Button style={{ textTransform: 'initial' }}>Export (xls)</Button>
-                            <Button variant="raised" color="secondary" style={{ textTransform: 'initial' }}>Add user</Button>
                         </Grid>                    
                         <Grid item xs={12} sm={12} md={12}>
                             { this._renderUsers() }
@@ -106,4 +109,4 @@ UsersPage.propTypes = {
     getUsers: PropTypes.func
 }
 
-export default connect(mapStateToProps, { getUsers })(UsersPage);
+export default connect(mapStateToProps, { getUsers, searchUser })(UsersPage);
