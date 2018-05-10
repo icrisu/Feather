@@ -21,7 +21,7 @@ class UserListItem extends PureComponent {
         this.setState({ anchorEl: null });
     }
 
-    _actionClick() {
+    _actionClick(action) {
 
     }
 

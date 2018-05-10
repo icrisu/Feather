@@ -9,6 +9,7 @@ import Loader from '../../common/misc/Loader';
 import { I18n } from 'react-redux-i18n';
 import uniqid from 'uniqid';
 import UserListItem from './UserListItem';
+import Button from 'material-ui/Button';
 
 
 class UsersPage extends Component {
@@ -67,6 +68,10 @@ class UsersPage extends Component {
                 <div className="content">
                     <Loader showloader={false} pageloader />
                     <Grid container spacing={24}>
+                        <Grid item xs={12} sm={12} md={12}>
+                            <Button style={{ textTransform: 'initial' }}>Export (xls)</Button>
+                            <Button variant="raised" color="secondary" style={{ textTransform: 'initial' }}>Add user</Button>
+                        </Grid>                    
                         <Grid item xs={12} sm={12} md={12}>
                             { this._renderUsers() }
                         </Grid>                      
