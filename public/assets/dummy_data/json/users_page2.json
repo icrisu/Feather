@@ -1,0 +1,49 @@
+{
+    "total": 20,
+    "currentPage": 2,
+    "totalPages": 2,    
+    "users": [
+        {
+            "first_name": "Anna",
+            "last_name": "Hamilton",
+            "company": "Blisk Inc",
+            "email": "anna@company.co",
+            "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace"
+        },
+        {
+            "first_name": "Jason",
+            "last_name": "Bourne",            
+            "company": "ShopIT Inc",
+            "email": "jason@company.co",
+            "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
+            "thumb": "assets/dummy_data/imgs/user_5.jpg"
+        },
+        {
+            "first_name": "Mark",
+            "last_name": "Robertson",            
+            "company": "Robertson Inc",
+            "email": "mark.rob@company.co",
+            "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace"
+        }, 
+        {
+            "first_name": "Jack",
+            "last_name": "Martin",            
+            "company": "Company LTD",
+            "email": "jack.m@company.co",
+            "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace"
+        }, 
+        {
+            "first_name": "Jesica",
+            "last_name": "Fisher",            
+            "company": "Jessica Shop",
+            "email": "jessica@dave.com",
+            "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
+            "thumb": "assets/dummy_data/imgs/user_10.jpg"
+        }                                                      
+    ]
+}

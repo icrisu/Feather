@@ -1,61 +1,77 @@
 {
     "total": 20,
-    "currentPage": 1,    
+    "currentPage": 1,
+    "totalPages": 2,    
     "users": [
         {
-            "name": "Anna Hamilton",
+            "first_name": "Anna",
+            "last_name": "Hamilton",
             "company": "Blisk Inc",
             "email": "anna@company.co",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_2.jpg"
         },
         {
-            "name": "Jason Bourne",
+            "first_name": "Jason",
+            "last_name": "Bourne",            
             "company": "ShopIT Inc",
             "email": "jason@company.co",
             "phone": "(541) 754-3010",
-            "thumb": "assets/dummy_data/imgs/user_3.jpg"
+            "link": "/users/kara-thrace"
         },
         {
-            "name": "Mark Robertson",
+            "first_name": "Mark",
+            "last_name": "Robertson",            
             "company": "Robertson Inc",
             "email": "mark.rob@company.co",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_4.jpg"
         }, 
         {
-            "name": "Jack Martin",
+            "first_name": "Jack",
+            "last_name": "Martin",            
             "company": "Company LTD",
             "email": "jack.m@company.co",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_5.jpg"
         }, 
         {
-            "name": "Jesica Fisher",
+            "first_name": "Jesica",
+            "last_name": "Fisher",            
             "company": "Jessica Shop",
             "email": "jessica@dave.com",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_11.jpg"
         },
         {
-            "name": "Anna Dale",
+            "first_name": "Anna",
+            "last_name": "Dale",            
             "company": "HPSS Inc",
             "email": "anna@dave.com",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_8.jpg"
         },
         {
-            "name": "Robert Gale",
+            "first_name": "Robert",
+            "last_name": "Gale",            
             "company": "Gale inc",
             "email": "robert@dave.com",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_9.jpg"
         },
         {
-            "name": "Antonia June",
+            "first_name": "Antonia",
+            "last_name": "June",            
             "company": "Quantum Inc",
             "email": "antonia@dave.com",
             "phone": "(541) 754-3010",
+            "link": "/users/kara-thrace",
             "thumb": "assets/dummy_data/imgs/user_10.jpg"
         }                                                        
     ]

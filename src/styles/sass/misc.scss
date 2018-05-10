@@ -181,4 +181,17 @@
     width: #{$avatarSize}px; height: #{$avatarSize}px; overflow: hidden; border-radius: #{$avatarSize / 2}px; margin-right: 10px;
     display: inline-block;
     img { width: 100% }
+    &.avatar-small-text {
+        display: flex; justify-content: center; align-items: center;
+        font-weight: 500;
+        font-size: 13px;        
+        color: #{ $smallTextAvatarColor };
+        background: #{ $smallTextAvatarBackground };
+    }
+}
+
+// custom pagination
+.custom-pagination {
+    padding: 10px 0px;
+    display: inline-block;
 }

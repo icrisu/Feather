@@ -28,6 +28,7 @@ class PopOverHelper extends Component {
             layout = {
                 anchorOriginVertical: 'bottom',
                 anchorOriginHorizontal: 'right',
+                transformOriginVertical: 'top',
                 transformOriginHorizontal: 'right'
             }
         }
@@ -35,9 +36,18 @@ class PopOverHelper extends Component {
             layout = {
                 anchorOriginVertical: 'top',
                 anchorOriginHorizontal: 'right',
+                transformOriginVertical: 'top',
                 transformOriginHorizontal: 'right'
             }
-        }  
+        } 
+        if (nextProps.position === 'top-left') {
+            layout = {
+                anchorOriginVertical: 'top',
+                anchorOriginHorizontal: 'left',
+                transformOriginVertical: 'top',
+                transformOriginHorizontal: 'right'
+            }
+        }           
         return { ...layout, open: nextProps.open || false };
     }
 
@@ -74,6 +84,7 @@ class PopOverHelper extends Component {
                 <Popover
                     open={open}
                     anchorEl={this.anchorEl}
+                    
                     anchorReference={anchorReference}
                     anchorPosition={{ top: positionTop, left: positionLeft }}
                     onClose={this.handleClose.bind(this)}

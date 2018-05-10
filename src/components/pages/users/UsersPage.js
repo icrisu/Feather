@@ -10,6 +10,7 @@ import { I18n } from 'react-redux-i18n';
 import uniqid from 'uniqid';
 import UserListItem from './UserListItem';
 import Button from 'material-ui/Button';
+import Pagination from '../../common/misc/Pagination';
 
 
 class UsersPage extends Component {
@@ -20,18 +21,22 @@ class UsersPage extends Component {
     }
 
     componentDidMount() {
-        this.props.getUsers(1);
+        this.props.getUsers(this.state.currentPage);
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        return { users: nextProps.users }
-    }    
+        return { users: nextProps.users, totalPages: nextProps.totalPages, currentPage: nextProps.currentPage }
+    }
+
+    _onPageChange(page) {
+        this.setState({ currentPage: page }, () => {
+            this.props.getUsers(this.state.currentPage);
+        })
+    }
 
     _renderUsersData() {
         return this.state.users.map(user => {
-            return (
-                <UserListItem user={ user } key={uniqid()} />
-            );
+            return <UserListItem user={ user } key={uniqid()} />;
         });
     }
 
@@ -75,7 +80,12 @@ class UsersPage extends Component {
                         <Grid item xs={12} sm={12} md={12}>
                             { this._renderUsers() }
                         </Grid>                      
-                    </Grid>                           
+                    </Grid> 
+                    <Grid container spacing={24}>
+                        <Grid item xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
+                            <Pagination onPageChange={ this._onPageChange.bind(this) } currentPage={ this.state.currentPage } totalPages={ this.state.totalPages } />
+                        </Grid>
+                    </Grid>                          
                 </div>
             </Fragment>           
         )
@@ -83,11 +93,11 @@ class UsersPage extends Component {
 }
 
 const mapStateToProps = ({ users }) => {
-    console.log(users)
     return { 
         users: users.users || [],
         total: users.total || 0,
         currentPage: users.currentPage || 1,
+        totalPages: users.totalPages || 1
     }
 }
 
