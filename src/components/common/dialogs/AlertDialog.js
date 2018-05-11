@@ -54,7 +54,7 @@ class AlertDialog extends PureComponent {
 					<DialogContentText id="alert-dialog-description">{ this.props.textContent }</DialogContentText>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={this._handleClose.bind(this)}>{ this.props.acceptText || 'Cancel' }</Button>
+					<Button onClick={this._handleClose.bind(this)}>{ this.props.rejectText || 'Cancel' }</Button>
 					<Button onClick={this._handleAccept.bind(this)} color="primary" autoFocus>{ this.props.acceptText || 'Agree' }</Button>
 				</DialogActions>
 			</Dialog>

@@ -4,6 +4,7 @@
     "totalPages": 2,    
     "users": [
         {
+            "_id": 1,
             "first_name": "Anna",
             "last_name": "Hamilton",
             "company": "Blisk Inc",
@@ -13,6 +14,7 @@
             "thumb": "assets/dummy_data/imgs/user_2.jpg"
         },
         {
+            "_id": 2,
             "first_name": "Jason",
             "last_name": "Bourne",            
             "company": "ShopIT Inc",
@@ -21,6 +23,7 @@
             "link": "/users/kara-thrace"
         },
         {
+            "_id": 3,
             "first_name": "Mark",
             "last_name": "Robertson",            
             "company": "Robertson Inc",
@@ -30,6 +33,7 @@
             "thumb": "assets/dummy_data/imgs/user_4.jpg"
         }, 
         {
+            "_id": 4,
             "first_name": "Jack",
             "last_name": "Martin",            
             "company": "Company LTD",
@@ -39,6 +43,7 @@
             "thumb": "assets/dummy_data/imgs/user_5.jpg"
         }, 
         {
+            "_id": 5,
             "first_name": "Jesica",
             "last_name": "Fisher",            
             "company": "Jessica Shop",
@@ -48,6 +53,7 @@
             "thumb": "assets/dummy_data/imgs/user_11.jpg"
         },
         {
+            "_id": 1,
             "first_name": "Anna",
             "last_name": "Dale",            
             "company": "HPSS Inc",
@@ -57,6 +63,7 @@
             "thumb": "assets/dummy_data/imgs/user_8.jpg"
         },
         {
+            "_id": 6,
             "first_name": "Robert",
             "last_name": "Gale",            
             "company": "Gale inc",
@@ -66,6 +73,7 @@
             "thumb": "assets/dummy_data/imgs/user_9.jpg"
         },
         {
+            "_id": 7,
             "first_name": "Antonia",
             "last_name": "June",            
             "company": "Quantum Inc",

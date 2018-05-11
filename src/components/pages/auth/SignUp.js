@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { redisterUser } from '../../../actions';
+import { registerUser } from '../../../actions';
 import CustomInput from '../../common/custom-form-elements/CustomInput';
 import Button from 'material-ui/Button';
 import { LinearProgress } from 'material-ui/Progress';
@@ -24,7 +24,7 @@ class SignUp extends Component {
     _register() {
         this.setState({ isLoading: true });
         const { email, password } = this.state;
-        this.props.redisterUser({ email, password });
+        this.props.registerUser({ email, password });
     }
 
     _renderProgress() {
@@ -79,7 +79,7 @@ class SignUp extends Component {
 }
 
 SignUp.propTypes = {
-    redisterUser: PropTypes.func.isRequired
+    registerUser: PropTypes.func.isRequired
 }
 
-export default connect(null, { redisterUser })(SignUp);
+export default connect(null, { registerUser })(SignUp);

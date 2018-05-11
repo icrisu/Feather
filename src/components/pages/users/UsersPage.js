@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import GenericPage from '../base/GenericPage';
 import { connect } from 'react-redux';
-import { getUsers, searchUser } from '../../../actions';
+import { getUsers, searchUser, removeUser } from '../../../actions';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
@@ -37,14 +37,13 @@ class UsersPage extends Component {
     }
 
     _removeUser(user) {
-        console.log('REMOVE', user)
         this.setState({ userToRemove: user }, () => {
             this.setState({ removeUserAlert: true })
         })
     }
     _confirmRemoveUser(user) {
-        console.log('REMOVE USER', user);
-        this.setState({ removeUserAlert: false })
+        this.setState({ removeUserAlert: false });
+        this.props.removeUser(user._id);
     }
 
     _renderUsersData() {
@@ -92,42 +91,17 @@ class UsersPage extends Component {
                         <Pagination onPageChange={ this._onPageChange.bind(this) } currentPage={ this.state.currentPage } totalPages={ this.state.totalPages } />
                     </Grid>
                 </Grid>                 
-                <AlertDialog transportData={ this.state.userToRemove } open={ this.state.removeUserAlert } title="Remove user" textContent="Are you sure you want to remove Jane from the database?" onAccept={ this._confirmRemoveUser.bind(this) } onReject={ d => this.setState({ removeUserAlert: false }) } />
+                <AlertDialog transportData={ this.state.userToRemove } 
+                    open={ this.state.removeUserAlert } 
+                    title="Remove user" 
+                    textContent={ this.state.userToRemove ? `Are you sure you want to remove ${this.state.userToRemove.first_name} ${this.state.userToRemove.last_name} from the database?` : ''} 
+                    onAccept={ this._confirmRemoveUser.bind(this) } 
+                    onReject={ d => this.setState({ removeUserAlert: false }) } 
+                    rejectText="Cancel"
+                    acceptText="Agree"
+                    />
             </GenericPage>
         )
-        // return(
-        //     <Fragment>
-        //         <div className="page-header">
-        //             <div className="left">
-        //                 <h1 className="page-title">{I18n.t('pages.users.title')}</h1>
-        //             </div>
-        //             <div className="right">
-        //                 right
-        //             </div>
-        //         </div> 
-        //         <div className="content users-page-content">
-        //             <Loader showloader={false} pageloader />
-        //             <Grid container spacing={24}>
-        //                 <Grid className="page-actions" item xs={12} sm={12} md={12}>
-        //                     <div style={{ display: 'flex' }}>
-        //                         <Button variant="raised" color="secondary" style={{ textTransform: 'initial', marginRight: 25 }}>Add new user</Button>
-        //                         <SearchWidget className="search" searchAction={ this.props.searchUser } placeholder="Search user..." />
-        //                     </div>
-        //                     <Button style={{ textTransform: 'initial' }}>Export (xls)</Button>
-        //                 </Grid>                    
-        //                 <Grid item xs={12} sm={12} md={12}>
-        //                     { this._renderUsers() }
-        //                 </Grid>                      
-        //             </Grid> 
-        //             <Grid container spacing={24}>
-        //                 <Grid item xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
-        //                     <Pagination onPageChange={ this._onPageChange.bind(this) } currentPage={ this.state.currentPage } totalPages={ this.state.totalPages } />
-        //                 </Grid>
-        //             </Grid>                          
-        //         </div>
-        //         <AlertDialog transportData={ this.state.userToRemove } open={ this.state.removeUserAlert } title="Remove user" textContent="Are you sure you want to remove Jane from the database?" onAccept={ this._confirmRemoveUser.bind(this) } onReject={ d => this.setState({ removeUserAlert: false }) } />
-        //     </Fragment>           
-        // )
     }
 }
 
@@ -142,7 +116,8 @@ const mapStateToProps = ({ users }) => {
 
 UsersPage.propTypes = {
     users: PropTypes.array,
-    getUsers: PropTypes.func
+    getUsers: PropTypes.func,
+    removeUser: PropTypes.func
 }
 
-export default connect(mapStateToProps, { getUsers, searchUser })(UsersPage);
+export default connect(mapStateToProps, { getUsers, searchUser, removeUser })(UsersPage);

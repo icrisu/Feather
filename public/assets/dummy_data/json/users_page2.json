@@ -4,6 +4,7 @@
     "totalPages": 2,    
     "users": [
         {
+            "_id": 8,
             "first_name": "Anna",
             "last_name": "Hamilton",
             "company": "Blisk Inc",
@@ -12,6 +13,7 @@
             "link": "/users/kara-thrace"
         },
         {
+            "_id": 9,
             "first_name": "Jason",
             "last_name": "Bourne",            
             "company": "ShopIT Inc",
@@ -21,6 +23,7 @@
             "thumb": "assets/dummy_data/imgs/user_5.jpg"
         },
         {
+            "_id": 10,
             "first_name": "Mark",
             "last_name": "Robertson",            
             "company": "Robertson Inc",
@@ -29,6 +32,7 @@
             "link": "/users/kara-thrace"
         }, 
         {
+            "_id": 11,
             "first_name": "Jack",
             "last_name": "Martin",            
             "company": "Company LTD",
@@ -37,6 +41,7 @@
             "link": "/users/kara-thrace"
         }, 
         {
+            "_id": 12,
             "first_name": "Jesica",
             "last_name": "Fisher",            
             "company": "Jessica Shop",
