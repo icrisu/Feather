@@ -12,6 +12,7 @@ import AppBar from '../topbar/AppBar';
 import { DEFAULT_LANG } from '../../config/constants';
 import PrivateRoutes from '../../routes/PrivateRoutes';
 import PublicRoutes from '../../routes/PublicRoutes';
+import SimpleNotification from '../common/misc/SimpleNotification';
 
 const styles = appTransitions;
 
@@ -74,6 +75,7 @@ class Main extends Component {
 				</main>
 
                 <ReactResizeDetector handleWidth handleHeight onResize={this._onResize.bind(this)} />
+				<SimpleNotification />
 			</Fragment>
 		)
 	}

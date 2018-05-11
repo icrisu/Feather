@@ -7,6 +7,7 @@ import notifications from './notifications';
 import sidebarActivity from './sidebarActivity';
 import access_token from './access_token';
 import users from './users';
+import simpleNotification from './simpleNotification'
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
     notifications,
     sidebarActivity,
     access_token,
-    users
+    users,
+    simpleNotification
 })

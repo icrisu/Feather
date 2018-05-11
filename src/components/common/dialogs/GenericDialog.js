@@ -9,10 +9,10 @@ import Dialog, {
 } from 'material-ui/Dialog';
 import _ from 'lodash';
 
-class AlertDialog extends PureComponent {
+class GenericDialog extends PureComponent {
 
 	static defaultProps = {
-		open: false, hasClose: true, textContent: '', title: ''
+		open: false, hasClose: true, textContent: '', title: '', acceptIsDisabled: false
 	}
 
 	state = {
@@ -21,15 +21,11 @@ class AlertDialog extends PureComponent {
 
 	static getDerivedStateFromProps(nextProps, prevState) {
 		return {
-			open: nextProps.open
+			open: nextProps.open, acceptIsDisabled: nextProps.acceptIsDisabled
 		}
 	}
 
-	handleClickOpen() {
-		this.setState({ open: true });
-	};
-
-	_handleClose() {
+	_handleClose = () => {
 		if (_.isFunction(this.props.onReject)) {
 			this.props.onReject(this.props.transportData);
 		} 
@@ -41,28 +37,35 @@ class AlertDialog extends PureComponent {
 		}
 	};
 
+	_renderSingleText() {
+		if (this.props.textContent) {
+			return <DialogContentText id="alert-dialog-description">{ this.props.textContent }</DialogContentText>;
+		}
+	}
+
 	render() {
 		return (
 			<Dialog
 				open={this.state.open}
-				onClose={this._handleClose.bind(this)}
+				onClose={ this._handleClose }
 				aria-labelledby="alert-dialog-title"
 				aria-describedby="alert-dialog-description"
 			>
 				<DialogTitle id="alert-dialog-title">{ this.props.title }</DialogTitle>
-				<DialogContent>
-					<DialogContentText id="alert-dialog-description">{ this.props.textContent }</DialogContentText>
+				<DialogContent className="pretty-scroll dialog-content">
+					{ this._renderSingleText() }
+					{ this.props.children }
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={this._handleClose.bind(this)}>{ this.props.rejectText || 'Cancel' }</Button>
-					<Button onClick={this._handleAccept.bind(this)} color="primary" autoFocus>{ this.props.acceptText || 'Agree' }</Button>
+					<Button onClick={this._handleAccept.bind(this)} color="primary" autoFocus disabled={ this.state.acceptIsDisabled }>{ this.props.acceptText || 'Agree' }</Button>
 				</DialogActions>
 			</Dialog>
 		);
 	}
 }
 
-AlertDialog.propTypes = {
+GenericDialog.propTypes = {
 	title: PropTypes.string,
 	onAccept: PropTypes.func,
 	onReject: PropTypes.func,
@@ -71,7 +74,12 @@ AlertDialog.propTypes = {
 	textContent: PropTypes.string,
 	acceptText: PropTypes.string,
 	rejectText: PropTypes.string,
-	transportData: PropTypes.any
+	transportData: PropTypes.any,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+	]),
+	acceptIsDisabled: PropTypes.bool
 }
 
-export default AlertDialog;
+export default GenericDialog;

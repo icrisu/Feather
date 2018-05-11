@@ -6,14 +6,17 @@ export default (state = {}, action) => {
             return action.payload;
         case REMOVE_USER:
             const { users } = state;
-            let newUsers = [];
+            
             for (let i = 0; i < users.length; i++) {
                 if (users[i]._id === action.payload) {
                     users.splice(i, 1);
                     break;
                 }
             }
-            return Object.assign({ ...state }, { users });
+            return { users: users, ...state };
+        case ADD_USER:
+            const usersList = [ action.payload, ...state.users ]
+            return { ...state, users: usersList };    
         default: 
             return state;
     }    

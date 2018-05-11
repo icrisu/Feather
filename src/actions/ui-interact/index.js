@@ -1,6 +1,6 @@
 import { setLocale } from 'react-redux-i18n';
 
-import { SUBMENU_OPEN, TOGGLE_MAIN_SIDEBAR, SELECT_LANGUAGE } from '../types';
+import { SUBMENU_OPEN, TOGGLE_MAIN_SIDEBAR, SELECT_LANGUAGE, SIMPLE_NOTIFICATION } from '../types';
 import { store } from '../../index';
 
 export const changeLang = lang => {
@@ -24,3 +24,10 @@ export const submenuOpened = _id => {
         type: SUBMENU_OPEN
     }
 }
+
+export const appNotify = simpleNotification => {
+    return {
+        type: SIMPLE_NOTIFICATION,
+        payload: simpleNotification
+    }
+}   

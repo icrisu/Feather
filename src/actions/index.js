@@ -4,6 +4,7 @@ import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
 import _ from 'lodash';
+import uniqid from 'uniqid';
 
 // retrive notifications
 export const getNotifications = () => {
@@ -207,6 +208,18 @@ export const getUsers = (page, cb) => {
                 payload: data.data
             })        
         });
+    }
+}
+
+
+// add user
+export const addUser = (user, cb) => {
+    // call API to add user
+    // fake user_id (suppose to be provided by API)
+    user._id = uniqid();
+    return {
+        type: ADD_USER,
+        payload: user
     }
 }
 
