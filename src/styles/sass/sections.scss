@@ -90,3 +90,27 @@
         }          
     }
 }
+
+// users
+.users-page-content {
+    @media screen and (max-width: 800px) {
+        .search-widget {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1050px) {
+        .phone {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .email {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .company {
+            display: none;
+        }
+    }                    
+}

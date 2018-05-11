@@ -24,7 +24,7 @@ const styles = theme => ({
 class UserListItem extends PureComponent {
 
     static defaultProps = {
-        user: {}
+        user: {}, removeUser: () => {}
     }
 
     constructor(props) {
@@ -34,7 +34,10 @@ class UserListItem extends PureComponent {
     }    
 
     _actionClick(action) {
-
+        this.setState({ open: false });
+        if (action === 'remove') {
+            this.props.removeUser(this.props.user);
+        }
     }
 
     _popoverClose() {
@@ -58,7 +61,7 @@ class UserListItem extends PureComponent {
                     <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><PhoneIcon /></ListItemIcon>
                     <ListItemText classes={{ primary: classes.listItem }} primary='Call user' />
                 </ListItem>            
-                <ListItem component={Link} to={`#`} disableGutters button onClick={ this._popoverClose }>
+                <ListItem onClick={ e => this._actionClick('remove') } disableGutters button>
                     <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><DeleteIcon /></ListItemIcon>
                     <ListItemText classes={{ primary: classes.listItem }} primary='Delete user' />
                 </ListItem>
@@ -86,9 +89,9 @@ class UserListItem extends PureComponent {
                         <Link className="table-link-bold" style={{ fontWeight: 500, textDecoration: 'none' }} to={ this.props.user.link }>{ this.props.user.first_name } { this.props.user.last_name }</Link>                           
                     </div>
                 </TableCell>
-                <TableCell>{this.props.user.company}</TableCell>
-                <TableCell>{this.props.user.email}</TableCell>
-                <TableCell>{this.props.user.phone}</TableCell>
+                <TableCell className="company">{this.props.user.company}</TableCell>
+                <TableCell className="email">{this.props.user.email}</TableCell>
+                <TableCell className="phone">{this.props.user.phone}</TableCell>
                 <TableCell style={{ textAlign: 'right' }}>{ this._renderActions() }</TableCell>
             </TableRow>            
         )
@@ -97,7 +100,8 @@ class UserListItem extends PureComponent {
 
 UserListItem.porpTypes = {
     classes: PropTypes.object.isRequired,
-    user: PropTypes.object
+    user: PropTypes.object,
+    removeUser: PropTypes.func
 }
 
 export default withStyles(styles)(UserListItem);

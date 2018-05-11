@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { getExpences } from '../../../actions';
+import GenericPage from '../base/GenericPage';
 import Grid from 'material-ui/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import QuickDashInfo from '../../common/info/QuickDashInfo';
@@ -56,46 +57,37 @@ class MainDashboard extends Component {
     // </Typography>
     // <Typography style={{ color: '#6d738e', marginBottom: 30 }} variant="body2" gutterBottom>
     //     Here's what's happening with your store today.
-    // </Typography>          
+    // </Typography>      
+        
         return(
-            <Fragment>
-                <div className="page-header">
-                    <div className="left">
-                        <h1 className="page-title">{I18n.t('pages.dashboard.title')}</h1>
-                    </div>
-                    <div className="right">
-                        right
-                    </div>
-                </div>
-                <div className="content">
-                    <Grid container spacing={24}>
-                        { this._renderQuickInfo() }                
-                        { this._renderRecentDocs() }
-                        
-                        <Grid item xs={12} sm={12} md={6}>                                               
-                            <CustomPaper title={I18n.t('pages.dashboard.salesByChannel')} hasMarginBottom>
-                                <ChannelSalesBar />
-                            </CustomPaper>
-                            <CustomPaper title={I18n.t('pages.dashboard.espensesStats')} hasMarginBottom>
-                                <StatsList retriveAction={ getExpences } />
-                            </CustomPaper>        
-                            <ActivityCards />
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={6}>
-                            <CustomPaper title={I18n.t('pages.dashboard.balanceHistory')} maxheight={300} removepadding="true" hasMarginBottom>
-                                <BalanceHistory />
-                            </CustomPaper>
-                            <CustomPaper title={I18n.t('pages.dashboard.recentActivity')} hasMarginBottom>
-                                <NotificationWidget />
-                            </CustomPaper>                              
-                            <CustomPaper title={I18n.t('pages.dashboard.bestSellingItems')} maxheight={300} removepadding="true">
-                                <BestSellingWidget />
-                            </CustomPaper>                          
-                        </Grid>
+            <GenericPage title={I18n.t('pages.dashboard.title')}>
+                <Grid container spacing={24}>
+                    { this._renderQuickInfo() }                
+                    { this._renderRecentDocs() }
+                    
+                    <Grid item xs={12} sm={12} md={6}>                                               
+                        <CustomPaper title={I18n.t('pages.dashboard.salesByChannel')} hasMarginBottom>
+                            <ChannelSalesBar />
+                        </CustomPaper>
+                        <CustomPaper title={I18n.t('pages.dashboard.espensesStats')} hasMarginBottom>
+                            <StatsList retriveAction={ getExpences } />
+                        </CustomPaper>        
+                        <ActivityCards />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={6}>
+                        <CustomPaper title={I18n.t('pages.dashboard.balanceHistory')} maxheight={300} removepadding="true" hasMarginBottom>
+                            <BalanceHistory />
+                        </CustomPaper>
+                        <CustomPaper title={I18n.t('pages.dashboard.recentActivity')} hasMarginBottom>
+                            <NotificationWidget />
+                        </CustomPaper>                              
+                        <CustomPaper title={I18n.t('pages.dashboard.bestSellingItems')} maxheight={300} removepadding="true">
+                            <BestSellingWidget />
+                        </CustomPaper>                          
+                    </Grid>
 
-                    </Grid>                                                          
-                </div>
-            </Fragment>
+                </Grid>            
+            </GenericPage>
         )
     }
 }

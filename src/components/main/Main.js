@@ -12,7 +12,6 @@ import AppBar from '../topbar/AppBar';
 import { DEFAULT_LANG } from '../../config/constants';
 import PrivateRoutes from '../../routes/PrivateRoutes';
 import PublicRoutes from '../../routes/PublicRoutes';
-// import StorageService from '../utils/StorageService';
 
 const styles = appTransitions;
 
@@ -71,9 +70,7 @@ class Main extends Component {
 						[classes.contentShift]: openedMenu,
 						[classes[`contentShift-left`]]: openedMenu
 					}) }>
-					<div className="page-content">	
-						<PrivateRoutes />
-					</div>
+					<PrivateRoutes />
 				</main>
 
                 <ReactResizeDetector handleWidth handleHeight onResize={this._onResize.bind(this)} />

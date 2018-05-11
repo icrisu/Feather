@@ -99,11 +99,12 @@ body, html, #root, input {
 // app page
 .app-page {
     background: #{ $pageBackground } !important;
-    overflow-y: auto;
-    margin-top: #{ $appBarHeight + 'px' };
-    height: calc(100% - #{($appBarHeight) + 'px'});
-    -webkit-overflow-scrolling: touch;
+    height: 100%;
     .page-content {
+        overflow-y: auto;
+        margin-top: #{ $appBarHeight + 'px' };
+        height: calc(100% - #{($appBarHeight) + 'px'});
+        -webkit-overflow-scrolling: touch;        
         .page-actions {
             display: flex; justify-content: space-between; align-items: center;
         }
