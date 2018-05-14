@@ -13,4 +13,5 @@ export const BEST_SELLING_ITEMS = 'BEST_SELLING_ITEMS';
 export const RECENT_BALANCE = 'RECENT_BALANCE';
 export const USERS = 'USERS';
 export const ADD_USER = 'ADD_USER';
+export const EDIT_USER = 'EDIT_USER';
 export const REMOVE_USER = 'REMOVE_USER';

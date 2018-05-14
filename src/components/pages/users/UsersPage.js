@@ -14,14 +14,15 @@ import Pagination from '../../common/misc/Pagination';
 import SearchWidget from '../../common/search/SearchWidget';
 import GenericDialog from '../../common/dialogs/GenericDialog';
 import NewUserModal from './NewUserModal';
+import EditUserModal from './EditUserModal';
 
 
 class UsersPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { users: [], currentPage: 1, total: 0, 
-            removeUserAlert: false, userToRemove: null, openNewUserModal: false }
+        this.state = { users: [], currentPage: 1, total: 0, userToEdit: null,
+            removeUserAlert: false, userToRemove: null, openNewUserModal: false, openEditUserModal: false }
     }
 
     componentDidMount() {
@@ -38,15 +39,19 @@ class UsersPage extends Component {
         })
     }
 
+    _createNewUser(event) {
+        this.setState({ openNewUserModal: true })
+    }
+
+    _editUser(user) {
+        this.setState({ openEditUserModal: true, userToEdit: user })
+    }
+
     _removeUser(user) { 
         this.setState({ userToRemove: user }, () => {
             this.setState({ removeUserAlert: true })
         })      
-    }
-
-    _createNewUser(event) {
-        this.setState({ openNewUserModal: true })
-    }
+    }    
 
     _confirmRemoveUser(user) {
         this.props.appNotify({
@@ -59,7 +64,7 @@ class UsersPage extends Component {
 
     _renderUsersData() {
         return this.state.users.map(user => {
-            return <UserListItem removeUser={ this._removeUser.bind(this) } user={ user } key={uniqid()} />;
+            return <UserListItem removeUser={ this._removeUser.bind(this) } editUser={ this._editUser.bind(this) } user={ user } key={uniqid()} />;
         });
     }
 
@@ -68,10 +73,10 @@ class UsersPage extends Component {
             <Table className="table" style={{ minWidth: 300 }}>
                 <TableHead>
                     <TableRow style={{ color: '#000' }}>
-                        <TableCell>NAME</TableCell>
-                        <TableCell className="company">COMPANY</TableCell>
-                        <TableCell className="email">EMAIL</TableCell>
-                        <TableCell className="phone">PHONE</TableCell>
+                        <TableCell>{I18n.t('pages.users.usersList.name')}</TableCell>
+                        <TableCell className="company">{I18n.t('pages.users.usersList.company')}</TableCell>
+                        <TableCell className="email">{I18n.t('pages.users.usersList.email')}</TableCell>
+                        <TableCell className="phone">{I18n.t('pages.users.usersList.phone')}</TableCell>
                     </TableRow>
                 </TableHead>
 
@@ -101,7 +106,8 @@ class UsersPage extends Component {
                     <Grid item xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
                         <Pagination onPageChange={ this._onPageChange.bind(this) } currentPage={ this.state.currentPage } totalPages={ this.state.totalPages } />
                     </Grid>
-                </Grid>                 
+                </Grid>   
+
                 <GenericDialog transportData={ this.state.userToRemove } 
                     open={ this.state.removeUserAlert } 
                     title="Remove user" 
@@ -112,6 +118,10 @@ class UsersPage extends Component {
                     acceptText="Agree"
                     />
                 <NewUserModal open={ this.state.openNewUserModal } onReject={ e => this.setState({ openNewUserModal: false }) } />
+                <EditUserModal 
+                    open={ this.state.openEditUserModal } 
+                    onReject={ e => this.setState({ openEditUserModal: false }) }
+                    user={ this.state.userToEdit } />                
             </GenericPage>
         )
     }

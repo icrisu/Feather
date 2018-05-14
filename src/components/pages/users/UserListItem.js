@@ -10,6 +10,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import EditIcon from '@material-ui/icons/Edit';
 import PhoneIcon from '@material-ui/icons/Phone';
 import DeleteIcon from '@material-ui/icons/Delete';
+import LinkIcon from '@material-ui/icons/Link';
+import { I18n } from 'react-redux-i18n';
 
 const styles = theme => ({
     list: {
@@ -37,6 +39,8 @@ class UserListItem extends PureComponent {
         this.setState({ open: false });
         if (action === 'remove') {
             this.props.removeUser(this.props.user);
+        } else if (action === 'edit') {
+            this.props.editUser(this.props.user);
         }
     }
 
@@ -53,17 +57,21 @@ class UserListItem extends PureComponent {
                 </IconButton>
             }>    
             <List component="nav" className={classes.list}>
-                <ListItem component={Link} to={ this.props.user.link } disableGutters button onClick={ this._popoverClose }>
+                <ListItem component={Link} to={ this.props.user.link } disableGutters button>
+                    <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><LinkIcon /></ListItemIcon>
+                    <ListItemText classes={{ primary: classes.listItem }} primary={I18n.t('pages.users.usersList.userProfile')} />
+                </ListItem>               
+                <ListItem onClick={ e => this._actionClick('edit')} disableGutters button>
                     <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><EditIcon /></ListItemIcon>
-                    <ListItemText classes={{ primary: classes.listItem }} primary='Edit user' />
-                </ListItem>            
+                    <ListItemText classes={{ primary: classes.listItem }} primary={I18n.t('pages.users.usersList.editUser')} />
+                </ListItem>   
                 <ListItem component={Link} to={`#`} disableGutters button onClick={ this._popoverClose }>
                     <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><PhoneIcon /></ListItemIcon>
-                    <ListItemText classes={{ primary: classes.listItem }} primary='Call user' />
+                    <ListItemText classes={{ primary: classes.listItem }} primary={I18n.t('pages.users.usersList.callUser')} />
                 </ListItem>            
                 <ListItem onClick={ e => this._actionClick('remove') } disableGutters button>
                     <ListItemIcon style={{ margin: 0, marginLeft: 15 }}><DeleteIcon /></ListItemIcon>
-                    <ListItemText classes={{ primary: classes.listItem }} primary='Delete user' />
+                    <ListItemText classes={{ primary: classes.listItem }} primary={I18n.t('pages.users.usersList.deleteUser')} />
                 </ListItem>
             </List>
             </PopOverHelper>            
@@ -101,7 +109,8 @@ class UserListItem extends PureComponent {
 UserListItem.porpTypes = {
     classes: PropTypes.object.isRequired,
     user: PropTypes.object,
-    removeUser: PropTypes.func
+    removeUser: PropTypes.func,
+    editUser: PropTypes.func
 }
 
 export default withStyles(styles)(UserListItem);

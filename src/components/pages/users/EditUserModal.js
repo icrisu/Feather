@@ -1,28 +1,36 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addUser } from '../../../actions';
+import { editUser } from '../../../actions';
 import GenericDialog from '../../common/dialogs/GenericDialog';
 import Grid from 'material-ui/Grid';
 import TextField from 'material-ui/TextField';
 import { appNotify } from '../../../actions/ui-interact';
 import { I18n } from 'react-redux-i18n';
 
-class NewUserModal extends PureComponent {
+class EditUserModal extends PureComponent {
 
     constructor(props) {
         super(props);
         this.dialog = React.createRef();   
         this.state = {
             user: {
-                first_name: '', 
-                last_name: '',            
+                first_name: '',
+                last_name: '',
                 company: '',
                 email: '',
                 phone: '',
                 link: '/users/kara-thrace', // dummy link for theme functionality
             },
             first_name_Error: false, last_name_Error: false
+        }
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.user) {
+            return { user: nextProps.user }
+        } else {
+            return null;
         }
     }
 
@@ -36,13 +44,13 @@ class NewUserModal extends PureComponent {
         }
     }
     
-    _confirmAddUser() {
+    _confirmEditUser() {
         if (!this.dialog) {
             return;
         }
-        this.props.addUser(this.state.user);
+        this.props.editUser(this.state.user);
         this.props.appNotify({
-            message:  `${I18n.t('pages.users.dialogs.user')} "${this.state.user.first_name} ${this.state.user.last_name}" ${I18n.t('pages.users.dialogs.added')}`, 
+            message:  `${I18n.t('pages.users.dialogs.user')} "${this.state.user.first_name} ${this.state.user.last_name}" ${I18n.t('pages.users.dialogs.edited')}`, 
             open: true
         });        
         this.dialog.current._handleClose();
@@ -110,10 +118,10 @@ class NewUserModal extends PureComponent {
     render() {
         const acceptIsDisabled = this.state.first_name_Error || this.state.first_name_Error || this.state.user.first_name === '' || this.state.user.last_name === '' ? true : false;
         const newProps = { 
-            ...this.props, title: I18n.t('pages.users.dialogs.createUserTitle'),
-            onAccept: this._confirmAddUser.bind(this),
+            ...this.props, title: I18n.t('pages.users.dialogs.editUserTitle'),
+            onAccept: this._confirmEditUser.bind(this),
             acceptIsDisabled,
-            acceptText: I18n.t('pages.users.dialogs.addUser'),
+            acceptText: I18n.t('dialogs.accept'),
             rejectText: I18n.t('dialogs.cancel')
         }
         return(
@@ -124,10 +132,12 @@ class NewUserModal extends PureComponent {
     }
 }
 
-NewUserModal.defaultProps = {
+EditUserModal.defaultProps = {
     open: PropTypes.bool,
-    addUser: PropTypes.func.isRequired,
-    appNotify: PropTypes.func
+    editUser: PropTypes.func.isRequired,
+    appNotify: PropTypes.func,
+    user: PropTypes.object.isRequired,
+    confirmEditUser: PropTypes.func.isRequired
 }
 
-export default connect(null, { addUser, appNotify })(NewUserModal);
+export default connect(null, { editUser, appNotify })(EditUserModal);

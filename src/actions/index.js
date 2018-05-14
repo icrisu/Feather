@@ -1,5 +1,5 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
-    ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER } from './types';
+    ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -219,6 +219,15 @@ export const addUser = (user, cb) => {
     user._id = uniqid();
     return {
         type: ADD_USER,
+        payload: user
+    }
+}
+
+// edit user
+export const editUser = (user, cb) => {
+    // call API to edit user
+    return {
+        type: EDIT_USER,
         payload: user
     }
 }

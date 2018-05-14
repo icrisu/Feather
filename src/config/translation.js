@@ -58,8 +58,35 @@ export const TRANSLATION_DATA = {
                 bestSellingItems: 'Best selling items'
             },
             users: {
-                title: 'Platform users'
+                title: 'Platform users',           
+                usersList: {
+                    name: 'NAME',
+                    company: 'COMPANY',
+                    email: 'EMAIL',
+                    phone: 'PHONE',
+                    userProfile: 'User profile',
+                    editUser: 'Edit user',
+                    callUser: 'Call user',
+                    deleteUser: 'Delete user'
+                },
+                dialogs: {
+                    createUserTitle: 'Create new user',
+                    editUserTitle: 'Edit user',
+                    user: 'User',
+                    added: 'has been added',
+                    edited: 'has been updated',
+                    firstName: 'First name',
+                    lastName: 'Last name',
+                    email: 'Email',
+                    company: 'Company',
+                    phone: 'Phone',
+                    addUser: 'Add user'
+                }
             }
+        },
+        modals: {
+            accept: 'Save',
+            cancel: 'Cancel'
         }
     },    
     US: {
