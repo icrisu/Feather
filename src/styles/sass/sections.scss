@@ -141,5 +141,37 @@
                 color: #9a9a9a;
             }
         }
+        .rating-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+            .vertical-separator {
+                width: 1px;
+                background: #cfd8dc;
+                height: 24px;
+                padding: 0px;
+                margin: 0px 10px;
+            }
+            .likes {
+                font-size: 15px;
+            }
+            > span, > * {
+                padding: 0px 5px;
+            }
+        }
+        .contact-block {
+            margin: 25px 0px;
+            .label {
+                color: #9a9a9a; font-size: 14px;
+                margin-bottom: 3px;
+            }
+            .contact-value {
+                font-size: 15px;
+            }
+        }
+        .divider {
+            background: rgba(207, 216, 220, .5);
+        }
     }
 }
