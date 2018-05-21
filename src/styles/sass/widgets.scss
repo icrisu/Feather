@@ -310,3 +310,18 @@
 .activity-info-card:hover {
     background: rgba(242, 242, 242, .25);
 }
+
+// timeline events
+.timeline-events-ui {
+    .timeline-events {
+        a {
+            text-decoration: none;
+        }
+    }
+    .load-more {
+        margin: 20px 0px;
+        display: flex;
+        justify-content: center; align-items: center;
+    }
+}
+

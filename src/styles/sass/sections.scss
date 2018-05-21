@@ -168,10 +168,15 @@
             }
             .contact-value {
                 font-size: 15px;
+                line-height: 142%;
             }
         }
         .divider {
             background: rgba(207, 216, 220, .5);
+        }
+        .controls {
+            display: flex;
+            justify-content: center; align-items: center;
         }
     }
 }

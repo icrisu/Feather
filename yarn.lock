@@ -6135,6 +6135,12 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-event-timeline@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/react-event-timeline/-/react-event-timeline-1.5.2.tgz#cb4ffab71c4e147196a7d0595c6a77a340447f7d"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-flags-select@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/react-flags-select/-/react-flags-select-1.1.7.tgz#09425453af8baf7d85ae40bd1e1f1aed83efba7c"

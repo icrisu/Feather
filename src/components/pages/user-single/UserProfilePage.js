@@ -6,6 +6,7 @@ import GenericPage from '../base/GenericPage';
 import CustomPaper from '../../common/paper/CustomPaper';
 import ProfileCard from './ProfileCard';
 import StorageService from '../../../services/StorageService';
+import TimelineEvents from '../../common/timeline/TimelineEvents';
 
 class UserProfilePage extends PureComponent {
 
@@ -27,8 +28,8 @@ class UserProfilePage extends PureComponent {
                         </CustomPaper>
                     </Grid>
                     <Grid item xs={12} sm={12} md={8}>
-                        <CustomPaper>
-                            test
+                        <CustomPaper title="Recent activity">
+                            <TimelineEvents />
                         </CustomPaper>
                     </Grid>                                          
                 </Grid>

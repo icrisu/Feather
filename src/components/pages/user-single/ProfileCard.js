@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import StorageService from '../../../services/StorageService';
 import Typography from '@material-ui/core/Typography';
-import ReactStars from 'react-stars'
+import ReactStars from 'react-stars';
+import Button from '@material-ui/core/Button';
+import CallIcon from '@material-ui/icons/Call';
+import EmailIcon from '@material-ui/icons/Email';
 
 class ProfileCard extends PureComponent {
 
@@ -27,7 +30,21 @@ class ProfileCard extends PureComponent {
                     <div className="vertical-separator"></div>
                     <span className="likes"><i className="far fa-thumbs-up"></i> 525</span>
                 </div>
+
                 <div className="custom-divider divider"></div>
+
+                <div className="controls">
+                    <Button variant="raised" color="secondary" size="medium" style={{ margin: '0 7px' }}>
+                        <CallIcon style={{ marginRight: 10, fontSize: 18 }} />
+                        Call
+                    </Button>
+                    <Button variant="raised" size="medium" style={{ margin: '0 7px' }}>
+                        <EmailIcon style={{ marginRight: 10, fontSize: 18 }} />
+                        Email
+                    </Button>                                        
+                </div>
+
+                <div className="custom-divider divider"></div>                
                 
                 <div className="contact-block">
                     <div className="label">Email address</div>
