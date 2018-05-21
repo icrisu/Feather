@@ -6,7 +6,8 @@ import Fade from 'material-ui/transitions/Fade';
 class GenericPage extends PureComponent {
 
     static defaultProps = {
-        showLoading: false
+        showLoading: false,
+        pageContentClasses: ''
     }
 
     constructor(props) {
@@ -37,11 +38,12 @@ class GenericPage extends PureComponent {
     }
 
     render() {
+        const { pageContentClasses } = this.props;
         return(
             <div className="page-content" ref={this.pageContentRef}>
                 { this._renderPageHeaderArea() } 
                 <Fade in={ true } timeout={ 500 }>
-                    <div className="content users-page-content">
+                    <div className={`content ${pageContentClasses}`}>
                         <Loader showloader={ this.props.showLoading } pageloader />
                         { this.props.children }
                     </div>
@@ -65,7 +67,8 @@ GenericPage.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]),    
-    showLoading: PropTypes.bool
+    showLoading: PropTypes.bool,
+    pageContentClasses: PropTypes.string
 }
 
 

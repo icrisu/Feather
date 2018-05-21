@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Snackbar from 'material-ui/Snackbar';
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 class SimpleNotification extends PureComponent {

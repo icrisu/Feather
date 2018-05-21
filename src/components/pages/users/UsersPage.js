@@ -89,7 +89,7 @@ class UsersPage extends Component {
 
     render() {        
         return(
-            <GenericPage title={I18n.t('pages.users.title')}>
+            <GenericPage title={I18n.t('pages.users.title')} pageContentClasses="users-page-content">
                 <Grid container spacing={24}>
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div style={{ display: 'flex' }}>

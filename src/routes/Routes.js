@@ -3,6 +3,7 @@ import _ from 'lodash';
 export const ROUTES = {
     signin: { path: '/signin', isPublic: true },
     signup: { path: '/signup', isPublic: true },
+    singleUser: { path: '/users/:_id' },
     users: { path: '/users' },
     home: { path: '/' },
 }
