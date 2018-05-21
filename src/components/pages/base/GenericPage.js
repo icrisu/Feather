@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Loader from '../../common/misc/Loader';
-import Fade from 'material-ui/transitions/Fade';
+import Fade from '@material-ui/core/Fade';
 
 class GenericPage extends PureComponent {
 

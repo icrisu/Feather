@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 
 class CustomPaper extends PureComponent {
 

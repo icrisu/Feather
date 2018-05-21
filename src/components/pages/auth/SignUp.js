@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { registerUser } from '../../../actions';
 import CustomInput from '../../common/custom-form-elements/CustomInput';
-import Button from 'material-ui/Button';
-import { LinearProgress } from 'material-ui/Progress';
+import Button from '@material-ui/core/Button';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import { I18n } from 'react-redux-i18n';
 
 class SignUp extends Component {

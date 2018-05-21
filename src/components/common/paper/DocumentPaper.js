@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import InboxIcon from '@material-ui/icons/DateRange';
 
 const MAX_CHARS = 100;

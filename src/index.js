@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
-import CssBaseline from 'material-ui/CssBaseline';
-import { MuiThemeProvider } from 'material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import { Fragment } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { loadTranslations, syncTranslationWithStore } from 'react-redux-i18n';
@@ -19,6 +19,8 @@ import reducers from './reducers';
 import './styles/css/index.css';
 
 import Main from './components/main/Main';
+
+
 const WithAuthentication = RequireAuth(Main);
 
 // ONLY USED FOR DEMOS ( remove in production )

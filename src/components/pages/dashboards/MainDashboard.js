@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { getExpences } from '../../../actions';
 import GenericPage from '../base/GenericPage';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import QuickDashInfo from '../../common/info/QuickDashInfo';
 import ChannelSalesBar from '../../common/charts/ChannelSalesBar';

@@ -6,10 +6,10 @@ import PopOverHelper from '../utils/PopOverHelper';
 import { Link } from 'react-router-dom';
 import { APP_BAR_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import CustomBadge from '../widgets/CustomBadge';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import _ from 'lodash';
 import { getNotifications } from '../../actions';
 

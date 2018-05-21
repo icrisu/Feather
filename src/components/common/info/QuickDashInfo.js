@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import TrendingUp from '@material-ui/icons/TrendingUp';
 import TrendingFlat from '@material-ui/icons/TrendingFlat';
 import TrendingDown from '@material-ui/icons/TrendingDown';

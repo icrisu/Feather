@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import CustomPaper from '../../common/paper/CustomPaper';
 import ActivityInfoCard from '../../common/info/ActivityInfoCard';
 

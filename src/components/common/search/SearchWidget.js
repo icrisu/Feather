@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import enhanceWithClickOutside from 'react-click-outside';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import { APP_BAR_COLORS } from '../../../theme/Customize';
 import _ from 'lodash';
 import safe from 'undefsafe';

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { I18n } from 'react-redux-i18n';
-import Drawer from 'material-ui/Drawer';
+import Drawer from '@material-ui/core/Drawer';
 import { toggleMainSidebar } from '../../../actions/ui-interact';
 import SwipeableViews from 'react-swipeable-views';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import AppBar from 'material-ui/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import AppBar from '@material-ui/core/AppBar';
 import SidebarActivity from './SidebarActivity';
 import SidebarSales from './SidebarSales';
 

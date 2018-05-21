@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import shortid from 'shortid';
 import Chart from 'chart.js';
-import { CircularProgress } from 'material-ui/Progress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { WIDGET_LOADER_COLOR } from '../../../theme/Customize';
 
 class BaseChart extends PureComponent {

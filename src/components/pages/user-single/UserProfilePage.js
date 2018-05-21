@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import GenericPage from '../base/GenericPage';
 import CustomPaper from '../../common/paper/CustomPaper';
 import ProfileCard from './ProfileCard';

@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { submenuOpened } from '../../../actions/ui-interact';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import { withStyles } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { MAIN_MENU_COLORS } from '../../../theme/Customize';

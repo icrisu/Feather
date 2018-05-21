@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addUser } from '../../../actions';
 import GenericDialog from '../../common/dialogs/GenericDialog';
-import Grid from 'material-ui/Grid';
-import TextField from 'material-ui/TextField';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 import { appNotify } from '../../../actions/ui-interact';
 import { I18n } from 'react-redux-i18n';
 

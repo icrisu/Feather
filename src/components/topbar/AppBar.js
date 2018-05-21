@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { toggleMainSidebar } from '../../actions/ui-interact';
 import { search } from '../../actions';
 import { APP_BAR_COLORS } from '../../theme/Customize';
 import { appTransitions } from '../main/transitions';
 import classNames from 'classnames';
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CustomBadge from '../widgets/CustomBadge';
 import ListIcon from '@material-ui/icons/List';

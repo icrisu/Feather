@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinearProgress } from 'material-ui/Progress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 export default props => {
     return <LinearProgress className="page-loader" />

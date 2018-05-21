@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from 'material-ui/List';
+import List from '@material-ui/core/List';
 import MenuLink from './MenuLink';
 import Submenu from './Submenu';
 import { I18n } from 'react-redux-i18n';

@@ -1,4 +1,4 @@
-import { createMuiTheme } from 'material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 // override theme 
 // more info @ https://material-ui-next.com/customization/overrides/

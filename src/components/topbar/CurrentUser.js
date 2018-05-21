@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PopOverHelper from '../utils/PopOverHelper';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import Typography from 'material-ui/Typography';
-import List, { ListItem, ListItemText }  from 'material-ui/List';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
 import { Link } from 'react-router-dom';
 import { MAIN_MENU_COLORS } from '../../theme/Customize';
 import { I18n } from 'react-redux-i18n';

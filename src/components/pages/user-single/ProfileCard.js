@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import StorageService from '../../../services/StorageService';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import ReactStars from 'react-stars'
 
 class ProfileCard extends PureComponent {

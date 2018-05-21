@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CircularProgress } from 'material-ui/Progress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { WIDGET_LOADER_COLOR } from '../../../theme/Customize';
 import HorizontalListItem from './HorizontalListItem';
 import { getRecentBalance } from '../../../actions';

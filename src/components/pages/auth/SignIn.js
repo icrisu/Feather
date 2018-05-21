@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { authenticate } from '../../../actions';
 import { Link } from 'react-router-dom';
 import CustomInput from '../../common/custom-form-elements/CustomInput';
-import Button from 'material-ui/Button';
-import Checkbox from 'material-ui/Checkbox';
-import { LinearProgress } from 'material-ui/Progress';
-import { FormControlLabel } from 'material-ui/Form';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { ROUTES } from '../../../routes/Routes';
 import { I18n } from 'react-redux-i18n';
 

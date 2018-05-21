@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TableCell, TableRow } from 'material-ui/Table';
-import IconButton from 'material-ui/IconButton';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import IconButton from '@material-ui/core/IconButton';
 import PopOverHelper from '../../utils/PopOverHelper';
-import List, { ListItem, ListItemText, ListItemIcon }  from 'material-ui/List';
-import { withStyles } from 'material-ui/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import EditIcon from '@material-ui/icons/Edit';
