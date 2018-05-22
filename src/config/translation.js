@@ -3,6 +3,8 @@ export const TRANSLATION_DATA = {
         mainMenu: {
             dashboard: 'Dashboard',
             users: 'Users',
+            platformUsers: 'Platform users',
+            singleUser: 'Single user'
         },
         topbar: {
             currentUser: {

@@ -24,7 +24,10 @@ class MainMenuItems extends Component {
             <nav className="main-navigation-ui">
                 <List component="nav">
                     <MenuLink to={ ROUTES.home.path } label={I18n.t('mainMenu.dashboard')} Icon={ <DashboardIcon /> } />
-                    <MenuLink to={ ROUTES.users.path } label={I18n.t('mainMenu.users')} Icon={ <span className="menu-icon"><i className="fas fa-user-friends"></i></span> } />                
+                    <Submenu label={I18n.t('mainMenu.users')} Icon={ <span className="menu-icon"><i className="fas fa-user-friends"></i></span> }>
+                        <MenuLink to={ROUTES.users.path} label={I18n.t('mainMenu.platformUsers')} />
+                        <MenuLink to={`${ROUTES.users.path}/kara_trace`} label={I18n.t('mainMenu.singleUser')} />
+                    </Submenu> 
 
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Activity timeline" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="My account" />
