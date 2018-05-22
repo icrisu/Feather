@@ -1,0 +1,32 @@
+{
+    "hasMore": true,
+    "events": [
+        {
+            "createdAt": "2018-09-12 10:06 AM",
+            "title": "Powerpoint presentation added",
+            "icon": "<i class=\"fas fa-file-powerpoint\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div><p><a href=\"/\">Read more</a></p>"
+        },
+        {
+            "createdAt": "2018-09-12 09:00 AM",
+            "title": "Docker training available",
+            "iconColor": "#ee559f",
+            "icon": "<i class=\"fab fa-docker\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a target=\"_blank\" href=\"http://google.com\" target=\"_blank\">External link</a></p>"
+        },
+        {
+            "createdAt": "in 3 minutes",
+            "title": "Upcoming daily call",
+            "iconColor": "#33c489",
+            "icon": "<i class=\"fas fa-phone-square\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry...<p><a href=\"/\">Attend meeting</a></p>"
+        },
+        {
+            "createdAt": "in 40 minutes",
+            "title": "Upcoming react meetup",
+            "iconColor": "#33c489",
+            "icon": "<i class=\"fab fa-meetup\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a href=\"/\">Attend meeting</a></p>"
+        }                         
+    ]
+}

@@ -243,11 +243,20 @@ export const removeUser = (userId, cb) => {
 
 // retrive user events 
 export const retriveUserEvents = (page = 1, userId = null) => {
-    console.log('PAGE', page)
     return new Promise((resolve, reject) => {
         API.getInstance().getUserEvents(page, userId)
         .then(data => {
             resolve(data.data)
         });        
+    })
+}
+
+// retrive community events 
+export const retriveCommunityEvents = (page = 1, resourceId = null) => {
+    return new Promise((resolve, reject) => {
+        API.getInstance().getCommunityEvents(page, resourceId)
+        .then(data => {
+            resolve(data.data)
+        });
     })
 }

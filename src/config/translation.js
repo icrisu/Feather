@@ -4,7 +4,8 @@ export const TRANSLATION_DATA = {
             dashboard: 'Dashboard',
             users: 'Users',
             platformUsers: 'Platform users',
-            singleUser: 'Single user'
+            singleUser: 'Single user',
+            eventsTimeline: 'Activity timeline'
         },
         topbar: {
             currentUser: {
@@ -84,6 +85,9 @@ export const TRANSLATION_DATA = {
                     phone: 'Phone',
                     addUser: 'Add user'
                 }
+            },
+            events: {
+                title: 'Events timeline'
             }
         },
         modals: {

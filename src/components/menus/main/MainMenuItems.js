@@ -7,6 +7,7 @@ import { ROUTES } from '../../../routes/Routes';
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import EventIcon from '@material-ui/icons/Event';
 
 class MainMenuItems extends Component {
 
@@ -28,8 +29,8 @@ class MainMenuItems extends Component {
                         <MenuLink to={ROUTES.users.path} label={I18n.t('mainMenu.platformUsers')} />
                         <MenuLink to={`${ROUTES.users.path}/kara_trace`} label={I18n.t('mainMenu.singleUser')} />
                     </Submenu> 
+                    <MenuLink Icon={ <EventIcon /> } to={ROUTES.eventsTimeline.path} label={I18n.t('mainMenu.eventsTimeline')} />
 
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Activity timeline" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="My account" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Scrum app" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Users" />

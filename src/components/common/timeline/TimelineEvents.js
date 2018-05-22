@@ -12,7 +12,8 @@ const styles = {
     },
     contentStyle: {
         fontWeight: 400, fontSize: 14, background: '#f8f9fd'
-    }
+    },
+    bubbleStyle: { background: '#FFF' }
 };
 
 class TimelineEvents extends PureComponent {
@@ -71,10 +72,10 @@ class TimelineEvents extends PureComponent {
                     <TimelineEvent title={ event.title || '' } key={ uniqid() }
                         titleStyle={ styles.eventTitle }
                         contentStyle={ styles.contentStyle }
+                        bubbleStyle={ styles.bubbleStyle }
                         createdAt={ event.createdAt }
                         iconColor={ event.iconColor || this.state.defaultColor }
                         icon={ <span dangerouslySetInnerHTML={{ __html: event.icon ? event.icon : this.state.defaultIcon }}></span> }
-                        
                     >
                         <div onClick={ this._captureClicks.bind(this) } dangerouslySetInnerHTML={{ __html: event.html }} />
                     </TimelineEvent>                

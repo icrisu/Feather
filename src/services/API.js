@@ -103,6 +103,11 @@ class API {
         return axios.get(`${API_ROOT}/user_events${page}.json`);
     }
 
+    // fake community events API response
+    getCommunityEvents(page = 1, userId = null) {
+        return axios.get(`${API_ROOT}/community_events${page}.json`);
+    }    
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

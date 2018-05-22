@@ -5,6 +5,7 @@ export const ROUTES = {
     signup: { path: '/signup', isPublic: true },
     singleUser: { path: '/users/:_id' },
     users: { path: '/users' },
+    eventsTimeline: { path: '/events-timeline' },
     home: { path: '/' },
 }
 
