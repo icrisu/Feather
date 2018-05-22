@@ -108,6 +108,14 @@ class API {
         return axios.get(`${API_ROOT}/community_events${page}.json`);
     }    
 
+    searchInvoice(term) {
+        return axios.get(`${API_ROOT}/search-invoice-results.html`);
+    }
+    
+    getInvoices(page = 1) {
+        return axios.get(`${API_ROOT}/invoices_page${page}.json`);
+    }        
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

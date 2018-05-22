@@ -6,6 +6,8 @@ export const ROUTES = {
     singleUser: { path: '/users/:_id' },
     users: { path: '/users' },
     eventsTimeline: { path: '/events-timeline' },
+    invoices: { path: '/invoices' },
+    singleInvoice: { path: '/invoices/:_id' },
     home: { path: '/' },
 }
 

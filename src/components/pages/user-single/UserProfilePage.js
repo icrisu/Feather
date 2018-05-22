@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import GenericPage from '../base/GenericPage';
 import CustomPaper from '../../common/paper/CustomPaper';

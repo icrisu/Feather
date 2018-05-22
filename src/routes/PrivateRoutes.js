@@ -7,6 +7,8 @@ const MainDashboard = AsyncLoader.load({ importPath: import('../components/pages
 const UsersPage = AsyncLoader.load({ importPath: import('../components/pages/users/UsersPage') });
 const UserProfilePage = AsyncLoader.load({ importPath: import('../components/pages/user-single/UserProfilePage') });
 const EventsTimeline = AsyncLoader.load({ importPath: import('../components/pages/events/EventsTimeline') });
+const Invoices = AsyncLoader.load({ importPath: import('../components/pages/invoices/Invoices') });
+
 
 
 export default props => {
@@ -15,6 +17,7 @@ export default props => {
             <Route path={ ROUTES.singleUser.path } component={ UserProfilePage } />
             <Route path={ ROUTES.users.path } component={ UsersPage } />
             <Route path={ ROUTES.eventsTimeline.path } component={ EventsTimeline } />
+            <Route path={ ROUTES.invoices.path } component={ Invoices } />
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />

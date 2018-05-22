@@ -1,5 +1,6 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
-    ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER } from './types';
+    ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER,
+    INVOICE_SEARCH_RESULTS, INVOICES } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -259,4 +260,39 @@ export const retriveCommunityEvents = (page = 1, resourceId = null) => {
             resolve(data.data)
         });
     })
+}
+
+
+// get invoices
+export const getInvoices = (page, cb) => {
+    return (dispatch, getState) => {
+        API.getInstance().getInvoices(page)
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }         
+            dispatch({
+                type: INVOICES,
+                payload: data.data
+            })        
+        });
+    }
+}
+
+// you can create multiple search actions
+// pass a search action to SearchWidget
+export const searchInvoice = (term, cb) => {
+	return (dispatch, getState) => {   
+        API.getInstance().searchInvoice()
+        .then(data => {
+            if (_.isFunction(cb)) {
+                cb(data.data);
+            }
+            dispatch({
+                type: INVOICE_SEARCH_RESULTS,
+                payload: data.data	
+            })        
+        })
+        .catch(err => { console.log(err) });
+    }
 }

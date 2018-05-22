@@ -101,7 +101,7 @@ class UsersPage extends Component {
                             <SearchWidget className="search" searchAction={ this.props.searchUser } placeholder="Search user..." />
                         </div>
                         <Button style={{ textTransform: 'initial' }}>Export (xls)</Button>
-                    </Grid>                    
+                    </Grid> 
                     <Grid item xs={12} sm={12} md={12}>
                         { this._renderUsers() }
                     </Grid>                      

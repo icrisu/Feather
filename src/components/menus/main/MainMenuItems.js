@@ -30,6 +30,11 @@ class MainMenuItems extends Component {
                         <MenuLink to={`${ROUTES.users.path}/kara_trace`} label={I18n.t('mainMenu.singleUser')} />
                     </Submenu> 
                     <MenuLink Icon={ <EventIcon /> } to={ROUTES.eventsTimeline.path} label={I18n.t('mainMenu.eventsTimeline')} />
+                    
+                    <Submenu label={I18n.t('mainMenu.invoices')} Icon={ <span className="menu-icon"><i className="fas fa-file-alt"></i></span> }>
+                        <MenuLink to={ROUTES.invoices.path} label={I18n.t('mainMenu.allInvoices')} />
+                        <MenuLink to={`${ROUTES.invoices.path}/test_invoice`} label={I18n.t('mainMenu.singleInvoice')} />
+                    </Submenu>                     
 
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="My account" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Scrum app" />

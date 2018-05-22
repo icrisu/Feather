@@ -5,7 +5,10 @@ export const TRANSLATION_DATA = {
             users: 'Users',
             platformUsers: 'Platform users',
             singleUser: 'Single user',
-            eventsTimeline: 'Activity timeline'
+            eventsTimeline: 'Activity timeline',
+            invoices: 'Invoices',
+            allInvoices: 'All invoices',
+            singleInvoice: 'Single invoice'
         },
         topbar: {
             currentUser: {
@@ -88,6 +91,9 @@ export const TRANSLATION_DATA = {
             },
             events: {
                 title: 'Events timeline'
+            },
+            invoices: {
+                title: 'Invoices'
             }
         },
         modals: {
