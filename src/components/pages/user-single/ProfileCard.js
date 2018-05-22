@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import StorageService from '../../../services/StorageService';
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import ReactStars from 'react-stars';
 import Button from '@material-ui/core/Button';
@@ -10,11 +10,17 @@ class ProfileCard extends PureComponent {
 
     constructor(props) {
         super(props);
-        const { firstName, lastName, thumb } = StorageService.getUser();
         this.state = {
-            user: { firstName, lastName, thumb }
-        }          
+            user: {}
+        } 
     }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+            user: nextProps.user
+        }
+    }
+
     render() {
         return(
             <div className="profile-card">
@@ -68,6 +74,10 @@ class ProfileCard extends PureComponent {
             </div>
         )
     }
+}
+
+ProfileCard.propTypes = {
+    user: PropTypes.object.isRequired
 }
 
 export default ProfileCard;

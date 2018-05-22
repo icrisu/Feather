@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
 import Button from '@material-ui/core/Button';
+import uniqid from 'uniqid';
+import _ from 'lodash';
 
 const styles = {
     eventTitle: {
@@ -13,35 +16,81 @@ const styles = {
 };
 
 class TimelineEvents extends PureComponent {
+
+    static defaultProps = {
+        loadMoreLabel: 'Load more'
+    }
     
+    constructor(props) {
+        super(props);
+        this.state = { 
+            events: [],
+            defaultColor: '#8450fb',
+            defaultIcon: '<i class="far fa-calendar-alt"></i>',
+            currentPage: 1,
+            hasMore: true,
+            isLoading: false
+        };
+    }
+
+    componentDidMount() {
+        this._loadEvents();
+    }
+
+    _loadMore() {
+        if (this.state.hasMore === true) {
+            this.setState({ currentPage: this.state.currentPage + 1 }, () => {
+                this._loadEvents();
+            })
+        }
+    }
+
+    _loadEvents() {
+        this.setState({ isLoading: true }, () => {
+            this.props.retriveEvents(this.state.currentPage, this.props.resourceId)
+            .then(result => {
+                this.setState({ hasMore: result.hasMore, events: [ ...this.state.events, ...result.events ], isLoading: false });
+            })
+        })
+    }
+
+    // route internal clicks from HTML
+    _captureClicks(e) {        
+        const href = e.target.getAttribute('href');
+        const target = e.target.getAttribute('target');
+        if (_.isNil(target) && !_.isNil(href)) {
+            e.preventDefault();
+            this.props.history.push(href);
+        }
+        // default click behavior
+    }    
+
+    _renderEvents() {
+        return this.state.events.map(event => {
+            return(
+                    <TimelineEvent title={ event.title || '' } key={ uniqid() }
+                        titleStyle={ styles.eventTitle }
+                        contentStyle={ styles.contentStyle }
+                        createdAt={ event.createdAt }
+                        iconColor={ event.iconColor || this.state.defaultColor }
+                        icon={ <span dangerouslySetInnerHTML={{ __html: event.icon ? event.icon : this.state.defaultIcon }}></span> }
+                        
+                    >
+                        <div onClick={ this._captureClicks.bind(this) } dangerouslySetInnerHTML={{ __html: event.html }} />
+                    </TimelineEvent>                
+            )
+        })
+    }
+
     render() {
         return(
             <div className="timeline-events-ui">
-                <Timeline className="timeline-events" style={{ ':first-child': { display: 'none' } }}>
-                    <TimelineEvent title="John Doe sent a SMS"
-                        titleStyle={ styles.eventTitle }
-                        contentStyle={ styles.contentStyle }
-                        createdAt="2018-09-12 10:06 PM"
-                        iconColor="#8450fb"
-                        icon={<i className="far fa-calendar-alt"></i>}
-                    >
-                        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged...</div>
-                        <p><a href="#">Read more</a></p>
-                    </TimelineEvent>
-                    <TimelineEvent title="Kara Trace attended to World Conf meeting"
-                        titleStyle={ styles.eventTitle }
-                        contentStyle={ styles.contentStyle }
-                        createdAt="2018-09-12 10:06 AM"
-                        iconColor="#8450fb"
-                        icon={<i className="far fa-calendar-alt"></i>}
-                    >
-                        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-                        <p><a href="#">Read more</a></p>
-                    </TimelineEvent>                
+                <Timeline className="timeline-events">
+                    { this._renderEvents() }
                 </Timeline>
-                <div className="load-more">
-                    <Button variant="raised" color="primary" size="medium">
-                        Load more
+                <div className="load-more" style={{ display: this.state.hasMore ? 'flex' : 'none' }}>
+                    <Button disabled={ this.state.isLoading } onClick={ this._loadMore.bind(this) } variant="raised" color="primary" size="medium">
+                        { this.props.loadMoreLabel }
                     </Button>
                 </div>                
             </div>
@@ -49,4 +98,10 @@ class TimelineEvents extends PureComponent {
     }
 }
 
-export default TimelineEvents;
+TimelineEvents.propTypes = {
+    retriveEvents: PropTypes.func.isRequired,
+    resourceId: PropTypes.number,
+    loadMoreLabel: PropTypes.string
+}
+
+export default withRouter(TimelineEvents);

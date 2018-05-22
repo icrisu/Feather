@@ -1,0 +1,23 @@
+{
+    "hasMore": true,
+    "events": [
+        {
+            "createdAt": "2018-09-12 10:06 AM",
+            "title": "Kara Trace joined World Conf meeting",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged...</div><p><a href=\"/\">Read more</a></p>"
+        },
+        {
+            "createdAt": "2018-09-12 09:00 AM",
+            "title": "New legal document added by Kara Trace",
+            "iconColor": "#e769a6",
+            "icon": "<i class=\"far fa-file-alt\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a target=\"_blank\" href=\"http://google.com\" target=\"_blank\">External link</a></p>"
+        },
+        {
+            "createdAt": "2018-09-12 09:00 AM",
+            "title": "GraphQL training by Kara Trace",
+            "icon": "<i class=\"fas fa-graduation-cap\"></i>",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a target=\"_blank\" href=\"/\">Attend training</a></p>"
+        }                  
+    ]
+}

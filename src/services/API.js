@@ -98,6 +98,11 @@ class API {
         return axios.get(`${API_ROOT}/users_page${page}.json`);
     }    
 
+    // fake user events API response
+    getUserEvents(page = 1, userId = null) {
+        return axios.get(`${API_ROOT}/user_events${page}.json`);
+    }
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

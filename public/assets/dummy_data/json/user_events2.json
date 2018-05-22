@@ -1,0 +1,15 @@
+{
+    "hasMore": false,
+    "events": [
+        {
+            "createdAt": "2018-09-12 09:00 AM",
+            "title": "Some new event",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a target=\"_blank\" href=\"/\">Read more</a></p>"
+        },
+        {
+            "createdAt": "2018-09-12 09:00 AM",
+            "title": "Some old event",
+            "html": "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<p><a target=\"_blank\" href=\"/\">Read more</a></p>"
+        }  
+    ]
+}

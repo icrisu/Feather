@@ -240,3 +240,14 @@ export const removeUser = (userId, cb) => {
         payload: userId
     }
 }
+
+// retrive user events 
+export const retriveUserEvents = (page = 1, userId = null) => {
+    console.log('PAGE', page)
+    return new Promise((resolve, reject) => {
+        API.getInstance().getUserEvents(page, userId)
+        .then(data => {
+            resolve(data.data)
+        });        
+    })
+}
