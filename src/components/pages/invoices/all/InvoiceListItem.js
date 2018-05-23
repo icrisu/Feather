@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import IconButton from '@material-ui/core/IconButton';
-import PopOverHelper from '../../utils/PopOverHelper';
+import PopOverHelper from '../../../utils/PopOverHelper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -12,11 +12,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import EditIcon from '@material-ui/icons/Edit';
-import PhoneIcon from '@material-ui/icons/Phone';
-import DeleteIcon from '@material-ui/icons/Delete';
 import LinkIcon from '@material-ui/icons/Link';
-import { I18n } from 'react-redux-i18n';
-import { ROUTES } from '../../../routes/Routes';
+import { ROUTES } from '../../../../routes/Routes';
 
 const styles = theme => ({
     list: {
@@ -93,6 +90,7 @@ class InvoiceListItem extends PureComponent {
                 </TableCell>
                 <TableCell className="company">{this.props.invoice.company}</TableCell>
                 <TableCell className="amount">{this.props.invoice.amount}</TableCell>
+                <TableCell className="date">{this.props.invoice.date}</TableCell>
                 <TableCell className="status">
                     <div className="invoice-status" style={ this._renderStatus(this.props.invoice.status) }>{this.props.invoice.status}</div>
                 </TableCell>

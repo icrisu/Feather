@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-class CustomInput extends Component {
+class CustomTextarea extends PureComponent {
 
     state = { value: '' };
 
@@ -13,7 +13,7 @@ class CustomInput extends Component {
         return {
             value: nextProps.value || ''
         }
-    }
+    }    
 
     _onChange(e) {
         this.setState({ value: e.currentTarget.value }, () => {
@@ -27,15 +27,14 @@ class CustomInput extends Component {
         return(
             <div { ...this.props } className="custom-input">
                 <label>{ this.props.label || '' }</label>
-                <input onChange={ this._onChange.bind(this) } className="input-field" type={ this.props.type || 'text' } placeholder={ this.props.placeholder || '' } value={ this.state.value } />
+                <textarea onChange={ this._onChange.bind(this) } className="textarea-field" type={ this.props.type || 'text' } placeholder={ this.props.placeholder || '' } value={ this.state.value } ></textarea>
             </div>
         )
     }
 }
 
-CustomInput.propTypes = {
-    onChange: PropTypes.func,
-    value: PropTypes.string
+CustomTextarea.propTypes = {
+    onChange: PropTypes.func
 }
 
-export default CustomInput;
+export default CustomTextarea;

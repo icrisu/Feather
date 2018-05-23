@@ -8,35 +8,40 @@
             "invoice_number": "FD6324",
             "company": "ShopIT Inc",
             "amount": "$9.100,00",
-            "status": "Paid"
+            "status": "Paid",
+            "date": "Jun 18 2018"
         },
         {
             "_id": 1,        
             "invoice_number": "FD6328",
             "company": "HPSS Inc",
             "amount": "$9.567,00",
-            "status": "Pending"
+            "status": "Pending",
+            "date": "Jun 18 2018"
         },        
         {
             "_id": 3,      
             "invoice_number": "FD6328",
             "company": "Robertson Inc",
             "amount": "$8.234,00",
-            "status": "Pending"
+            "status": "Pending",
+            "date": "Jun 18 2018"
         }, 
         {
             "_id": 4,      
             "company": "Company LTD",
             "invoice_number": "FD6328",
             "amount": "$5.000,00",
-            "status": "Rejected"
+            "status": "Rejected",
+            "date": "Jun 18 2018"
         }, 
         {
             "_id": 5,
             "invoice_number": "FD6328",
             "company": "Jessica Shop",
             "amount": "$734,00",
-            "status": "Paid"
+            "status": "Paid",
+            "date": "Jun 18 2018"
         }                                                       
     ]
 }

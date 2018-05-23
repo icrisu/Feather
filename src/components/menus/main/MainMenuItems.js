@@ -8,6 +8,7 @@ import { ROUTES } from '../../../routes/Routes';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import EventIcon from '@material-ui/icons/Event';
+import ChatIcon from '@material-ui/icons/Chat';
 
 class MainMenuItems extends Component {
 
@@ -33,8 +34,23 @@ class MainMenuItems extends Component {
                     
                     <Submenu label={I18n.t('mainMenu.invoices')} Icon={ <span className="menu-icon"><i className="fas fa-file-alt"></i></span> }>
                         <MenuLink to={ROUTES.invoices.path} label={I18n.t('mainMenu.allInvoices')} />
-                        <MenuLink to={`${ROUTES.invoices.path}/test_invoice`} label={I18n.t('mainMenu.singleInvoice')} />
+                        <MenuLink to={`${ROUTES.invoices.path}/view/1`} label={I18n.t('mainMenu.singleInvoice')} />
+                        <MenuLink to={`${ROUTES.invoices.path}/edit/1`} label={I18n.t('mainMenu.editSingleInvoice')} />
                     </Submenu>                     
+
+                    <MenuLink Icon={ <ChatIcon /> } to={ ROUTES.chat.path } label="Chat app" />
+                    
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Email app" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="E-commerce" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Charts" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Todo app" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Google map" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Scrum app" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Contacts" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Pricing table" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Buttons" />
+                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Forms" />
+                    
 
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="My account" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Scrum app" />

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import GenericPage from '../base/GenericPage';
+import GenericPage from '../../base/GenericPage';
 import { connect } from 'react-redux';
-import { searchInvoice, getInvoices } from '../../../actions';
+import { searchInvoice, getInvoices } from '../../../../actions';
 import { Link } from 'react-router-dom';
 import { I18n } from 'react-redux-i18n';
-import CustomPaper from '../../common/paper/CustomPaper';
 import Grid from '@material-ui/core/Grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,8 +11,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
-import Pagination from '../../common/misc/Pagination';
-import SearchWidget from '../../common/search/SearchWidget';
+import Pagination from '../../../common/misc/Pagination';
+import SearchWidget from '../../../common/search/SearchWidget';
 import InvoiceListItem from './InvoiceListItem';
 import uniqid from 'uniqid';
 
@@ -51,8 +50,9 @@ class Invoices extends Component {
                     <TableRow style={{ color: '#000' }}>
                         <TableCell>NUMBER</TableCell>
                         <TableCell className="company">CLIENT</TableCell>
-                        <TableCell className="email">AMOUNT</TableCell>
-                        <TableCell className="phone">STATUS</TableCell>
+                        <TableCell className="amount">AMOUNT</TableCell>
+                        <TableCell className="date">DATE</TableCell>
+                        <TableCell className="status">STATUS</TableCell>
                     </TableRow>
                 </TableHead>
 
@@ -65,7 +65,7 @@ class Invoices extends Component {
 
     render() {
         return(
-            <GenericPage title={I18n.t('pages.invoices.title')} pageContentClasses="events-page-content">
+            <GenericPage title={I18n.t('pages.invoices.title')} pageContentClasses="invoices-page-content">
                 <Grid container spacing={24}>
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div style={{ display: 'flex' }}>

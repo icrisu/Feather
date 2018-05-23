@@ -8,7 +8,9 @@ export const TRANSLATION_DATA = {
             eventsTimeline: 'Activity timeline',
             invoices: 'Invoices',
             allInvoices: 'All invoices',
-            singleInvoice: 'Single invoice'
+            singleInvoice: 'Single invoice',
+            editSingleInvoice: 'Edit Single',
+            chatApp: 'Chat app'
         },
         topbar: {
             currentUser: {
@@ -94,7 +96,16 @@ export const TRANSLATION_DATA = {
             },
             invoices: {
                 title: 'Invoices'
-            }
+            },
+            newInvoice: {
+                title: 'New invoice'
+            },
+            editInvoice: {
+                title: 'Invoice'
+            },
+            viewInvoice: {
+                title: 'Invoice'
+            }          
         },
         modals: {
             accept: 'Save',

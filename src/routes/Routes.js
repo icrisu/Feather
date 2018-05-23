@@ -7,7 +7,10 @@ export const ROUTES = {
     users: { path: '/users' },
     eventsTimeline: { path: '/events-timeline' },
     invoices: { path: '/invoices' },
-    singleInvoice: { path: '/invoices/:_id' },
+    newInvoice: { path: '/invoices/new' },
+    viewInvoice: { path: '/invoices/view/:_id' },
+    editInvoice: { path: '/invoices/edit/:_id' },
+    chat: { path: '/messenger' },
     home: { path: '/' },
 }
 

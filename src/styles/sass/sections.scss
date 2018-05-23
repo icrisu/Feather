@@ -180,3 +180,37 @@
         }
     }
 }
+
+// invoices
+.invoices-page-content {
+    @media screen and (max-width: 800px) {
+        .search-widget {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1050px) {
+        .status, .date {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .amount {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .company {
+            display: none;
+        }
+    }                    
+}
+
+.invoice-info-block {
+    margin: 18px 0px;
+    .label {
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 14px;        
+    }    
+}
