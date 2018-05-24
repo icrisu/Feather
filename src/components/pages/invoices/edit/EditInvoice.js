@@ -256,7 +256,6 @@ class EditInvoice extends Component {
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div>{ this._renderStatus() }</div>
                         <div>
-                            <Button style={{ textTransform: 'initial', marginRight: 20 }}>Export invoice (pdf)</Button>
                             { this._renderSave() }
                         </div>
                     </Grid>      

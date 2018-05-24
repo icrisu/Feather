@@ -214,3 +214,80 @@
         font-size: 14px;        
     }    
 }
+
+// messenger
+.messenger-chat-rooms-content {
+    .chat-room-list-item {
+        padding: 15px 15px;
+        border-bottom-style: solid; border-width: 1px; border-color: rgba(153, 165, 200, 0.2);
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        .avatar {
+            $size: 40;
+            width: #{$size}px; height: #{$size}px; border-radius: #{$size / 2}px; overflow: hidden;
+            margin-right: 15px; margin-bottom: 2px;
+            img {
+                width: 100%;
+            }
+        }
+        .info {
+            .title {
+                font-weight: 500;
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+            .excerpt {
+                color: #8790b5;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                span:first-child {
+                    margin-right: 5px;
+                }
+                .seen {
+                    color: rgb(63, 214, 152);
+                }
+            }
+            @media screen and (max-width: 500px) {
+                .excerpt {
+                    display: none;
+                }
+            }            
+        }
+        .time {
+            text-align: right;
+            font-size: 13px;
+            color: #8790b5;
+            margin-bottom: 3px;
+        }
+        .indicators {
+            color: #8790b5;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .notification {
+                display: inline-block;
+                background: rgb(63, 214, 152);
+                height: 18px;
+                padding: 2px 6px;
+                margin: 0;
+                line-height: 100%;
+                color: #FFFFFF;
+                border-radius: 12px;
+                
+            }
+            .arrow {
+                display: inline-block;
+                margin-right: -7px;
+                padding-top: 2px;
+            }
+        }
+    }
+    .chat-room-list-item:last-child {
+        border: none;
+    }
+    .chat-room-list-item:hover {
+        background: rgba(249, 249, 249, .5);
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "rooms": [
+        {
+            "_id": 1,
+            "avatar": "assets/dummy_data/imgs/user_2.jpg",
+            "title": "Anna Hamilton",
+            "excerpt": "OK, I will set up the meeting ...",
+            "date": "10:40AM",
+            "seen": false,
+            "unread": 5
+        },
+        {
+            "_id": 2,
+            "avatar": "assets/dummy_data/imgs/user_5.jpg",
+            "title": "Jack Martin",
+            "excerpt": "The team will meet on Monday and ...",
+            "date": "09:05AM",
+            "seen": false,
+            "unread": 9
+        },
+        {
+            "_id": 3,
+            "avatar": "assets/dummy_data/imgs/user_11.jpg",
+            "title": "Jesica Fisher",
+            "excerpt": "I've just added a new document ...",
+            "date": "Yesterday",
+            "seen": true
+        },
+        {
+            "_id": 4,
+            "avatar": "assets/dummy_data/imgs/user_1.jpg",
+            "title": "Kara Trace",
+            "excerpt": "Meet me at 1pm for lunch ...",
+            "date": "Tuesday",
+            "seen": true
+        },
+        {
+            "_id": 5,
+            "avatar": "assets/dummy_data/imgs/user_9.jpg",
+            "title": "Robert Gale",
+            "excerpt": "Presentation starting in 10 minutes ...",
+            "date": "Monday",
+            "seen": true
+        }                 
+    ]
+}

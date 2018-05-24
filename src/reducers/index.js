@@ -9,6 +9,7 @@ import access_token from './access_token';
 import users from './users';
 import simpleNotification from './simpleNotification';
 import invoices from './invoices';
+import chatRooms from './chat-rooms';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -20,5 +21,6 @@ export default combineReducers({
     access_token,
     users,
     simpleNotification,
-    invoices
+    invoices,
+    chatRooms
 })

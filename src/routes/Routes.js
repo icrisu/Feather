@@ -6,11 +6,12 @@ export const ROUTES = {
     singleUser: { path: '/users/:_id' },
     users: { path: '/users' },
     eventsTimeline: { path: '/events-timeline' },
-    invoices: { path: '/invoices' },
     newInvoice: { path: '/invoices/new' },
     viewInvoice: { path: '/invoices/view/:_id' },
-    editInvoice: { path: '/invoices/edit/:_id' },
-    chat: { path: '/messenger' },
+    editInvoice: { path: '/invoices/edit/:_id' },    
+    invoices: { path: '/invoices' },
+    messengerSingle: { path: '/messenger/:_id' },    
+    messenger: { path: '/messenger' },
     home: { path: '/' },
 }
 

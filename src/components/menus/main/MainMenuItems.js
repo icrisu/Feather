@@ -38,7 +38,7 @@ class MainMenuItems extends Component {
                         <MenuLink to={`${ROUTES.invoices.path}/edit/1`} label={I18n.t('mainMenu.editSingleInvoice')} />
                     </Submenu>                     
 
-                    <MenuLink Icon={ <ChatIcon /> } to={ ROUTES.chat.path } label="Chat app" />
+                    <MenuLink Icon={ <ChatIcon /> } to={ ROUTES.messenger.path } label={I18n.t('mainMenu.chatApp')} />
                     
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Email app" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="E-commerce" />

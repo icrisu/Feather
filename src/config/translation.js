@@ -10,7 +10,7 @@ export const TRANSLATION_DATA = {
             allInvoices: 'All invoices',
             singleInvoice: 'Single invoice',
             editSingleInvoice: 'Edit Single',
-            chatApp: 'Chat app'
+            chatApp: 'Messenger'
         },
         topbar: {
             currentUser: {
@@ -105,6 +105,9 @@ export const TRANSLATION_DATA = {
             },
             viewInvoice: {
                 title: 'Invoice'
+            },
+            messenger: {
+                title: 'Messenger'
             }          
         },
         modals: {

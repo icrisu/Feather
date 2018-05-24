@@ -114,7 +114,15 @@ class API {
     
     getInvoices(page = 1) {
         return axios.get(`${API_ROOT}/invoices_page${page}.json`);
-    }        
+    }
+    
+    chatSearch(term) {
+        return axios.get(`${API_ROOT}/chat_search.html`);
+    }    
+
+    getChatRooms() {
+        return axios.get(`${API_ROOT}/chat_rooms.json`);
+    }
 
     static getInstance() {
         if (!instance) {
