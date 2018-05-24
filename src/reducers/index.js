@@ -10,6 +10,7 @@ import users from './users';
 import simpleNotification from './simpleNotification';
 import invoices from './invoices';
 import chatRooms from './chat-rooms';
+import chatMessages from './chatMessages';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -22,5 +23,6 @@ export default combineReducers({
     users,
     simpleNotification,
     invoices,
-    chatRooms
+    chatRooms,
+    chatMessages
 })

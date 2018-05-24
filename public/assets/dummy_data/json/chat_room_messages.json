@@ -1,0 +1,25 @@
+{
+    "messages": [
+        {
+            "_id": "1",
+            "sender": {
+                "name": "Anna Hamilton",
+                "thumb": "assets/dummy_data/imgs/user_2.jpg"
+            },
+            "body": {
+                "text": "Hello how are you today?"
+            },
+            "type": "regular",
+            "time": "Now"
+        },
+        {
+            "_id": "2",
+            "sender": "me",
+            "body": {
+                "text": "Hey, I'm fine, u're up for a quick daily call?"
+            },
+            "type": "regular",
+            "time": "Now"
+        }        
+    ]
+}

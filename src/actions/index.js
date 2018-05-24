@@ -1,6 +1,6 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
     ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER,
-    INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS } from './types';
+    INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS, NEW_MESSAGE, CHAT_MESSAGES } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -330,4 +330,27 @@ export const getChatRooms = cb => {
         })
         .catch(err => { console.log(err) });
     }
+}
+
+// send message
+export const sendMessage = (message, chatRoomId) => {
+    // implement API call / server implementation
+    return {
+        type: NEW_MESSAGE,
+        payload: message	        
+    }
+}
+
+// retrieve messages from room
+export const getRoomMessages = roomId => {
+	return (dispatch, getState) => {   
+        API.getInstance().getRoomMessages(roomId)
+        .then(data => {
+            dispatch({
+                type: CHAT_MESSAGES,
+                payload: data.data.messages	
+            })        
+        })
+        .catch(err => { console.log(err) });
+    }    
 }

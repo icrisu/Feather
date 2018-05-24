@@ -108,7 +108,10 @@ export const TRANSLATION_DATA = {
             },
             messenger: {
                 title: 'Messenger'
-            }          
+            },
+            messengerSingle: {
+                title: 'Chat'
+            }                       
         },
         modals: {
             accept: 'Save',

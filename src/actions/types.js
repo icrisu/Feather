@@ -18,3 +18,5 @@ export const EDIT_USER = 'EDIT_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 export const INVOICES = 'INVOICES';
 export const CHAT_ROOMS = 'CHAT_ROOMS';
+export const NEW_MESSAGE = 'NEW_MESSAGE';
+export const CHAT_MESSAGES = 'CHAT_MESSAGES';

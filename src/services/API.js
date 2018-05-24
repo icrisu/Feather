@@ -124,6 +124,10 @@ class API {
         return axios.get(`${API_ROOT}/chat_rooms.json`);
     }
 
+    getRoomMessages(roomId) {
+        return axios.get(`${API_ROOT}/chat_room_messages.json`);
+    }
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

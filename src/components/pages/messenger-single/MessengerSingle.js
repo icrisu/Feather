@@ -1,45 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { chatSearch, getChatRooms } from '../../../actions';
-import PropTypes from 'prop-types';
+import { sendMessage } from '../../../actions';
 import GenericPage from '../base/GenericPage';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import CustomPaper from '../../common/paper/CustomPaper';
 import { I18n } from 'react-redux-i18n';
-// import { ROUTES } from '../../../routes/Routes';
+import ChatMessages from './ChatMessages';
+import IconButton from '@material-ui/core/IconButton';
+import SendIcon from '@material-ui/icons/Send';
 
 class MessengerSingle extends Component {
 
+    state = { message: '' }
+
+    componentDidMount() {
+        console.log(this.props.match.params._id);
+    }
+
+    _onMessageChange(event) {
+        this.setState({ message: event.target.value })
+    }
+
+    _sendMessage() {
+        console.log('send message');
+    }
 
     render() {
         return(
-            <GenericPage title={I18n.t('pages.messenger.title')} pageContentClasses="messenger-chat-rooms-content">
-                <Grid container spacing={24}>
-                    <Grid className="page-actions" item xs={12} sm={12} md={12}>
-                        <div style={{ display: 'flex' }}>
-                            control
+            <GenericPage title={I18n.t('pages.messengerSingle.title')} pageContentClasses="messenger-chat-room">
+                <ChatMessages roomId={ this.props.match.params._id } />
+                <div className="chat-controls">
+                    <div className="controlls">
+                        <input onChange={ this._onMessageChange.bind(this) } value={ this.state.message } placeholder="Type a message" className="chat-input" type="text" />
+                        <div className="send">
+                            <IconButton onClick={ this._sendMessage.bind(this) } disabled={ this.state.message === '' } >
+                                <SendIcon />
+                            </IconButton>                        
                         </div>
-                    </Grid> 
-                    <Grid item xs={12} sm={12} md={12}>
-                        <CustomPaper title="Latest conversations" removepadding="true">
-                            conversation
-                        </CustomPaper>
-                    </Grid>
-                </Grid> 
-            </GenericPage>            
+                    </div>
+                </div>
+            </GenericPage>
         )
     }
 }
 
-// const mapStateToProps = ({ chatRooms }) => {
-//     return { chatRooms };
-// }
-
-// Messenger.defaultProps = {
-//     chatSearch: PropTypes.func,
-//     getChatRooms: PropTypes.func,
-//     chatRooms: PropTypes.object
-// }
-
-export default connect(null, { chatSearch, getChatRooms })(MessengerSingle);
+export default connect(null, { sendMessage })(MessengerSingle);
