@@ -122,6 +122,16 @@ body, html, #root, input {
                 font-size: 23px; 
                 margin: 0px;               
             }
+            .right {
+                display: flex; align-items: center;
+                &.nav {
+                    font-size: 14px;
+                    a {
+                        
+                        color: #7447a2; text-decoration: none;
+                    }
+                }
+            }
         }
         > .content {
             padding: 25px 40px;

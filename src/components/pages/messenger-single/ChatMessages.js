@@ -14,8 +14,17 @@ class ChatMessages extends Component {
         chatMessages: []
     }
 
+    constructor(props) {
+        super(props);
+        this.chatBodyUI = React.createRef();
+    }
+
     componentDidMount() {
         this.props.getRoomMessages(this.props.roomId);
+    }
+
+    componentDidUpdate() {
+        this.chatBodyUI.current.scrollTo(0, this.chatBodyUI.current.scrollHeight)
     }
 
     _renderMessages() {
@@ -26,7 +35,7 @@ class ChatMessages extends Component {
 
     render() {
         return(
-            <div style={ styles.chatBody } className="chat-body clearfix">
+            <div style={ styles.chatBody } ref={ this.chatBodyUI } className="chat-body clearfix">
                 { this._renderMessages() }
             </div>
         )

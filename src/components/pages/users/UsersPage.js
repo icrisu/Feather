@@ -26,7 +26,9 @@ class UsersPage extends Component {
     constructor(props) {
         super(props);
         this.state = { users: [], currentPage: 1, total: 0, userToEdit: null,
-            removeUserAlert: false, userToRemove: null, openNewUserModal: false, openEditUserModal: false }
+            removeUserAlert: false, userToRemove: null, openNewUserModal: false, openEditUserModal: false,
+            _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Users' }]
+        }
     }
 
     componentDidMount() {
@@ -93,7 +95,7 @@ class UsersPage extends Component {
 
     render() {        
         return(
-            <GenericPage title={I18n.t('pages.users.title')} pageContentClasses="users-page-content">
+            <GenericPage title={I18n.t('pages.users.title')} pageContentClasses="users-page-content" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div style={{ display: 'flex' }}>

@@ -1,4 +1,5 @@
 @import 'colors.scss';
+@import 'settings.scss';
 @import 'helpers/mixing.scss';
 
 // Login
@@ -306,13 +307,17 @@
         background-repeat: repeat;
         .chat-message {
             max-width: 50%;
-            padding: 15px;
-            margin: 20px 0px;
+            padding: 15px; padding-bottom: 22px;
+            margin: 17px 0px;
             position: relative;
             border-radius: 6px;
             $meColor: #eceaf8;
             $otherColor: #ffffff;
             font-size: 15px;
+            position: relative;
+            -webkit-box-shadow: 0px 1px 5px 0px rgba(133,133,133,0.23);
+            -moz-box-shadow: 0px 1px 5px 0px rgba(133,133,133,0.23);
+            box-shadow: 0px 1px 5px 0px rgba(133,133,133,0.23);      
             &.me {
                 background: #{ $meColor };
                 text-align: right;
@@ -324,36 +329,57 @@
                 border-top-left-radius: 0;
                 float: left;
             }
+            $arrowSize: 16;
             &.other:after {
                 content: '';
                 position: absolute;
                 left: 0;
-                top: 10px;
+                top: #{$arrowSize / 2}px;
                 width: 0;
                 height: 0;
-                border: 20px solid transparent;
+                border: #{$arrowSize}px solid transparent;
                 border-right-color: #{ $otherColor };
                 border-left: 0;
                 border-top: 0;
-                border-bottom: -10px;// 0
-                margin-top: -10px;
-                margin-left: -20px;
+                border-bottom: -#{$arrowSize / 2}px;// 0
+                margin-top: -#{$arrowSize / 2}px;
+                margin-left: -#{$arrowSize}px;
             }            
             &.me:after {
                 content: '';
                 position: absolute;
                 right: 0;
-                top: 10px;
+                top: #{$arrowSize / 2}px;
                 width: 0;
                 height: 0;
-                border: 20px solid transparent;
+                border: #{$arrowSize}px solid transparent;
                 border-left-color: #{ $meColor };
                 border-top: 0;
                 border-right: 0;
-                border-bottom: -10px;// 0
-                margin-top: -10px;
-                margin-right: -20px;
-            }            
+                border-bottom: -#{$arrowSize / 2}px;// 0
+                margin-top: -#{$arrowSize / 2}px;
+                margin-right: -#{$arrowSize}px;
+            } 
+            .user-thumb {
+                width: 40px; height: 40px; overflow: hidden;
+                border-radius: 20px;
+                margin-bottom: 10px;
+                
+                img {
+                    width: 100%;
+                }
+                &.left {
+                    float: left; margin-right: 10px;
+                }
+                &.right {
+                    float: right; margin-left: 10px;
+                }                
+            }
+            .time {
+                position: absolute; right: 15px; bottom: 3px;
+                display: flex; justify-content: center; align-items: center;
+                font-size: 12px; color: #949494;
+            }           
         }
         @media screen and (max-width: 900px) {
             .chat-message {

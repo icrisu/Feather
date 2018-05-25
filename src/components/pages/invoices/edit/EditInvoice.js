@@ -37,7 +37,8 @@ class EditInvoice extends Component {
                 vatPercent: 10,
                 status: 2
             },
-            redirectToInvoices: false
+            redirectToInvoices: false,
+            _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Invoices', to: '/invoices' }, { label: '#FD6328' }]
         };
     }    
 
@@ -250,7 +251,7 @@ class EditInvoice extends Component {
 
     render() {
         return(
-            <GenericPage title={`${I18n.t('pages.editInvoice.title')} #${this.state.invoice.invoiceNo}`} pageContentClasses="edit-invoice-page-content">
+            <GenericPage title={`${I18n.t('pages.editInvoice.title')} #${this.state.invoice.invoiceNo}`} pageContentClasses="edit-invoice-page-content" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                 
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>

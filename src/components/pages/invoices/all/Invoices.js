@@ -20,7 +20,9 @@ class Invoices extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { invoices: [], currentPage: 1, total: 0, invoiceToEdit: null }
+        this.state = { invoices: [], currentPage: 1, total: 0, invoiceToEdit: null,
+            _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Invoices'  } ]
+        }
     }    
 
     componentDidMount() {
@@ -65,7 +67,7 @@ class Invoices extends Component {
 
     render() {
         return(
-            <GenericPage title={I18n.t('pages.invoices.title')} pageContentClasses="invoices-page-content">
+            <GenericPage title={I18n.t('pages.invoices.title')} pageContentClasses="invoices-page-content" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div style={{ display: 'flex' }}>

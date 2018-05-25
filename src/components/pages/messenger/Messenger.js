@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import GenericPage from '../base/GenericPage';
 import SearchWidget from '../../common/search/SearchWidget';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import CustomPaper from '../../common/paper/CustomPaper';
 import { I18n } from 'react-redux-i18n';
 import _ from 'lodash';
@@ -22,6 +21,8 @@ class Messenger extends Component {
     static defaultProps = {
         chatRooms: {}
     }
+
+    _pageNavigation = [{ label: 'Dashboard', to: '/' }, { label: 'Messenger' }];
 
     state = { selectedRoom: null };
 
@@ -77,7 +78,7 @@ class Messenger extends Component {
 
     render() {
         return(
-            <GenericPage title={I18n.t('pages.messenger.title')} pageContentClasses="messenger-chat-rooms-content">
+            <GenericPage title={I18n.t('pages.messenger.title')} pageContentClasses="messenger-chat-rooms-content" pageNav={ this._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div style={{ display: 'flex' }}>

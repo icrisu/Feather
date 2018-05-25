@@ -7,19 +7,35 @@
                 "thumb": "assets/dummy_data/imgs/user_2.jpg"
             },
             "body": {
-                "text": "Hello how are you today?"
+                "text": "Hello! How are you today?"
             },
             "type": "regular",
-            "time": "Now"
+            "time": "09:25am"
         },
         {
             "_id": "2",
-            "sender": "me",
+            "sender": {
+                "isMe": true,
+                "name": "Me",
+                "thumb": "assets/dummy_data/imgs/user_9.jpg"
+            },
             "body": {
                 "text": "Hey, I'm fine, u're up for a quick daily call?"
             },
             "type": "regular",
+            "time": "09:30am"
+        },
+        {
+            "_id": "3",
+            "sender": {
+                "name": "Anna Hamilton",
+                "thumb": "assets/dummy_data/imgs/user_2.jpg"
+            },
+            "body": {
+                "text": "Sure, let's set up a call at 10:00am, I have to book the conference room ..."
+            },
+            "type": "regular",
             "time": "Now"
-        }        
+        }                 
     ]
 }

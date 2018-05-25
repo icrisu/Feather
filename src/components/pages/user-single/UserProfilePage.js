@@ -15,7 +15,8 @@ class UserProfilePage extends PureComponent {
         // fake user
         const { firstName, lastName, thumb } = StorageService.getUser();
         this.state = {
-            user: { firstName, lastName, thumb, userId: null }
+            user: { firstName, lastName, thumb, userId: null},
+            _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Users', to: '/users' }, { label: 'Kara Thrace' }]
         }  
     }
 
@@ -32,7 +33,7 @@ class UserProfilePage extends PureComponent {
 
     render() {
         return(
-            <GenericPage title={ `${this.state.user.firstName} ${this.state.user.lastName}` } pageContentClasses="user-single">
+            <GenericPage title={ `${this.state.user.firstName} ${this.state.user.lastName}` } pageContentClasses="user-single" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid item xs={12} sm={12} md={4}>
                         <CustomPaper>

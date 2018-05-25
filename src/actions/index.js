@@ -335,9 +335,24 @@ export const getChatRooms = cb => {
 // send message
 export const sendMessage = (message, chatRoomId) => {
     // implement API call / server implementation
+    // don't forget to strip HTML for <script> tags on the server : )
+    // fake message bellow
+    const fakeMessage = {
+        "_id": uniqid(), // !!! messages should have unique IDs
+        "sender": {
+            "isMe": true,
+            "name": "Me",
+            "thumb": "assets/dummy_data/imgs/user_9.jpg"
+        },
+        "body": {
+            "text": message
+        },
+        "type": "regular",
+        "time": "Now"
+    };
     return {
         type: NEW_MESSAGE,
-        payload: message	        
+        payload: fakeMessage	        
     }
 }
 

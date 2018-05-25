@@ -7,9 +7,11 @@ import TimelineEvents from '../../common/timeline/TimelineEvents';
 import { retriveUserEvents, retriveCommunityEvents } from '../../../actions/index';
 
 class EventsTimeline extends Component {
+
+    state = { _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Events'  } ] }
     render() {
         return(
-            <GenericPage title={I18n.t('pages.events.title')} pageContentClasses="events-page-content">
+            <GenericPage title={I18n.t('pages.events.title')} pageContentClasses="events-page-content" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid item xs={12} sm={12} md={6}>
                         <CustomPaper title="Community events">
