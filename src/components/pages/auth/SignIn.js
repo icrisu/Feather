@@ -15,7 +15,7 @@ import { I18n } from 'react-redux-i18n';
 class SignIn extends Component {
 
     state = {
-        rememberMe: false, isLoading: false, email: '', password: ''
+        rememberMe: false, isLoading: false, email: 'demo.user@demo.co', password: 'somepass'
     }
 
     _handleChange(event) {
@@ -75,8 +75,8 @@ class SignIn extends Component {
                         </div>
                         <div className="content">
                             <h3 className="title">{I18n.t('pages.auth.login.title')}</h3>
-                            <CustomInput onChange={ this._emailChange.bind(this) } label={I18n.t('pages.auth.login.email')} placeholder={I18n.t('pages.auth.login.emailPlaceholder')} style={{ marginBottom: 20 }} />
-                            <CustomInput onChange={ this._passwordChange.bind(this) } label={I18n.t('pages.auth.login.password')} placeholder={I18n.t('pages.auth.login.passwordPlaceholder')} type="password" style={{ marginBottom: 25 }} />
+                            <CustomInput onChange={ this._emailChange.bind(this) } value={ this.state.email } label={I18n.t('pages.auth.login.email')} placeholder={I18n.t('pages.auth.login.emailPlaceholder')} style={{ marginBottom: 20 }} />
+                            <CustomInput onChange={ this._passwordChange.bind(this) } value={ this.state.password } label={I18n.t('pages.auth.login.password')} placeholder={I18n.t('pages.auth.login.passwordPlaceholder')} type="password" style={{ marginBottom: 25 }} />
                             <div className="controls">
                                 <FormControlLabel style={{ color: 'red' }}
                                     control={

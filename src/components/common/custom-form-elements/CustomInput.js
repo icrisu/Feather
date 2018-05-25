@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 class CustomInput extends Component {
 
@@ -10,9 +11,12 @@ class CustomInput extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        return {
-            value: nextProps.value || ''
+        if (_.isString(nextProps.value)) {
+            return {
+                value: nextProps.value || ''
+            }
         }
+        return null;
     }
 
     _onChange(e) {
@@ -35,7 +39,9 @@ class CustomInput extends Component {
 
 CustomInput.propTypes = {
     onChange: PropTypes.func,
-    value: PropTypes.string
+    value: PropTypes.oneOfType([
+        PropTypes.string, PropTypes.object
+    ])
 }
 
 export default CustomInput;

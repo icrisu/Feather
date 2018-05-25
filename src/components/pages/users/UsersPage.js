@@ -32,7 +32,9 @@ class UsersPage extends Component {
     }
 
     componentDidMount() {
-        this.props.getUsers(this.state.currentPage);
+        this.setState({ currentPage: 1 }, () => {
+            this.props.getUsers(this.state.currentPage);
+        })
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {

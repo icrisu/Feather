@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 class CustomTextarea extends PureComponent {
 
@@ -10,9 +11,12 @@ class CustomTextarea extends PureComponent {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        return {
-            value: nextProps.value || ''
+        if (_.isString(nextProps.value)) {
+            return {
+                value: nextProps.value || ''
+            }
         }
+        return null;
     }    
 
     _onChange(e) {

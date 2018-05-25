@@ -127,15 +127,24 @@ body, html, #root, input {
                 &.nav {
                     font-size: 14px;
                     a {
-                        
                         color: #7447a2; text-decoration: none;
                     }
-                }
+                }               
             }
+            @media screen and (max-width: 700px) {
+                .nav {
+                    display: none;
+                }
+            }             
         }
         > .content {
             padding: 25px 40px;
         }
+        @media screen and (max-width: 700px) {
+            > .content {
+                padding: 25px 20px;
+            }
+        }          
     }
 }
 

@@ -26,7 +26,9 @@ class Invoices extends Component {
     }    
 
     componentDidMount() {
-        this.props.getInvoices(this.state.currentPage);
+        this.setState({ currentPage: 1 }, () => {
+            this.props.getInvoices(this.state.currentPage);
+        })
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {

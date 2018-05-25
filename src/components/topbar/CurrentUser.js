@@ -63,13 +63,13 @@ class CurrentUser extends Component {
                     </div>
 
                     <List component="nav" className={classes.list}>
-                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
+                        <ListItem component={Link} to={`/users/kara_trace`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.profile')} />
                         </ListItem>
-                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
+                        <ListItem component={Link} to={`/users/kara_trace`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.settings')} />
                         </ListItem>
-                        <ListItem component={Link} to={`/users`} disableGutters button onClick={ this._popoverClose }>
+                        <ListItem component={Link} to={`/events-timeline`} disableGutters button onClick={ this._popoverClose }>
                             <ListItemText classes={{ primary: classes.listItem }} inset primary={I18n.t('topbar.currentUser.notifications')} />
                         </ListItem>
                         <ListItem onClick={ e => this.props.logOut() } disableGutters button>
