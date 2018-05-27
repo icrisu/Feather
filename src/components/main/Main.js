@@ -28,8 +28,8 @@ class Main extends Component {
         this.state = { openedMenu: true, appWidth: 0, currentLang: DEFAULT_LANG };
 
         this._delayedResize = _.debounce((w, h) => {   
-            this.setState({ openedMenu: _.isNumber(w) && w < 750 ? false: true, appWidth: w });
-        }, 350);		
+            this.setState({ openedMenu: _.isNumber(w) && w < 767 ? false: true, appWidth: w });
+        }, 100);		
 	}
 
 	componentDidUpdate() {

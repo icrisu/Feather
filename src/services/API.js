@@ -128,6 +128,10 @@ class API {
         return axios.get(`${API_ROOT}/chat_room_messages.json`);
     }
 
+    getEmailMessages(page = 1) {
+        return axios.get(`${API_ROOT}/emails_page${page}.json`);
+    }      
+
     static getInstance() {
         if (!instance) {
             instance = new API(instanceKey);

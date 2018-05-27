@@ -10,7 +10,16 @@ export const TRANSLATION_DATA = {
             allInvoices: 'All invoices',
             singleInvoice: 'Single invoice',
             editSingleInvoice: 'Edit Single',
-            chatApp: 'Messenger'
+            chatApp: 'Messenger',
+            emailApp: {
+                main: 'Email',
+                inbox: 'Inbox',
+                sent: 'Sent',
+                draft: 'Draft',
+                trash: 'Trash',
+                starred: 'Starred',
+                spam: 'Spam'
+            }
         },
         topbar: {
             currentUser: {
@@ -111,6 +120,9 @@ export const TRANSLATION_DATA = {
             },
             messengerSingle: {
                 title: 'Chat'
+            },
+            inbox: {
+                title: 'Inbox'
             }                       
         },
         modals: {

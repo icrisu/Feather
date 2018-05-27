@@ -13,6 +13,8 @@ const EditInvoice = AsyncLoader.load({ importPath: import('../components/pages/i
 const ViewInvoice = AsyncLoader.load({ importPath: import('../components/pages/invoices/view/ViewInvoice') });
 const Messenger = AsyncLoader.load({ importPath: import('../components/pages/messenger/Messenger') });
 const MessengerSingle = AsyncLoader.load({ importPath: import('../components/pages/messenger-single/MessengerSingle') });
+const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/Inbox') });
+
 
 
 export default props => {
@@ -20,13 +22,18 @@ export default props => {
         <Switch>
             <Route path={ ROUTES.singleUser.path } component={ UserProfilePage } />
             <Route path={ ROUTES.users.path } component={ UsersPage } />
+            
             <Route path={ ROUTES.eventsTimeline.path } component={ EventsTimeline } />
+            
             <Route path={ ROUTES.newInvoice.path } component={ NewInvoice } />
             <Route path={ ROUTES.editInvoice.path } component={ EditInvoice } />
             <Route path={ ROUTES.viewInvoice.path } component={ ViewInvoice } />
             <Route path={ ROUTES.invoices.path } component={ Invoices } />
+
             <Route path={ ROUTES.messengerSingle.path } component={ MessengerSingle } />
             <Route path={ ROUTES.messenger.path } component={ Messenger } />
+
+            <Route path={ ROUTES.inbox.path } component={ Inbox } />
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />

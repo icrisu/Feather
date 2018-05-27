@@ -420,3 +420,35 @@
         }
     }
 }
+
+// email 
+.emails-page-content {
+    .from {
+        display: flex;
+        align-items: center;
+        .star {
+            margin-right: 13px;
+        }
+    }
+    .excerpt {
+        color: #8c8c8c;
+    }
+    .time {
+        text-align: right;
+    }
+    @media screen and (max-width: 1050px) {
+        .excerpt {
+            display: none;
+        }
+    } 
+    @media screen and (max-width: 700px) {
+        .subject {
+            display: none;
+        }
+    } 
+    @media screen and (max-width: 500px) {
+        .email-control {
+            margin-bottom: 7px;
+        }
+    }              
+}

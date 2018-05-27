@@ -90,24 +90,27 @@ class MenuLink extends Component {
     }
     
     _renderIcon(Icon, isInternalLink = true) {
+        const { isSubmenu } = this.props;
+        const submenuIconSize = isSubmenu ? { fontSize: 18 } : {};
         if (isInternalLink) {
             return React.cloneElement(Icon, {
-                style: { marginRight: 0, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }
+                style: { marginRight: 0, ...submenuIconSize, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }
             })
         } else {
             return React.cloneElement(Icon, {
-                style: { color: MAIN_MENU_COLORS.itemColor }
+                style: { color: MAIN_MENU_COLORS.itemColor, ...submenuIconSize }
             })        
         }
     }
 
     _renderWithLink() {
         const { classes, Icon, to, label, isSubmenu, submenuOpended } = this.props;
+        const noIconStyle = Icon ? {} : { paddingLeft: 10 };
         return(
             <ListItem disableGutters onClick={this._listItemClick.bind(this)} className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: (isSubmenu && submenuOpended) || this.state.selectedItem === true }) } button component={Link} to={to}>
                 { this._renderSelector() }
                 { Icon ? <ListItemIcon>{ this._renderIcon(Icon) }</ListItemIcon> : null }                            
-                <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
+                <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} style={ noIconStyle } />
             </ListItem>
         )
     }
@@ -118,10 +121,11 @@ class MenuLink extends Component {
 
     _renderWithHref() {
         const { classes, Icon, href, target, label, isSubmenu, submenuOpended } = this.props;
+        const noIconStyle = Icon ? {} : { paddingLeft: 10 };
         return(
             <ListItem className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
                 { Icon ? <ListItemIcon>{ this._renderIcon(Icon, false) }</ListItemIcon> : this._renderIconSpace() }                            
-                <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} />
+                <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} style={ noIconStyle } />
             </ListItem>
         )
     }    

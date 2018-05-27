@@ -11,6 +11,7 @@ import simpleNotification from './simpleNotification';
 import invoices from './invoices';
 import chatRooms from './chat-rooms';
 import chatMessages from './chatMessages';
+import emailMessages from './emailMessages';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -24,5 +25,6 @@ export default combineReducers({
     simpleNotification,
     invoices,
     chatRooms,
-    chatMessages
+    chatMessages,
+    emailMessages
 })
