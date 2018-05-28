@@ -126,7 +126,19 @@ export const TRANSLATION_DATA = {
             },
             sent: {
                 title: 'Sent mail'
-            }                                   
+            },
+            starred: {
+                title: 'Starred messages'
+            },
+            draft: {
+                title: 'Draft messages'
+            },
+            trash: {
+                title: 'Trash'
+            },
+            spam: {
+                title: 'Spam'
+            }                                                           
         },
         modals: {
             accept: 'Save',

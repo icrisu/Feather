@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import GenericPage from '../../base/GenericPage';
+import GenericPage from '../base/GenericPage';
 import { connect } from 'react-redux';
-import { getSentMessages } from '../../../../actions';
+import { getSentMessages } from '../../../actions';
 import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import EmailListItem from '../helpers/EmailListItem';
+import EmailListItem from './helpers/EmailListItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Pagination from '../../../common/misc/Pagination';
+import Pagination from '../../common/misc/Pagination';
 import Delete from '@material-ui/icons/Delete';
 import Block from '@material-ui/icons/Block';
 import MoveToInbox from '@material-ui/icons/MoveToInbox';
@@ -21,7 +21,7 @@ class Sent extends Component {
 
     state = {
         selectAll: false, currentPage: 1, total: 0, messages: [], atLeastOneIsSelected: false,
-        _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Email', to: '/inbox' }, { label: 'Sent' }]
+        _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Email', to: '/email/inbox' }, { label: 'Sent' }]
     }
 
     componentDidMount() {

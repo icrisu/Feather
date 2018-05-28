@@ -47,7 +47,7 @@ class MainMenuItems extends Component {
                     <MenuLink Icon={ <ChatIcon /> } to={ ROUTES.messenger.path } label={I18n.t('mainMenu.chatApp')} />
 
                     <Submenu label={I18n.t('mainMenu.emailApp.main')} Icon={ <EmailIcon /> }>
-                        <MenuLink to={ROUTES.inbox.path} label={I18n.t('mainMenu.emailApp.inbox')} Icon={ <InboxIcon /> } />
+                        <MenuLink to={ROUTES.inbox.path} label={I18n.t('mainMenu.emailApp.inbox')} Icon={ <InboxIcon /> } badge={4} />
                         <MenuLink to={ROUTES.sent.path} label={I18n.t('mainMenu.emailApp.sent')} Icon={ <SendIcon /> } />
                         <MenuLink to={ROUTES.starred.path} label={I18n.t('mainMenu.emailApp.starred')} Icon={ <Star /> } />
                         <MenuLink to={ROUTES.draft.path} label={I18n.t('mainMenu.emailApp.draft')} Icon={ <MailOutline /> } />

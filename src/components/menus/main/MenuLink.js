@@ -49,7 +49,8 @@ class MenuLink extends Component {
         Icon: null,
         label: '',
         isSubmenu: false,
-        submenuOpended: false
+        submenuOpended: false,
+        openSubmenu: () => {}
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -103,14 +104,21 @@ class MenuLink extends Component {
         }
     }
 
+    _renderBadge() {
+        if (_.isNumber(this.props.badge)) {
+            return <div className="badge">{ this.props.badge }</div>;
+        }
+    }
+
     _renderWithLink() {
         const { classes, Icon, to, label, isSubmenu, submenuOpended } = this.props;
         const noIconStyle = Icon ? {} : { paddingLeft: 10 };
         return(
-            <ListItem disableGutters onClick={this._listItemClick.bind(this)} className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: (isSubmenu && submenuOpended) || this.state.selectedItem === true }) } button component={Link} to={to}>
+            <ListItem disableGutters onClick={this._listItemClick.bind(this)} className={ classNames('menu-link', classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: (isSubmenu && submenuOpended) || this.state.selectedItem === true }) } button component={Link} to={to}>
                 { this._renderSelector() }
                 { Icon ? <ListItemIcon>{ this._renderIcon(Icon) }</ListItemIcon> : null }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} style={ noIconStyle } />
+                { this._renderBadge() }
             </ListItem>
         )
     }
@@ -123,9 +131,10 @@ class MenuLink extends Component {
         const { classes, Icon, href, target, label, isSubmenu, submenuOpended } = this.props;
         const noIconStyle = Icon ? {} : { paddingLeft: 10 };
         return(
-            <ListItem className={ classNames(classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
+            <ListItem className={ classNames('menu-link', classes.root, { [classes.nested]: isSubmenu, [classes.submenuBack]: isSubmenu && submenuOpended }) } button onClick={ e => this._onClick(href, target) }>
                 { Icon ? <ListItemIcon>{ this._renderIcon(Icon, false) }</ListItemIcon> : this._renderIconSpace() }                            
                 <ListItemText classes={{ primary: this.state.selectedItem ? classes.selectedMenuItem : classes.itemText }} inset primary={label} style={ noIconStyle } />
+                { this._renderBadge() }
             </ListItem>
         )
     }    
@@ -153,7 +162,9 @@ MenuLink.propTypes = {
     target: PropTypes.string,
     label: PropTypes.string,
     isSubmenu: PropTypes.bool,
-    submenuOpended: PropTypes.bool
+    submenuOpended: PropTypes.bool,
+    openSubmenu: PropTypes.func,
+    badge: PropTypes.any
 };
 
 export default withRouter(connect(null, { submenuOpened })(withStyles(styles)(MenuLink)));

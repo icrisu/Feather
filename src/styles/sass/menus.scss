@@ -23,6 +23,20 @@
         font-size: 20px;
         padding-left: 3px;        
     }
+
+    .menu-link {
+        position: relative;
+        .badge {
+            position: absolute; top: 7px; right: 7px;
+            background: #f8f9fd;
+            height: 16px;
+            border-radius: 8px;
+            padding: 2px 5px;
+            margin: 0;
+            line-height: 100%;
+            font-size: 12px;
+        }
+    }
 }
 .main-navigation-ui {
     height: calc(100% - #{$mainLogoUIHeight + 'px'});

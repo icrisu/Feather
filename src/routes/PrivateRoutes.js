@@ -13,9 +13,12 @@ const EditInvoice = AsyncLoader.load({ importPath: import('../components/pages/i
 const ViewInvoice = AsyncLoader.load({ importPath: import('../components/pages/invoices/view/ViewInvoice') });
 const Messenger = AsyncLoader.load({ importPath: import('../components/pages/messenger/Messenger') });
 const MessengerSingle = AsyncLoader.load({ importPath: import('../components/pages/messenger-single/MessengerSingle') });
-const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/inbox/Inbox') });
-const Sent = AsyncLoader.load({ importPath: import('../components/pages/email/sent/Sent') });
-const StarredMessages = AsyncLoader.load({ importPath: import('../components/pages/email/starred/Starred') });
+const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/Inbox') });
+const Sent = AsyncLoader.load({ importPath: import('../components/pages/email/Sent') });
+const StarredMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Starred') });
+const DraftMessages = AsyncLoader.load({ importPath: import('../components/pages/email/DraftMessages') });
+const TrashMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Trash') });
+const SpamMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Spam') });
 
 
 
@@ -38,6 +41,10 @@ export default props => {
             <Route path={ ROUTES.inbox.path } component={ Inbox } />
             <Route path={ ROUTES.sent.path } component={ Sent } />
             <Route path={ ROUTES.starred.path } component={ StarredMessages } />
+            <Route path={ ROUTES.draft.path } component={ DraftMessages } />
+            <Route path={ ROUTES.trash.path } component={ TrashMessages } />
+            <Route path={ ROUTES.spam.path } component={ SpamMessages } />
+            
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />

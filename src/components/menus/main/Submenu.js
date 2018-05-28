@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { submenuOpened } from '../../../actions/ui-interact';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { withRouter } from 'react-router';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -53,7 +54,36 @@ class Submenu extends Component {
     handleClick() {
         this.setState({ open: !this.state.open });
         this.props.submenuOpened(this.state.id);
-    };    
+    }; 
+
+    componentDidUpdate(prevProps, prevState) {
+        const isSamePath = this.props.location.pathname === prevProps.location.pathname;
+        // open submenu
+        if (!this.state.open && !isSamePath && this._hasChildWithPath()) {
+            this.setState({ open: true });
+            this.props.submenuOpened(this.state.id);
+        }
+    } 
+
+    _hasChildWithPath() {
+        let has = false;
+        if (_.isArray(this.props.children)) {
+            for (let i = 0; i < this.props.children.length; i++) {
+                if (this.props.children[i].props.to === this.props.location.pathname) {
+                    has = true;
+                }
+                break;
+            }
+        }
+        return has;
+    }
+    
+    _openSubmenu() {
+        if (this.state.open === false) {
+            this.setState({ open: true });
+            this.props.submenuOpened(this.state.id);
+        }
+    }
 
     _renderSubmenuItems() {
         return React.Children.map(this.props.children, Child => {
@@ -103,4 +133,4 @@ const mapStateToProps = ({submenu}) => {
     return { submenu }
 }
 
-export default connect(mapStateToProps, { mapStateToProps, submenuOpened })(withStyles(styles)(Submenu));
+export default withRouter(connect(mapStateToProps, { mapStateToProps, submenuOpened })(withStyles(styles)(Submenu)));
