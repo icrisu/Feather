@@ -21,3 +21,4 @@ export const CHAT_ROOMS = 'CHAT_ROOMS';
 export const NEW_MESSAGE = 'NEW_MESSAGE';
 export const CHAT_MESSAGES = 'CHAT_MESSAGES';
 export const EMAIL_MESSAGES = 'EMAIL_MESSAGES';
+export const SENT_MESSAGES = 'SENT_MESSAGES';

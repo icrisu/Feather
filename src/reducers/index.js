@@ -12,6 +12,7 @@ import invoices from './invoices';
 import chatRooms from './chat-rooms';
 import chatMessages from './chatMessages';
 import emailMessages from './emailMessages';
+import sentMessages from './sentMessages';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -26,5 +27,6 @@ export default combineReducers({
     invoices,
     chatRooms,
     chatMessages,
-    emailMessages
+    emailMessages,
+    sentMessages
 })

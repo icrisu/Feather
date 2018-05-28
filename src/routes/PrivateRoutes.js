@@ -13,7 +13,8 @@ const EditInvoice = AsyncLoader.load({ importPath: import('../components/pages/i
 const ViewInvoice = AsyncLoader.load({ importPath: import('../components/pages/invoices/view/ViewInvoice') });
 const Messenger = AsyncLoader.load({ importPath: import('../components/pages/messenger/Messenger') });
 const MessengerSingle = AsyncLoader.load({ importPath: import('../components/pages/messenger-single/MessengerSingle') });
-const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/Inbox') });
+const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/inbox/Inbox') });
+const Sent = AsyncLoader.load({ importPath: import('../components/pages/email/sent/Sent') });
 
 
 
@@ -34,6 +35,7 @@ export default props => {
             <Route path={ ROUTES.messenger.path } component={ Messenger } />
 
             <Route path={ ROUTES.inbox.path } component={ Inbox } />
+            <Route path={ ROUTES.sent.path } component={ Sent } />
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />

@@ -123,7 +123,10 @@ export const TRANSLATION_DATA = {
             },
             inbox: {
                 title: 'Inbox'
-            }                       
+            },
+            sent: {
+                title: 'Sent mail'
+            }                                   
         },
         modals: {
             accept: 'Save',

@@ -1,0 +1,34 @@
+{
+    "total": 20,
+    "currentPage": 2,
+    "totalPages": 2,    
+    "messages": [
+        {
+            "_id": 8,
+            "from": "To: PinMe",
+            "subject": "We think you might like these Pins",
+            "excerpt": "We found some fresh Pins for you...",
+            "time": "23 May",
+            "isRead": true,
+            "isStarred": 0
+        },
+        {
+            "_id": 9,
+            "from": "To: me, John, Brad (11)",
+            "subject": "Daily Development Jobs from Nomads",
+            "excerpt": "Curated deliveri of remote jobs...",
+            "time": "22 May",
+            "isRead": true,
+            "isStarred": 0
+        },
+        {
+            "_id": 10,
+            "from": "To: LinkedIn",
+            "subject": "LinkedIn updates",
+            "excerpt": "Congratulate Robert on the work aniversary...",
+            "time": "21 May",
+            "isRead": true,
+            "isStarred": 0
+        }         
+    ]
+}

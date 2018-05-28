@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import GenericPage from '../base/GenericPage';
+import GenericPage from '../../base/GenericPage';
 import { connect } from 'react-redux';
-import { getEmailMessages } from '../../../actions';
+import { getEmailMessages } from '../../../../actions';
 import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import EmailListItem from './helpers/EmailListItem';
+import EmailListItem from '../helpers/EmailListItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Pagination from '../../common/misc/Pagination';
-import uniqid from 'uniqid';
+import Pagination from '../../../common/misc/Pagination';
 import Delete from '@material-ui/icons/Delete';
 import Block from '@material-ui/icons/Block';
 

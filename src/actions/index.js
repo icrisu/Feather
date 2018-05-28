@@ -1,6 +1,6 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
     ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER,
-    INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS, NEW_MESSAGE, CHAT_MESSAGES, EMAIL_MESSAGES } from './types';
+    INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS, NEW_MESSAGE, CHAT_MESSAGES, EMAIL_MESSAGES, SENT_MESSAGES } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -381,6 +381,22 @@ export const getEmailMessages = (page, cb) => {
             }         
             dispatch({
                 type: EMAIL_MESSAGES,
+                payload: data.data
+            })        
+        });
+    }
+}
+
+// get sent messages
+export const getSentMessages = (page, cb) => {
+    return (dispatch, getState) => {
+        API.getInstance().getSentMessages(page)
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }         
+            dispatch({
+                type: SENT_MESSAGES,
                 payload: data.data
             })        
         });
