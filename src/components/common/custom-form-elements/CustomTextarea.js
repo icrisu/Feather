@@ -38,7 +38,8 @@ class CustomTextarea extends PureComponent {
 }
 
 CustomTextarea.propTypes = {
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    placeholder: PropTypes.string
 }
 
 export default CustomTextarea;

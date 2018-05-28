@@ -138,7 +138,10 @@ export const TRANSLATION_DATA = {
             },
             spam: {
                 title: 'Spam'
-            }                                                           
+            },
+            emailCompose: {
+                title: 'New email'
+            }                                                        
         },
         modals: {
             accept: 'Save',

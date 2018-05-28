@@ -18,6 +18,7 @@ export const ROUTES = {
     trash: { path: '/email/trash' },
     starred: { path: '/email/starred' },
     spam: { path: '/email/spam' },
+    newEmail: { path: '/email/new' },
     home: { path: '/' },
 }
 

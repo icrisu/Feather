@@ -451,3 +451,15 @@
         }
     }              
 }
+
+// compose
+.compose-email-page-content {
+    .textarea-field {
+        min-height: 250px;
+        margin-bottom: 15px;
+    }
+    .compose-controls {
+        display: flex; align-items: center;
+        justify-content: space-between;
+    }
+}

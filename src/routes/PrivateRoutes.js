@@ -19,8 +19,7 @@ const StarredMessages = AsyncLoader.load({ importPath: import('../components/pag
 const DraftMessages = AsyncLoader.load({ importPath: import('../components/pages/email/DraftMessages') });
 const TrashMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Trash') });
 const SpamMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Spam') });
-
-
+const Compose = AsyncLoader.load({ importPath: import('../components/pages/email/Compose') });
 
 export default props => {
     return(
@@ -44,6 +43,7 @@ export default props => {
             <Route path={ ROUTES.draft.path } component={ DraftMessages } />
             <Route path={ ROUTES.trash.path } component={ TrashMessages } />
             <Route path={ ROUTES.spam.path } component={ SpamMessages } />
+            <Route path={ ROUTES.newEmail.path } component={ Compose } />
             
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
