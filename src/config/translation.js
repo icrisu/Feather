@@ -21,7 +21,10 @@ export const TRANSLATION_DATA = {
                 trash: 'Trash',
                 starred: 'Starred',
                 spam: 'Spam'
-            }
+            },
+            eCommerce: 'E-commerce',
+            shop: 'Products',
+            shopCart: 'Cart page'
         },
         topbar: {
             currentUser: {
@@ -146,7 +149,10 @@ export const TRANSLATION_DATA = {
             },
             emailSingle: {
                 title: 'Email'
-            }                                                        
+            },
+            shop: {
+                title: 'Products'
+            }                                                       
         },
         modals: {
             accept: 'Save',

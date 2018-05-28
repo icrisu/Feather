@@ -138,6 +138,11 @@ class API {
 
     getStarredMessages(page = 1) {
         return axios.get(`${API_ROOT}/emails_starred_page${page}.json`);
+    }
+    
+    // shop
+    getProducts(page = 1) {
+        return axios.get(`${API_ROOT}/shop_products_page${page}.json`);
     }    
 
     static getInstance() {

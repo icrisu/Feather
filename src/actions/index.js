@@ -1,7 +1,7 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
     ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER,
     INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS, NEW_MESSAGE, CHAT_MESSAGES, EMAIL_MESSAGES, SENT_MESSAGES,
-    STARRED_MESSAGES } from './types';
+    STARRED_MESSAGES, SHOP_PRODUCTS } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -414,6 +414,22 @@ export const getStarredMessages = (page, cb) => {
             }         
             dispatch({
                 type: STARRED_MESSAGES,
+                payload: data.data
+            })        
+        });
+    }
+}
+
+// get shop products
+export const getProducts = (page, cb) => {
+    return (dispatch, getState) => {
+        API.getInstance().getProducts(page)
+        .then(data => {
+            if (!_.isNil(cb) && _.isFunction(cb)) {
+                cb(data.data);
+            }         
+            dispatch({
+                type: SHOP_PRODUCTS,
                 payload: data.data
             })        
         });

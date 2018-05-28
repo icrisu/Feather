@@ -62,7 +62,7 @@ class AppBar extends PureComponent {
                     </div>                    
                     <div className="separator select-language-separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control">
-                        <IconButton component={ Link } to="/shopping/cart" style={navItemsStyle}>
+                        <IconButton component={ Link } to="/shop/cart" style={navItemsStyle}>
                             <i className="fas fa-shopping-cart"></i>
                         </IconButton>
                     </div>

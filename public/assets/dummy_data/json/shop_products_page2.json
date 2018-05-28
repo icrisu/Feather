@@ -1,0 +1,37 @@
+{
+    "total": 20,
+    "currentPage": 2,
+    "totalPages": 2,        
+    "products": [
+        {
+            "_id": 3,
+            "title": "Portelan teacup",
+            "subTitle": "NordWood & Norse",
+            "price": 59,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/3.jpg"
+            ]
+        },        
+        {
+            "_id": 2,
+            "title": "H&S Headphones",
+            "subTitle": "Electronics",
+            "price": 290,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/2.jpg"
+            ]
+        },
+        {
+            "_id": 1,
+            "title": "Magnolia bag",
+            "subTitle": "Lifestyle",
+            "price": 80,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/1.jpg"
+            ]
+        }                                      
+    ]
+}

@@ -14,6 +14,7 @@ import chatMessages from './chatMessages';
 import emailMessages from './emailMessages';
 import sentMessages from './sentMessages';
 import starredMessages from './starredMessages';
+import shopProducts from './shopProducts';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -30,5 +31,6 @@ export default combineReducers({
     chatMessages,
     emailMessages,
     sentMessages,
-    starredMessages
+    starredMessages,
+    shopProducts
 })

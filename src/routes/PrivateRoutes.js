@@ -21,6 +21,7 @@ const TrashMessages = AsyncLoader.load({ importPath: import('../components/pages
 const SpamMessages = AsyncLoader.load({ importPath: import('../components/pages/email/Spam') });
 const Compose = AsyncLoader.load({ importPath: import('../components/pages/email/Compose') });
 const EmailSingle = AsyncLoader.load({ importPath: import('../components/pages/email/EmailSingle') });
+const Shop = AsyncLoader.load({ importPath: import('../components/pages/shop/Shop') });
 
 export default props => {
     return(
@@ -46,6 +47,8 @@ export default props => {
             <Route path={ ROUTES.spam.path } component={ SpamMessages } />
             <Route path={ ROUTES.newEmail.path } component={ Compose } />
             <Route path={ ROUTES.emailView.path } component={ EmailSingle } />
+
+            <Route path={ ROUTES.shop.path } component={ Shop } />
             
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />

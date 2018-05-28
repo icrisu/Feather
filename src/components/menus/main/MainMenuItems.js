@@ -15,6 +15,7 @@ import MailOutline from '@material-ui/icons/MailOutline';
 import Info from '@material-ui/icons/Info';
 import Star from '@material-ui/icons/Star';
 import Delete from '@material-ui/icons/Delete';
+import ShopIcon from '@material-ui/icons/Shop';
 
 class MainMenuItems extends Component {
 
@@ -58,8 +59,13 @@ class MainMenuItems extends Component {
                         <MenuLink to={ROUTES.trash.path} label={I18n.t('mainMenu.emailApp.trash')} Icon={ <Delete /> } />
                         <MenuLink to={ROUTES.spam.path} label={I18n.t('mainMenu.emailApp.spam')} Icon={ <Info /> } />
                     </Submenu>
+
+                    <Submenu label={I18n.t('mainMenu.eCommerce')} Icon={ <ShopIcon /> }>
+                        <MenuLink to={ROUTES.shop.path} label={I18n.t('mainMenu.shop')} />
+                        <MenuLink to={ROUTES.shopCart.path} label={I18n.t('mainMenu.shopCart')} />
+                    </Submenu>                    
                     
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="E-commerce" />
+                    
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Charts" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Todo app" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Google map" />

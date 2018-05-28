@@ -6,12 +6,15 @@ export const ROUTES = {
     singleUser: { path: '/users/:_id' },
     users: { path: '/users' },
     eventsTimeline: { path: '/events-timeline' },
+    // invoices
     newInvoice: { path: '/invoices/new' },
     viewInvoice: { path: '/invoices/view/:_id' },
     editInvoice: { path: '/invoices/edit/:_id' },    
     invoices: { path: '/invoices' },
+    // chat
     messengerSingle: { path: '/messenger/:_id' },    
     messenger: { path: '/messenger' },
+    // email
     emailView: { path: '/email/view/:_id' },
     inbox: { path: '/email/inbox' },
     sent: { path: '/email/sent' },
@@ -20,6 +23,10 @@ export const ROUTES = {
     starred: { path: '/email/starred' },
     spam: { path: '/email/spam' },
     newEmail: { path: '/email/new' },
+    // shop
+    shopSingle: { path: '/shop/:_id' },
+    shop: { path: '/shop' },
+    shopCart: { path: '/shop/cart' },
     home: { path: '/' },
 }
 

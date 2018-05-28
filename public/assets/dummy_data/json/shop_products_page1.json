@@ -1,0 +1,67 @@
+{
+    "total": 20,
+    "currentPage": 1,
+    "totalPages": 2,        
+    "products": [
+        {
+            "_id": 1,
+            "title": "Magnolia bag",
+            "subTitle": "Lifestyle",
+            "price": 80,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/1.jpg"
+            ]
+        },
+        {
+            "_id": 2,
+            "title": "H&S Headphones",
+            "subTitle": "Electronics",
+            "price": 290,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/2.jpg"
+            ]
+        },
+        {
+            "_id": 3,
+            "title": "Portelan teacup",
+            "subTitle": "NordWood & Norse",
+            "price": 59,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/3.jpg"
+            ]
+        },
+        {
+            "_id": 4,
+            "title": "White earpods",
+            "subTitle": "Electronics",
+            "price": 199,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/4.jpg"
+            ]
+        },
+        {
+            "_id": 5,
+            "title": "Leather Watch",
+            "subTitle": "Jewellery",
+            "price": 399,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/5.jpg"
+            ]
+        },
+        {
+            "_id": 6,
+            "title": "Feng shui chair",
+            "subTitle": "NordWood & Norse",
+            "price": 449,
+            "isOnSale": false,
+            "images": [
+                "assets/dummy_data/imgs/products_medium/6.jpg"
+            ]
+        }                                         
+    ]
+}
