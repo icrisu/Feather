@@ -22,6 +22,8 @@ const SpamMessages = AsyncLoader.load({ importPath: import('../components/pages/
 const Compose = AsyncLoader.load({ importPath: import('../components/pages/email/Compose') });
 const EmailSingle = AsyncLoader.load({ importPath: import('../components/pages/email/EmailSingle') });
 const Shop = AsyncLoader.load({ importPath: import('../components/pages/shop/Shop') });
+const SingleProduct = AsyncLoader.load({ importPath: import('../components/pages/shop/SingleProduct') });
+
 
 export default props => {
     return(
@@ -48,6 +50,7 @@ export default props => {
             <Route path={ ROUTES.newEmail.path } component={ Compose } />
             <Route path={ ROUTES.emailView.path } component={ EmailSingle } />
 
+            <Route path={ ROUTES.shopSingle.path } component={ SingleProduct } />
             <Route path={ ROUTES.shop.path } component={ Shop } />
             
 

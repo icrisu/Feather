@@ -557,3 +557,16 @@
         }
     }    
 }
+
+// product single
+.shop-single-page-content {
+    .product-image-ui {
+        max-width: 400px; 
+        overflow: hidden;
+        border-radius: 2px;
+        margin-right: 24px; margin-bottom: 24px;
+        img {
+            width: 100%;
+        }
+    }
+}

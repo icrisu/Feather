@@ -62,6 +62,7 @@ class MainMenuItems extends Component {
 
                     <Submenu label={I18n.t('mainMenu.eCommerce')} Icon={ <ShopIcon /> }>
                         <MenuLink to={ROUTES.shop.path} label={I18n.t('mainMenu.shop')} />
+                        <MenuLink to={`${ROUTES.shop.path}/1`} label={I18n.t('mainMenu.shopSingle')} />
                         <MenuLink to={ROUTES.shopCart.path} label={I18n.t('mainMenu.shopCart')} />
                     </Submenu>                    
                     

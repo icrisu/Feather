@@ -23,7 +23,8 @@ export const TRANSLATION_DATA = {
                 spam: 'Spam'
             },
             eCommerce: 'E-commerce',
-            shop: 'Products',
+            shop: 'Shop / Products',
+            shopSingle: 'Product single',
             shopCart: 'Cart page'
         },
         topbar: {

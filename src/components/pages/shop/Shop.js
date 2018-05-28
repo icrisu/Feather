@@ -5,8 +5,6 @@ import { getProducts } from '../../../actions';
 import GenericPage from '../base/GenericPage';
 import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
 import ShopListItem from './ShopListItem';
 import Pagination from '../../common/misc/Pagination';
 
