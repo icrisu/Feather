@@ -11,6 +11,8 @@ export const TRANSLATION_DATA = {
             singleInvoice: 'Single invoice',
             editSingleInvoice: 'Edit Single',
             chatApp: 'Messenger',
+            chatAllMessages: 'All messages',
+            chatSingle: 'Single room',
             emailApp: {
                 main: 'Email',
                 inbox: 'Inbox',

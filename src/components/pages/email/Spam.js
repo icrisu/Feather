@@ -23,7 +23,6 @@ class Spam extends Component {
                     <Grid item xs={12} sm={12} md={12}>
                         <p>Your spam folder is empty.</p>
                         <Button component={ Link } to="/email/inbox" variant="raised" color="secondary" style={{ textTransform: 'initial' }}>Go to inbox</Button>
-                        
                     </Grid> 
                 </Grid>
             </GenericPage> 

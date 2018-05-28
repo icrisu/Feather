@@ -7,7 +7,6 @@ import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom';
 import CustomPaper from '../../common/paper/CustomPaper';
 import CustomInput from '../../common/custom-form-elements/CustomInput';
 import CustomTextarea from '../../common/custom-form-elements/CustomTextarea';
@@ -26,9 +25,13 @@ class EmailSingle extends Component {
         _pageNavigation: [{ label: 'Dashboard', to: '/' }, { label: 'Inbox', to: '/email/inbox' }, { label: 'Email subject' }]
     } 
 
+    constructor(props) {
+        super(props);
+        this.genericPageRef = React.createRef();
+    }
+
     // implement retrive email from ID from props
     // componentDidMount() {
-
     // }
 
     _handleChange(val, field) {
@@ -42,6 +45,12 @@ class EmailSingle extends Component {
             open: true
         }); 
         this.props.history.push('/email/inbox');
+    }
+
+    _replyClick() {
+        this.setState({ showReply: true }, () => {
+            this.genericPageRef.current.scrollToBottom();
+        });
     }
 
     _renderDummyMessage() {
@@ -87,14 +96,17 @@ class EmailSingle extends Component {
   
     render() {
         return(
-            <GenericPage title={`${I18n.t('pages.emailSingle.title')} subject`} pageContentClasses="single-email-page-content compose-email-page-content" pageNav={ this.state._pageNavigation }>
+            <GenericPage title={`${I18n.t('pages.emailSingle.title')} subject`} 
+                pageContentClasses="single-email-page-content compose-email-page-content" 
+                pageNav={ this.state._pageNavigation }
+                ref={this.genericPageRef} >
                 <Grid container spacing={24}>
 
                     <Grid className="page-actions" item xs={12} sm={12} md={12}>
                         <div className="from">
                             from { this.state.from } to me
                         </div>
-                        <Button onClick={ e => this.setState({ showReply: true }) } variant="raised" color="secondary" style={{ textTransform: 'initial' }}>
+                        <Button onClick={ this._replyClick.bind(this) } variant="raised" color="secondary" style={{ textTransform: 'initial' }}>
                             <Reply style={{ fontSize: 18, marginRight: 5 }} />
                             Reply
                         </Button>

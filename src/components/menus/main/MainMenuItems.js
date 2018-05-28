@@ -36,15 +36,19 @@ class MainMenuItems extends Component {
                         <MenuLink to={ROUTES.users.path} label={I18n.t('mainMenu.platformUsers')} />
                         <MenuLink to={`${ROUTES.users.path}/kara_trace`} label={I18n.t('mainMenu.singleUser')} />
                     </Submenu> 
+
                     <MenuLink Icon={ <EventIcon /> } to={ROUTES.eventsTimeline.path} label={I18n.t('mainMenu.eventsTimeline')} />
                     
                     <Submenu label={I18n.t('mainMenu.invoices')} Icon={ <span className="menu-icon"><i className="fas fa-file-alt"></i></span> }>
                         <MenuLink to={ROUTES.invoices.path} label={I18n.t('mainMenu.allInvoices')} />
                         <MenuLink to={`${ROUTES.invoices.path}/view/1`} label={I18n.t('mainMenu.singleInvoice')} />
                         <MenuLink to={`${ROUTES.invoices.path}/edit/1`} label={I18n.t('mainMenu.editSingleInvoice')} />
-                    </Submenu>                     
+                    </Submenu>
 
-                    <MenuLink Icon={ <ChatIcon /> } to={ ROUTES.messenger.path } label={I18n.t('mainMenu.chatApp')} />
+                    <Submenu label={I18n.t('mainMenu.chatApp')} Icon={ <ChatIcon /> }>
+                        <MenuLink to={ ROUTES.messenger.path } label={I18n.t('mainMenu.chatAllMessages')} />
+                        <MenuLink to={ `${ROUTES.messenger.path}/1` } label={I18n.t('mainMenu.chatSingle')} />
+                    </Submenu>                                          
 
                     <Submenu label={I18n.t('mainMenu.emailApp.main')} Icon={ <EmailIcon /> }>
                         <MenuLink to={ROUTES.inbox.path} label={I18n.t('mainMenu.emailApp.inbox')} Icon={ <InboxIcon /> } badge={4} />

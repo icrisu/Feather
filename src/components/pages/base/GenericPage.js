@@ -33,6 +33,12 @@ class GenericPage extends PureComponent {
         } catch (e) {};
     }
 
+    scrollToBottom = () => {
+        try {
+            this.pageContentRef.current.scrollTo(0, this.pageContentRef.current.scrollHeight)
+        } catch (e) { console.log(e)};        
+    }
+
     _renderPageActions() {
         if (this.props.pageActions) {
             return this.props.pageActions;
