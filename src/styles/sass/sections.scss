@@ -453,7 +453,7 @@
 }
 
 // compose
-.compose-email-page-content {
+.compose-email-page-content, .single-email-page-content {
     .textarea-field {
         min-height: 250px;
         margin-bottom: 15px;
@@ -461,5 +461,16 @@
     .compose-controls {
         display: flex; align-items: center;
         justify-content: space-between;
+    }
+}
+
+.single-email-page-content {
+    .from {
+        font-size: 14px;
+        color: #888;
+    }
+    .fromContent {
+        line-height: 150%;
+        font-size: 15px;
     }
 }

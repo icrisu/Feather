@@ -141,6 +141,9 @@ export const TRANSLATION_DATA = {
             },
             emailCompose: {
                 title: 'New email'
+            },
+            emailSingle: {
+                title: 'Email'
             }                                                        
         },
         modals: {

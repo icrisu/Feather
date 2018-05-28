@@ -12,6 +12,7 @@ export const ROUTES = {
     invoices: { path: '/invoices' },
     messengerSingle: { path: '/messenger/:_id' },    
     messenger: { path: '/messenger' },
+    emailView: { path: '/email/view/:_id' },
     inbox: { path: '/email/inbox' },
     sent: { path: '/email/sent' },
     draft: { path: '/email/draft' },
