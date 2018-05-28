@@ -499,6 +499,22 @@
                     position: absolute; left: 0; top: 0; width: 100%; height: 100%;
                     background: rgba(0, 0, 0, .1);
                     display: flex; align-items: center; justify-content: center;
+                    z-index: 3;
+                }
+                .sale-triangle {
+                    position: absolute; top: 0; right: 0; 
+                    width: 0;
+                    height: 0;
+                    border-top: 50px solid rgb(63, 214, 152);
+                    border-left: 50px solid transparent;
+                    z-index: 1;
+                }
+                .sale-label {
+                    position: absolute; top: 8px; right: 1px; 
+                    color: #FFF;
+                    z-index: 2;
+                    font-size: 14px;
+                    transform: rotate(45deg);
                 }
             }
             .details {
@@ -528,5 +544,16 @@
                 }
             }
         }
+        @media screen and (max-width: 630px) {
+            .shop-list-item {
+                float: none;
+                display: inline-block;
+            }
+        }         
     }
+    @media screen and (max-width: 630px) {
+        .products {
+            text-align: center;
+        }
+    }    
 }

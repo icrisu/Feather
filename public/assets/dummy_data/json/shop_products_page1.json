@@ -28,7 +28,7 @@
             "title": "Portelan teacup",
             "subTitle": "NordWood & Norse",
             "price": 59,
-            "isOnSale": false,
+            "isOnSale": true,
             "images": [
                 "assets/dummy_data/imgs/products_medium/3.jpg"
             ]
@@ -58,7 +58,7 @@
             "title": "Feng shui chair",
             "subTitle": "NordWood & Norse",
             "price": 449,
-            "isOnSale": false,
+            "isOnSale": true,
             "images": [
                 "assets/dummy_data/imgs/products_medium/6.jpg"
             ]

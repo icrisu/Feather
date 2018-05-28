@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Fade from '@material-ui/core/Fade';
@@ -27,6 +27,17 @@ class ShopListItem extends Component {
         }
     }
 
+    _renderSale(product) {
+        if (product.isOnSale === true) {
+            return(
+                <Fragment>
+                    <div className="sale-triangle"></div>
+                    <div className="sale-label">Sale</div>
+                </Fragment>
+            )
+        }
+    }    
+
     _onClick() {
         this.props.history.push(`/shop/${ this.props.product._id }`);
     }
@@ -41,6 +52,7 @@ class ShopListItem extends Component {
                 >
                 <div className="image-ui">
                     <img src={ product.images[0] } alt="" />
+                    { this._renderSale(product) }
                     { this._renderShowLink() }
                 </div>
                 <div className="details">
