@@ -1,0 +1,70 @@
+{
+    "total": 20,
+    "currentPage": 1,
+    "totalPages": 1,    
+    "messages": [
+        {
+            "_id": 1,
+            "from": "Ely from Apollo",
+            "subject": "Digest: Studio. new platform",
+            "excerpt": "Cool backgrounds, daily CSS design ...",
+            "time": "Now",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 2,
+            "from": "Jason Bourne",
+            "subject": "New contract",
+            "excerpt": "Jason Bourne sent you the document Contract Jun ...",
+            "time": "16:55",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 3,
+            "from": "To: Anna Hamilton",
+            "subject": "Design review request",
+            "excerpt": "7 Screens Changed Status in [Website]...",
+            "time": "15:20",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 4,
+            "from": "Envato Market",
+            "subject": "All earnings / end of month",
+            "excerpt": "Your request for all earnings has been calculated...",
+            "time": "13:20",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 5,
+            "from": "To: PinMe",
+            "subject": "We think you might like these Pins",
+            "excerpt": "We found some fresh Pins for you...",
+            "time": "28 May",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 6,
+            "from": "To: me, John, Brad (6)",
+            "subject": "Daily Development Jobs from Nomads",
+            "excerpt": "Curated deliveri of remote jobs...",
+            "time": "27 May",
+            "isRead": true,
+            "isStarred": 1
+        },
+        {
+            "_id": 7,
+            "from": "To: LinkedIn",
+            "subject": "LinkedIn updates",
+            "excerpt": "Congratulate Robert on the work aniversary...",
+            "time": "24 May",
+            "isRead": true,
+            "isStarred": 1
+        }                                                   
+    ]
+}

@@ -49,11 +49,11 @@ class MainMenuItems extends Component {
                     <Submenu label={I18n.t('mainMenu.emailApp.main')} Icon={ <EmailIcon /> }>
                         <MenuLink to={ROUTES.inbox.path} label={I18n.t('mainMenu.emailApp.inbox')} Icon={ <InboxIcon /> } />
                         <MenuLink to={ROUTES.sent.path} label={I18n.t('mainMenu.emailApp.sent')} Icon={ <SendIcon /> } />
-                        <MenuLink to={ROUTES.draft.path} label={I18n.t('mainMenu.emailApp.draft')} Icon={ <MailOutline /> } />
                         <MenuLink to={ROUTES.starred.path} label={I18n.t('mainMenu.emailApp.starred')} Icon={ <Star /> } />
+                        <MenuLink to={ROUTES.draft.path} label={I18n.t('mainMenu.emailApp.draft')} Icon={ <MailOutline /> } />
                         <MenuLink to={ROUTES.trash.path} label={I18n.t('mainMenu.emailApp.trash')} Icon={ <Delete /> } />
                         <MenuLink to={ROUTES.spam.path} label={I18n.t('mainMenu.emailApp.spam')} Icon={ <Info /> } />
-                    </Submenu>                     
+                    </Submenu>
                     
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="E-commerce" />
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Charts" />

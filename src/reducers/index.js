@@ -13,6 +13,7 @@ import chatRooms from './chat-rooms';
 import chatMessages from './chatMessages';
 import emailMessages from './emailMessages';
 import sentMessages from './sentMessages';
+import starredMessages from './starredMessages';
 
 export default combineReducers({
     i18n: i18nReducer,
@@ -28,5 +29,6 @@ export default combineReducers({
     chatRooms,
     chatMessages,
     emailMessages,
-    sentMessages
+    sentMessages,
+    starredMessages
 })

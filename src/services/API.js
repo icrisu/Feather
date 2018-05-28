@@ -134,8 +134,11 @@ class API {
 
     getSentMessages(page = 1) {
         return axios.get(`${API_ROOT}/emails_sent_page${page}.json`);
-    }      
-    
+    }
+
+    getStarredMessages(page = 1) {
+        return axios.get(`${API_ROOT}/emails_starred_page${page}.json`);
+    }    
 
     static getInstance() {
         if (!instance) {

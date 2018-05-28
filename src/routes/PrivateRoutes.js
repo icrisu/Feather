@@ -15,6 +15,7 @@ const Messenger = AsyncLoader.load({ importPath: import('../components/pages/mes
 const MessengerSingle = AsyncLoader.load({ importPath: import('../components/pages/messenger-single/MessengerSingle') });
 const Inbox = AsyncLoader.load({ importPath: import('../components/pages/email/inbox/Inbox') });
 const Sent = AsyncLoader.load({ importPath: import('../components/pages/email/sent/Sent') });
+const StarredMessages = AsyncLoader.load({ importPath: import('../components/pages/email/starred/Starred') });
 
 
 
@@ -36,6 +37,7 @@ export default props => {
 
             <Route path={ ROUTES.inbox.path } component={ Inbox } />
             <Route path={ ROUTES.sent.path } component={ Sent } />
+            <Route path={ ROUTES.starred.path } component={ StarredMessages } />
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
             <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
