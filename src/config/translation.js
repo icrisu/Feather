@@ -156,7 +156,10 @@ export const TRANSLATION_DATA = {
             },
             cart: {
                 title: 'Shoping cart'
-            }                                                                    
+            },
+            charts: {
+                title: 'Charts'
+            }                                                                   
         },
         modals: {
             accept: 'Save',

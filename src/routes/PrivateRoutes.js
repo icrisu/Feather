@@ -24,6 +24,7 @@ const EmailSingle = AsyncLoader.load({ importPath: import('../components/pages/e
 const Shop = AsyncLoader.load({ importPath: import('../components/pages/shop/Shop') });
 const SingleProduct = AsyncLoader.load({ importPath: import('../components/pages/shop/SingleProduct') });
 const Cart = AsyncLoader.load({ importPath: import('../components/pages/shop/Cart') });
+const Charts = AsyncLoader.load({ importPath: import('../components/pages/charts/Charts') });
 
 
 export default props => {
@@ -54,6 +55,8 @@ export default props => {
             <Route exact path={ ROUTES.shopCart.path } component={ Cart } />
             <Route path={ ROUTES.shopSingle.path } component={ SingleProduct } />
             <Route path={ ROUTES.shop.path } component={ Shop } />
+
+            <Route path={ ROUTES.charts.path } component={ Charts } />
             
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />

@@ -27,6 +27,8 @@ export const ROUTES = {
     shopCart: { path: '/shop/cart' },
     shopSingle: { path: '/shop/:_id' },
     shop: { path: '/shop' },
+    // charts
+    charts: { path: '/charts' },
     home: { path: '/' },
 }
 

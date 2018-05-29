@@ -5,28 +5,28 @@
             "info": "Jun 20 2018",
             "value": "+$2.137,00",
             "trend": "up",
-            "link": "/"
+            "link": "/invoices"
         },
         {
             "title": "Subscription renewal",
             "info": "Jun 18 2018",
             "value": "-$1.370,00",
             "trend": "down",
-            "link": "/"
+            "link": "/invoices"
         },
         {
             "title": "Payment from invoice #5893",
             "info": "Jun 17 2018",
             "value": "+$1.678,00",
             "trend": "up",
-            "link": "/"
+            "link": "/invoices"
         },
         {
             "title": "Payment from invoice #5789",
             "info": "Jun 11 2018",
             "value": "+$865,00",
             "trend": "up",
-            "link": "/"
+            "link": "/invoices"
         }
     ]
 }

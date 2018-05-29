@@ -16,6 +16,7 @@ import Info from '@material-ui/icons/Info';
 import Star from '@material-ui/icons/Star';
 import Delete from '@material-ui/icons/Delete';
 import ShopIcon from '@material-ui/icons/Shop';
+import ChartIcon from '@material-ui/icons/ShowChart';
 
 class MainMenuItems extends Component {
 
@@ -64,7 +65,9 @@ class MainMenuItems extends Component {
                         <MenuLink to={ROUTES.shop.path} label={I18n.t('mainMenu.shop')} />
                         <MenuLink to={`${ROUTES.shop.path}/1`} label={I18n.t('mainMenu.shopSingle')} />
                         <MenuLink to={ROUTES.shopCart.path} label={I18n.t('mainMenu.shopCart')} />
-                    </Submenu>                    
+                    </Submenu>      
+
+                    <MenuLink Icon={ <ChartIcon /> } to={ ROUTES.charts.path } label="Charts" />              
                     
                     
                     <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Charts" />
