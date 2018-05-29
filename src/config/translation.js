@@ -153,7 +153,10 @@ export const TRANSLATION_DATA = {
             },
             shop: {
                 title: 'Products'
-            }                                                       
+            },
+            cart: {
+                title: 'Shoping cart'
+            }                                                                    
         },
         modals: {
             accept: 'Save',

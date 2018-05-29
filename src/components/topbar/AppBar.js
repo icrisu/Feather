@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { toggleMainSidebar } from '../../actions/ui-interact';
-import { search } from '../../actions';
+import { search, pushFakeDataToCart } from '../../actions';
 import { APP_BAR_COLORS } from '../../theme/Customize';
 import { appTransitions } from '../main/transitions';
 import classNames from 'classnames';
@@ -17,8 +17,8 @@ import CurrentUser from './CurrentUser';
 import NotificationSidebar from '../menus/main-sidebar/NotificationSidebar';
 import FlagLangSelect from '../widgets/FlagLangSelect';
 import SearchWidget from '../common/search/SearchWidget';
-
 import { I18n } from 'react-redux-i18n';
+import _ from 'lodash';
 
 const styles = appTransitions;
 const navItemsStyle = {
@@ -30,12 +30,24 @@ class AppBar extends PureComponent {
     static defaultProps = { openedMenu: true, toggleMenu: () => {} };
     state = { openNotificationSidebar: false }
 
+    componentDidMount() {
+        // fake cart implementation
+        this.props.pushFakeDataToCart();
+    }
+
     _toggleMenu() {
         this.props.toggleMenu();
     }    
 
     _openNotificationSidebar() {
         this.props.toggleMainSidebar(true);
+    }
+
+    _renderCartBadge() {
+        const { cartItems } = this.props;
+        if (_.isArray(cartItems) && cartItems.length > 0) {
+            return <CustomBadge content={ cartItems.length } />;
+        }
     }
 
     render() {
@@ -63,6 +75,7 @@ class AppBar extends PureComponent {
                     <div className="separator select-language-separator" style={{ backgroundColor: APP_BAR_COLORS.itemsSeparatorBackground }}></div>
                     <div className="control">
                         <IconButton component={ Link } to="/shop/cart" style={navItemsStyle}>
+                            { this._renderCartBadge() }
                             <i className="fas fa-shopping-cart"></i>
                         </IconButton>
                     </div>
@@ -86,11 +99,17 @@ class AppBar extends PureComponent {
     }
 }
 
+const mapStateToProps = ({ cartItems }) => {
+    return { cartItems };
+}
+
 AppBar.propTypes = {
 	classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
     openedMenu: PropTypes.bool,
-    toggleMenu: PropTypes.func.isRequired
+    toggleMenu: PropTypes.func.isRequired,
+    cartItems: PropTypes.array,
 };
 
-export default connect(null, { toggleMainSidebar, search })(withStyles(styles, { withTheme: true })(AppBar));
+
+export default connect(mapStateToProps, { toggleMainSidebar, search, pushFakeDataToCart })(withStyles(styles, { withTheme: true })(AppBar));

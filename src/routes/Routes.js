@@ -24,9 +24,9 @@ export const ROUTES = {
     spam: { path: '/email/spam' },
     newEmail: { path: '/email/new' },
     // shop
+    shopCart: { path: '/shop/cart' },
     shopSingle: { path: '/shop/:_id' },
     shop: { path: '/shop' },
-    shopCart: { path: '/shop/cart' },
     home: { path: '/' },
 }
 

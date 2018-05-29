@@ -11,7 +11,10 @@
             "isOnSale": false,
             "images": [
                 "assets/dummy_data/imgs/products_medium/1.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]            
         },
         {
             "_id": 2,
@@ -21,7 +24,10 @@
             "isOnSale": false,
             "images": [
                 "assets/dummy_data/imgs/products_medium/2.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]             
         },
         {
             "_id": 3,
@@ -31,7 +37,10 @@
             "isOnSale": true,
             "images": [
                 "assets/dummy_data/imgs/products_medium/3.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]             
         },
         {
             "_id": 4,
@@ -41,7 +50,10 @@
             "isOnSale": false,
             "images": [
                 "assets/dummy_data/imgs/products_medium/4.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]             
         },
         {
             "_id": 5,
@@ -51,17 +63,23 @@
             "isOnSale": false,
             "images": [
                 "assets/dummy_data/imgs/products_medium/5.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]             
         },
         {
             "_id": 6,
-            "title": "Feng shui chair",
-            "subTitle": "NordWood & Norse",
+            "title": "Sherwood Recliner Chair",
+            "subTitle": "By Darbi Home Co",
             "price": 449,
             "isOnSale": true,
             "images": [
                 "assets/dummy_data/imgs/products_medium/6.jpg"
-            ]
+            ],
+            "imagesLarge": [
+                "assets/dummy_data/imgs/products_medium/product-large.jpg"
+            ]             
         }                                         
     ]
 }

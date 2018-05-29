@@ -251,3 +251,18 @@
     }
 }
 
+.cart-stepper {
+    display: flex;
+    align-items: center;
+    .input-counter {
+        border: none; outline: none;
+        width: 40px;
+        border-color: #CCC;
+        border-bottom-style: solid; border-width: 1px;
+        margin: 0px 3px;
+        padding: 2px 0px;
+        font-size: 18px;
+        text-align: right;
+    }
+}
+

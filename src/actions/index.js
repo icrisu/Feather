@@ -1,7 +1,7 @@
 import { NOTIFICATIONS, SIDEBAR_ACTIVITY, RECENT_SALES, RECENT_SALES_BY_CHANEL, GLOBAL_SEARCH_RESULTS,
     ACCESS_TOKEN, BEST_SELLING_ITEMS, RECENT_BALANCE, USERS, ADD_USER, REMOVE_USER, EDIT_USER,
     INVOICE_SEARCH_RESULTS, INVOICES, CHAT_ROOMS, NEW_MESSAGE, CHAT_MESSAGES, EMAIL_MESSAGES, SENT_MESSAGES,
-    STARRED_MESSAGES, SHOP_PRODUCTS } from './types';
+    STARRED_MESSAGES, SHOP_PRODUCTS, CART_ITEMS, REMOVE_CART_ITEM, CLEAR_CART } from './types';
 import API from '../services/API';
 import StorageService from '../services/StorageService';
 import InitService from '../services/InitService';
@@ -433,5 +433,57 @@ export const getProducts = (page, cb) => {
                 payload: data.data
             })        
         });
+    }
+}
+
+// pushing to cart should be done from the product single page
+// fake cart implementation
+export const pushFakeDataToCart = () => {
+    const fakeItems = [
+        {
+            "_id": 1,
+            "title": "Magnolia bag",
+            "subTitle": "Lifestyle",
+            "price": 80,
+            "images": ["assets/dummy_data/imgs/products_medium/1.jpg"],
+            "howMany": 1
+        },
+        {
+            "_id": 2,
+            "title": "H&S Headphones",
+            "subTitle": "Electronics",
+            "price": 290,
+            "isOnSale": false,
+            "images": ["assets/dummy_data/imgs/products_medium/2.jpg"],
+            "howMany": 1           
+        },
+        {
+            "_id": 6,
+            "title": "Sherwood Recliner Chair",
+            "subTitle": "By Darbi Home Co",
+            "price": 449,
+            "images": ["assets/dummy_data/imgs/products_medium/6.jpg"],
+            "howMany": 1
+        }  
+    ]
+    return {
+        payload: fakeItems,
+        type: CART_ITEMS
+    }
+}
+
+// remove item from cart
+export const removeCartItem = itemId => {
+    return {
+        payload: itemId,
+        type: REMOVE_CART_ITEM
+    }
+}
+
+// remove item from cart
+export const clearShopingCart = () => {
+    return {
+        payload: null,
+        type: CLEAR_CART
     }
 }

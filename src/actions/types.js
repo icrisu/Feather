@@ -24,3 +24,8 @@ export const EMAIL_MESSAGES = 'EMAIL_MESSAGES';
 export const SENT_MESSAGES = 'SENT_MESSAGES';
 export const STARRED_MESSAGES = 'STARRED_MESSAGES';
 export const SHOP_PRODUCTS = 'SHOP_PRODUCTS';
+// export const ADD_CART_ITEM = 'ADD_CART_ITEM';
+export const CART_ITEMS = 'CART_ITEMS';
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
+export const CLEAR_CART = 'CLEAR_CART';
+
