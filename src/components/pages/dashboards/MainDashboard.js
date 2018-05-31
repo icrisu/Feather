@@ -51,14 +51,7 @@ class MainDashboard extends Component {
         )
     }    
 
-    render() {
-    //     <Typography style={{ fontWeight: 400 }} variant="title" gutterBottom>
-    //     Good evening, Kara Thrace.
-    // </Typography>
-    // <Typography style={{ color: '#6d738e', marginBottom: 30 }} variant="body2" gutterBottom>
-    //     Here's what's happening with your store today.
-    // </Typography>      
-        
+    render() {  
         return(
             <GenericPage title={I18n.t('pages.dashboard.title')}>
                 <Grid container spacing={24}>
