@@ -60,22 +60,22 @@ class Charts extends Component {
             <GenericPage title={I18n.t('pages.charts.title')} pageContentClasses="charts-page-content" pageNav={ this.state._pageNavigation }>
                 <Grid container spacing={24}>
                     <Grid item xs={12} sm={12} md={6}>
-                        <CustomPaper title="Bar chart" hasMarginBottom>
+                        <CustomPaper title="Sales by channel" hasMarginBottom>
                             <BaseChart ref={this._barChart} />
                         </CustomPaper>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
-                        <CustomPaper title="Line chart" hasMarginBottom>
+                        <CustomPaper title="Recent purchases" hasMarginBottom>
                             <BaseChart ref={this._lineChart} />
                         </CustomPaper>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
-                        <CustomPaper title="Sales by channel" hasMarginBottom>
+                        <CustomPaper title="Today's sales" hasMarginBottom>
                             <BaseChart ref={this._pieChart} />
                         </CustomPaper>
                     </Grid>                     
                     <Grid item xs={12} sm={12} md={6}>
-                        <CustomPaper title="Today's sales" hasMarginBottom>
+                        <CustomPaper title="Weekly sales" hasMarginBottom>
                             <BaseChart ref={this._doughnut} />
                         </CustomPaper>
                     </Grid>
