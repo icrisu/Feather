@@ -18,7 +18,7 @@ import RequireAuth from './components/utils/RequireAuth';
 import reducers from './reducers';
 import './styles/css/index.css';
 
-import Main from './components/main/Main';
+import Main from './main/Main';
 
 
 const WithAuthentication = RequireAuth(Main);
@@ -48,5 +48,5 @@ ReactDOM.render(
 </Provider>, document.getElementById('root'));
 
 // perform tasks after app loads
-// ex: get notifications
+// ex: get sidebar notifications
 InitService.getInstance().init();

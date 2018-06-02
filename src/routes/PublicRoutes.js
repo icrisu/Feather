@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ROUTES } from './Routes';
-import SignIn from '../components/pages/auth/SignIn';
-import SignUp from '../components/pages/auth/SignUp';
+import SignIn from '../pages/auth/SignIn';
+import SignUp from '../pages/auth/SignUp';
 
 export default props => {
     return(

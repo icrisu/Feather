@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { toggleMainSidebar } from '../../actions/ui-interact';
 import { search, pushFakeDataToCart } from '../../actions';
 import { APP_BAR_COLORS } from '../../theme/Customize';
-import { appTransitions } from '../main/transitions';
+import { appTransitions } from '../../main/transitions';
 import classNames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
