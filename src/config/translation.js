@@ -162,7 +162,10 @@ export const TRANSLATION_DATA = {
             },
             map: {
                 title: 'Store locator'
-            }                                                                  
+            },
+            pricing: {
+                title: 'Pricing'
+            }                                                                              
         },
         modals: {
             accept: 'Save',

@@ -26,6 +26,8 @@ const SingleProduct = AsyncLoader.load({ importPath: import('../pages/shop/Singl
 const Cart = AsyncLoader.load({ importPath: import('../pages/shop/Cart') });
 const Charts = AsyncLoader.load({ importPath: import('../pages/charts/Charts') });
 const StoreLocator = AsyncLoader.load({ importPath: import('../pages/map-locations/StoreLocator') });
+const PricingPage = AsyncLoader.load({ importPath: import('../pages/pricing/PricingPage') });
+
 
 
 export default props => {
@@ -58,6 +60,8 @@ export default props => {
             <Route path={ ROUTES.shop.path } component={ Shop } />
 
             <Route path={ ROUTES.charts.path } component={ Charts } />
+
+            <Route path={ ROUTES.pricing.path } component={ PricingPage } />
 
             <Route path={ ROUTES.map.path } component={ StoreLocator } />
             

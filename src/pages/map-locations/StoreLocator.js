@@ -19,47 +19,8 @@ class StoreLocator extends Component {
     }
 
     _chooseStore(store, event) {
-        this.setState({ store });
-    }
-
-    _renderStore() {
-        if (this.state.store === 1) {
-            return(
-                <Fragment>
-                    <div className="store-title">A votre sante</div>
-                    <div>999 Third Avenue, San Francisco</div>
-                    <div>Open until 9:00pm</div>
-                    <div style={{ marginTop: '20px', marginBottom: 10 }}>
-                        <Button variant="raised" color="secondary" size="medium" style={{ marginRight: 15 }}>
-                            <CallIcon style={{ marginRight: 10, fontSize: 18 }} />
-                            Call
-                        </Button>
-                        <Button component={ Link } to="email/new" variant="raised" size="medium">
-                            <EmailIcon style={{ marginRight: 10, fontSize: 18 }} />
-                            Email
-                        </Button>                                
-                    </div>                     
-                </Fragment>
-            )
-        } else {
-            return(
-                <Fragment>
-                    <div className="store-title">Big House Coffee</div>
-                    <div>883 First Avenue, San Francisco</div>
-                    <div>Open until 5:00pm</div>
-                    <div style={{ marginTop: '20px', marginBottom: 10 }}>
-                        <Button variant="raised" color="secondary" size="medium" style={{ marginRight: 15 }}>
-                            <CallIcon style={{ marginRight: 10, fontSize: 18 }} />
-                            Call
-                        </Button>
-                        <Button component={ Link } to="email/new" variant="raised" size="medium">
-                            <EmailIcon style={{ marginRight: 10, fontSize: 18 }} />
-                            Email
-                        </Button>                                
-                    </div>                     
-                </Fragment>
-            )            
-        }
+        // this.setState({ store });
+        // do something on selected marker
     }
 
     _renderMarkers() {
@@ -86,9 +47,38 @@ class StoreLocator extends Component {
                         </CustomPaper>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
-                        <CustomPaper title="Shop info" hasMarginBottom>
-                            { this._renderStore() }                                                        
+                        <CustomPaper hasMarginBottom>
+                            <div className="store-title">A votre sante</div>
+                            <div className="store-about">999 Third Avenue, San Francisco</div>
+                            <div className="store-about">Open until 9:00pm</div>
+                            <div style={{ marginTop: '20px', marginBottom: 10 }}>
+                                <Button variant="raised" color="secondary" size="medium" style={{ marginRight: 15 }}>
+                                    <CallIcon style={{ marginRight: 10, fontSize: 18 }} />
+                                    Call
+                                </Button>
+                                <Button component={ Link } to="email/new" variant="raised" size="medium">
+                                    <EmailIcon style={{ marginRight: 10, fontSize: 18 }} />
+                                    Email
+                                </Button>                                
+                            </div>                                                                                
                         </CustomPaper>
+
+                        <CustomPaper hasMarginBottom>
+                            <div className="store-title">Big House Coffee</div>
+                            <div className="store-about">883 First Avenue, San Francisco</div>
+                            <div className="store-about">Open until 5:00pm</div>
+                            <div style={{ marginTop: '20px', marginBottom: 10 }}>
+                                <Button variant="raised" color="secondary" size="medium" style={{ marginRight: 15 }}>
+                                    <CallIcon style={{ marginRight: 10, fontSize: 18 }} />
+                                    Call
+                                </Button>
+                                <Button component={ Link } to="email/new" variant="raised" size="medium">
+                                    <EmailIcon style={{ marginRight: 10, fontSize: 18 }} />
+                                    Email
+                                </Button>                                
+                            </div>
+                        </CustomPaper>
+
                     </Grid>                    
                 </Grid>
             </GenericPage>
