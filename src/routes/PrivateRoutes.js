@@ -25,6 +25,7 @@ const Shop = AsyncLoader.load({ importPath: import('../components/pages/shop/Sho
 const SingleProduct = AsyncLoader.load({ importPath: import('../components/pages/shop/SingleProduct') });
 const Cart = AsyncLoader.load({ importPath: import('../components/pages/shop/Cart') });
 const Charts = AsyncLoader.load({ importPath: import('../components/pages/charts/Charts') });
+const StoreLocator = AsyncLoader.load({ importPath: import('../components/pages/map-locations/StoreLocator') });
 
 
 export default props => {
@@ -57,6 +58,8 @@ export default props => {
             <Route path={ ROUTES.shop.path } component={ Shop } />
 
             <Route path={ ROUTES.charts.path } component={ Charts } />
+
+            <Route path={ ROUTES.map.path } component={ StoreLocator } />
             
 
             <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />

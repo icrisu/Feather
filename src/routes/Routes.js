@@ -29,6 +29,8 @@ export const ROUTES = {
     shop: { path: '/shop' },
     // charts
     charts: { path: '/charts' },
+    // calendar
+    map: { path: '/store-locator' },
     home: { path: '/' },
 }
 

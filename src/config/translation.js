@@ -159,7 +159,10 @@ export const TRANSLATION_DATA = {
             },
             charts: {
                 title: 'Charts'
-            }                                                                   
+            },
+            map: {
+                title: 'Store locator'
+            }                                                                  
         },
         modals: {
             accept: 'Save',
