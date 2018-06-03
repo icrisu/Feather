@@ -9,7 +9,6 @@ export default props => {
         <Switch>
             <Route path={ ROUTES.signin.path } component={ SignIn } />
             <Route path={ ROUTES.signup.path } component={ SignUp } />
-
         </Switch>
     )
 }

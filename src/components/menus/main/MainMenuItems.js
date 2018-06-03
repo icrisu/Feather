@@ -20,6 +20,7 @@ import ChartIcon from '@material-ui/icons/ShowChart';
 import LocationOn from '@material-ui/icons/LocationOn';
 import Assignment from '@material-ui/icons/Assignment';
 import DoneAll from '@material-ui/icons/DoneAll';
+import CardGiftcard from '@material-ui/icons/CardGiftcard';
 
 class MainMenuItems extends Component {
 
@@ -75,14 +76,10 @@ class MainMenuItems extends Component {
                     <MenuLink Icon={ <ChartIcon /> } to={ ROUTES.charts.path } label="Charts" />
                     <MenuLink Icon={ <Assignment /> } to={ ROUTES.pricing.path } label="Pricing table" />
                     <MenuLink Icon={ <LocationOn /> } to={ ROUTES.map.path } label="Store locator" />
-                    
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Todo app" />
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Buttons" />
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="Forms" />
-                    <MenuLink Icon={ <InboxIcon /> } to="/activity" label="My account" />
+
+                    <MenuLink Icon={ <CardGiftcard /> } to={ ROUTES.buttonsSample.path } label="Buttons" />
                                       
-                    <MenuLink to="/main2" label="No icon" />
-                    <MenuLink href="http://google.com" target="_self" label="External" />
+                    <MenuLink href="http://google.com" target="_self" label="External link" />
                                         
                 </List>
             </nav>

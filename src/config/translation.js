@@ -168,7 +168,10 @@ export const TRANSLATION_DATA = {
             },
             todopage: {
                 title: 'My tasks'
-            }                                                                                           
+            },
+            buttonsSample: {
+                title: 'Buttons'
+            }                                                                                          
         },
         modals: {
             accept: 'Save',

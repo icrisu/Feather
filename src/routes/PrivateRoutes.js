@@ -28,7 +28,7 @@ const Charts = AsyncLoader.load({ importPath: import('../pages/charts/Charts') }
 const StoreLocator = AsyncLoader.load({ importPath: import('../pages/map-locations/StoreLocator') });
 const PricingPage = AsyncLoader.load({ importPath: import('../pages/pricing/PricingPage') });
 const ToDoAppPage = AsyncLoader.load({ importPath: import('../pages/todo/ToDoAppPage') });
-
+const ButtonsDemos = AsyncLoader.load({ importPath: import('../pages/elements/ButtonsDemos') });
 
 
 export default props => {
@@ -64,12 +64,13 @@ export default props => {
             <Route path={ ROUTES.charts.path } component={ Charts } />
             <Route path={ ROUTES.pricing.path } component={ PricingPage } />
             <Route path={ ROUTES.map.path } component={ StoreLocator } />
-            
 
-            <Route path={`/main1`} component={ () => <p>ssss XXXXX </p>} />
-            <Route path={`/main2`} component={ () => <p>ssss YYYYY </p>} />
-            <Route path={`/signin`} component={ () => <p>ssss sign in </p>} />
-            <Route path={ ROUTES.home.path } component={ MainDashboard } />
+            <Route path={ ROUTES.buttonsSample.path } component={ ButtonsDemos } />
+
+            <Route exact path={ ROUTES.home.path } component={ MainDashboard } />
+
+            <Route path={ ROUTES.notFound.path } component={ () => { return <p>not found not found not found not found not found not found not found not found not found not found </p> } } />
+
         </Switch>
     )
 }
