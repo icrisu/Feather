@@ -29,6 +29,7 @@ const StoreLocator = AsyncLoader.load({ importPath: import('../pages/map-locatio
 const PricingPage = AsyncLoader.load({ importPath: import('../pages/pricing/PricingPage') });
 const ToDoAppPage = AsyncLoader.load({ importPath: import('../pages/todo/ToDoAppPage') });
 const ButtonsDemos = AsyncLoader.load({ importPath: import('../pages/elements/ButtonsDemos') });
+const PageNotFound = AsyncLoader.load({ importPath: import('../pages/404/PageNotFound') });
 
 
 export default props => {
@@ -69,7 +70,7 @@ export default props => {
 
             <Route exact path={ ROUTES.home.path } component={ MainDashboard } />
 
-            <Route path={ ROUTES.notFound.path } component={ () => { return <p>not found not found not found not found not found not found not found not found not found not found </p> } } />
+            <Route path={ ROUTES.notFound.path } component={ PageNotFound } />
 
         </Switch>
     )

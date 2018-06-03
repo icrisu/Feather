@@ -78,6 +78,8 @@ class MainMenuItems extends Component {
                     <MenuLink Icon={ <LocationOn /> } to={ ROUTES.map.path } label="Store locator" />
 
                     <MenuLink Icon={ <CardGiftcard /> } to={ ROUTES.buttonsSample.path } label="Buttons" />
+
+                    <MenuLink to="/something-not-found" label="404 page" />
                                       
                     <MenuLink href="http://google.com" target="_self" label="External link" />
                                         
