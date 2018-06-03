@@ -13,8 +13,9 @@ const green = '#46b39d';
 const red = '#e16e9f';
 
 export default props => {
+    const style = props.style || {};
     return(
-        <Grid container spacing={24}>
+        <Grid container spacing={24} style={{ ...style }}>
             <Grid item xs={6} sm={6} md={6}>
                 <CustomPaper removepadding="true">
                     <ActivityInfoCard link="/" color={ green } value="22"

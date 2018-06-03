@@ -4,7 +4,7 @@ import { I18n } from 'react-redux-i18n';
 import CustomPaper from '../../components/common/paper/CustomPaper';
 import Grid from '@material-ui/core/Grid';
 import TimelineEvents from '../../components/common/timeline/TimelineEvents';
-import { retriveUserEvents, retriveCommunityEvents } from '../../actions/index';
+import { retriveUserEvents, retriveCommunityEvents } from '../../actions';
 
 class EventsTimeline extends Component {
 

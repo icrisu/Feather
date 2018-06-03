@@ -65,7 +65,7 @@ class MainDashboard extends Component {
                         <CustomPaper title={I18n.t('pages.dashboard.espensesStats')} hasMarginBottom>
                             <StatsList retriveAction={ getExpences } />
                         </CustomPaper>        
-                        <ActivityCards />
+                        <ActivityCards />                    
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
                         <CustomPaper title={I18n.t('pages.dashboard.balanceHistory')} maxheight={300} removepadding="true" hasMarginBottom>

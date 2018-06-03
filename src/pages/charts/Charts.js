@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import GenericPage from '../base/GenericPage';
 import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
