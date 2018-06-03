@@ -678,3 +678,33 @@
         color: #7f8fa6;
     }
 }
+
+.todo-page-content {
+    .todo-item {
+        position: relative;
+        background: #FFFFFF;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        $opacity: .15;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);
+        box-shadow: 0px 0px 5px 0px rgba(107,107,107,$opacity);      
+        .indicator {
+            position: absolute; top: 0; right: 0; width: 3px; height: 100%;
+            &.personal {
+                background: #f56683;
+            }
+            &.work {
+                background: #beaaf1;
+            }
+            &.meet {
+                background: #8aceff;
+            }
+            &.home {
+                background: #a4d28b;
+            }                                    
+        }  
+    }
+}

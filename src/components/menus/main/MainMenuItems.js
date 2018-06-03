@@ -19,6 +19,7 @@ import ShopIcon from '@material-ui/icons/Shop';
 import ChartIcon from '@material-ui/icons/ShowChart';
 import LocationOn from '@material-ui/icons/LocationOn';
 import Assignment from '@material-ui/icons/Assignment';
+import DoneAll from '@material-ui/icons/DoneAll';
 
 class MainMenuItems extends Component {
 
@@ -68,6 +69,8 @@ class MainMenuItems extends Component {
                         <MenuLink to={`${ROUTES.shop.path}/1`} label={I18n.t('mainMenu.shopSingle')} />
                         <MenuLink to={ROUTES.shopCart.path} label={I18n.t('mainMenu.shopCart')} />
                     </Submenu>      
+
+                    <MenuLink Icon={ <DoneAll /> } to={ ROUTES.todo.path } label="Todo App" />
 
                     <MenuLink Icon={ <ChartIcon /> } to={ ROUTES.charts.path } label="Charts" />
                     <MenuLink Icon={ <Assignment /> } to={ ROUTES.pricing.path } label="Pricing table" />

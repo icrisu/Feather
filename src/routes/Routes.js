@@ -31,6 +31,8 @@ export const ROUTES = {
     charts: { path: '/charts' },
     // pricing
     pricing: { path: '/pricing' },
+    // todo_app
+    todo: { path: '/todo' },    
     // map
     map: { path: '/store-locator' },
     home: { path: '/' },

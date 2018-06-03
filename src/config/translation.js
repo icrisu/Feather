@@ -165,7 +165,10 @@ export const TRANSLATION_DATA = {
             },
             pricing: {
                 title: 'Pricing'
-            }                                                                              
+            },
+            todopage: {
+                title: 'My tasks'
+            }                                                                                           
         },
         modals: {
             accept: 'Save',
