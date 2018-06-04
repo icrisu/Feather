@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import submenu from './submenu';
 import sidebarOpen from './sidebar';
+import requestCloseMenu from './requestCloseMenu';
 import language from './language';
 import { i18nReducer } from 'react-redux-i18n';
 import notifications from './notifications';
@@ -17,10 +18,12 @@ import starredMessages from './starredMessages';
 import shopProducts from './shopProducts';
 import cartItems from './cartItems';
 
+
 export default combineReducers({
     i18n: i18nReducer,
     submenu,
     sidebarOpen,
+    requestCloseMenu,
     language,
     notifications,
     sidebarActivity,

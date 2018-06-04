@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import GenericPage from '../base/GenericPage';
-import { I18n } from 'react-redux-i18n';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 

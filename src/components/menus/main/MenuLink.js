@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { submenuOpened } from '../../../actions/ui-interact';
+import { submenuOpened, requestCloseMenu } from '../../../actions/ui-interact';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -13,6 +13,7 @@ import classNames from 'classnames';
 import { MAIN_MENU_COLORS } from '../../../theme/Customize';
 import safe from 'undefsafe';
 import _ from 'lodash';
+import uniqid from 'uniqid';
 
 const styles = theme => ({
     root: {
@@ -65,6 +66,10 @@ class MenuLink extends Component {
         if (this.props.isSubmenu === false) {
             this.props.submenuOpened('_')
         }
+        this.props.requestCloseMenu({
+            requestId: uniqid(),
+            reason: 'MOBILE'
+        });
     }
 
     _renderIconSpace() {
@@ -164,7 +169,8 @@ MenuLink.propTypes = {
     isSubmenu: PropTypes.bool,
     submenuOpended: PropTypes.bool,
     openSubmenu: PropTypes.func,
-    badge: PropTypes.any
+    badge: PropTypes.any,
+    requestCloseMenu: PropTypes.func
 };
 
-export default withRouter(connect(null, { submenuOpened })(withStyles(styles)(MenuLink)));
+export default withRouter(connect(null, { submenuOpened, requestCloseMenu })(withStyles(styles)(MenuLink)));

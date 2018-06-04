@@ -9,7 +9,7 @@ import ReactResizeDetector from 'react-resize-detector';
 import _ from 'lodash';
 import MainMenu from '../components/menus/main/MainMenu';
 import AppBar from '../components/topbar/AppBar';
-import { DEFAULT_LANG } from '../config/constants';
+import { DEFAULT_LANG, SMALL_SCREEN_MAIN_SIZE } from '../config/constants';
 import PrivateRoutes from '../routes/PrivateRoutes';
 import PublicRoutes from '../routes/PublicRoutes';
 import SimpleNotification from '../components/common/misc/SimpleNotification';
@@ -20,7 +20,8 @@ class Main extends Component {
 
     static defaultProps = {
 		language: DEFAULT_LANG,
-		access_token: null
+		access_token: null,
+		requestCloseMenu: null
 	}
 
 	constructor(props) {
@@ -28,13 +29,31 @@ class Main extends Component {
         this.state = { openedMenu: true, appWidth: 0, currentLang: DEFAULT_LANG };
 
         this._delayedResize = _.debounce((w, h) => {   
-            this.setState({ openedMenu: _.isNumber(w) && w < 767 ? false: true, appWidth: w });
+            this.setState({ openedMenu: _.isNumber(w) && w < SMALL_SCREEN_MAIN_SIZE ? false : true, appWidth: w });
         }, 100);		
 	}
 
-	componentDidUpdate() {
+	static getDerivedStateFromProps(props, state) {
+		if (props.requestCloseMenu !== state.requestCloseMenu) {
+			return { requestCloseMenu: props.requestCloseMenu };
+		}
+		return null;
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
 		if (this.props.language !== this.state.currentLang) {
 			this.setState({ currentLang: this.props.language });
+		}
+
+		// close menu when on mobile and menu item is clicked
+		let isSmallScreen = false;
+		if (_.isNumber(this.state.appWidth)) {
+			isSmallScreen = this.state.appWidth < SMALL_SCREEN_MAIN_SIZE;
+		}
+		
+		const isValidCloseMenuRequest = !_.isNil(this.state.requestCloseMenu) && this.state.requestCloseMenu !== prevState.requestCloseMenu;
+		if (isValidCloseMenuRequest && isSmallScreen && this.state.openedMenu) {
+			this.setState({ openedMenu: false });
 		}
 	}
 
@@ -88,9 +107,9 @@ Main.propTypes = {
 	access_token: PropTypes.string
 };
 
-const mapStateToProps = ({ language, access_token }) => {
+const mapStateToProps = ({ language, access_token, requestCloseMenu }) => {
     return {
-        language, access_token
+        language, access_token, requestCloseMenu
     }
 }
 

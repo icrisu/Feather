@@ -1,6 +1,6 @@
 import { setLocale } from 'react-redux-i18n';
 
-import { SUBMENU_OPEN, TOGGLE_MAIN_SIDEBAR, SELECT_LANGUAGE, SIMPLE_NOTIFICATION } from '../types';
+import { SUBMENU_OPEN, TOGGLE_MAIN_SIDEBAR, SELECT_LANGUAGE, SIMPLE_NOTIFICATION, REQUEST_MENU_CLOSE } from '../types';
 import { store } from '../../index';
 
 export const changeLang = lang => {
@@ -31,3 +31,10 @@ export const appNotify = simpleNotification => {
         payload: simpleNotification
     }
 }   
+
+export const requestCloseMenu = request => {
+    return {
+        type: REQUEST_MENU_CLOSE,
+        payload: request
+    }
+}

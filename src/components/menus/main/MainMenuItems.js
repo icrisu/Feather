@@ -81,7 +81,7 @@ class MainMenuItems extends Component {
 
                     <MenuLink to="/something-not-found" label="404 page" />
                                       
-                    <MenuLink href="http://google.com" target="_self" label="External link" />
+                    <MenuLink href="http://google.com" target="_blank" label="External link" />
                                         
                 </List>
             </nav>
