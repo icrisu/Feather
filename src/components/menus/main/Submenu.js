@@ -16,6 +16,7 @@ import classNames from 'classnames';
 import { MAIN_MENU_COLORS } from '../../../theme/Customize';
 import uniqid from 'uniqid';
 import _ from 'lodash';
+import { menuStyle } from './menuStyle';
 
 const styles = theme => ({
     root: {
@@ -92,9 +93,10 @@ class Submenu extends Component {
     }
 
     _renderIcon(Icon) {
-        return React.cloneElement(Icon, {
+        const iconElement = React.cloneElement(Icon, {
             style: { marginRight: 0, color: MAIN_MENU_COLORS.itemColor }
-        })
+        });
+        return <div style={{ width: menuStyle.menuItemPaddingLeft }}>{ iconElement }</div>;
     }    
 
     render() {

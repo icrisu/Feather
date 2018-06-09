@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getRoomMessages } from '../../actions';
 import Message from './Message';
+import _ from 'lodash';
+import safe from 'undefsafe';
 
 const styles = {
     chatBody: { background: 'url("assets/img/seigaiha.png")' }
@@ -24,7 +26,9 @@ class ChatMessages extends Component {
     }
 
     componentDidUpdate() {
-        this.chatBodyUI.current.scrollTo(0, this.chatBodyUI.current.scrollHeight)
+        if (!_.isNil(safe(this.chatBodyUI, 'current.scrollTo'))) {
+            this.chatBodyUI.current.scrollTo(0, this.chatBodyUI.current.scrollHeight)
+        }
     }
 
     _renderMessages() {

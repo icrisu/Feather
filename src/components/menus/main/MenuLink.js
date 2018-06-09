@@ -14,6 +14,7 @@ import { MAIN_MENU_COLORS } from '../../../theme/Customize';
 import safe from 'undefsafe';
 import _ from 'lodash';
 import uniqid from 'uniqid';
+import { menuStyle } from './menuStyle';
 
 const styles = theme => ({
     root: {
@@ -76,7 +77,7 @@ class MenuLink extends Component {
         const { Icon } = this.props;
         return(
             <Fragment>
-                { Icon ? null : <div style={{ width: 24, marginRight: 0 }}></div> }
+                { Icon ? null : <div style={{ width: menuStyle.menuItemNoIconPadding, marginRight: 0 }}></div> }
             </Fragment>
         )        
     }
@@ -98,15 +99,17 @@ class MenuLink extends Component {
     _renderIcon(Icon, isInternalLink = true) {
         const { isSubmenu } = this.props;
         const submenuIconSize = isSubmenu ? { fontSize: 18 } : {};
+        let iconElement;
         if (isInternalLink) {
-            return React.cloneElement(Icon, {
+            iconElement = React.cloneElement(Icon, {
                 style: { marginRight: 0, ...submenuIconSize, color: this.state.selectedItem ? MAIN_MENU_COLORS.itemSelectedColor : MAIN_MENU_COLORS.itemColor }
             })
         } else {
-            return React.cloneElement(Icon, {
+            iconElement = React.cloneElement(Icon, {
                 style: { color: MAIN_MENU_COLORS.itemColor, ...submenuIconSize }
             })        
         }
+        return <div style={{ width: menuStyle.menuItemPaddingLeft }}>{ iconElement }</div>;
     }
 
     _renderBadge() {
