@@ -14,7 +14,7 @@ import { theme } from './theme/Customize';
 import InitService from './services/InitService';
 import StorageService from './services/StorageService';
 import RequireAuth from './components/utils/RequireAuth';
-
+// import registerServiceWorker from './registerServiceWorker'; // only if you're server uses HTTPS
 import reducers from './reducers';
 import './styles/css/index.css';
 
@@ -22,9 +22,6 @@ import Main from './main/Main';
 
 
 const WithAuthentication = RequireAuth(Main);
-
-// ONLY USED FOR DEMOS ( remove in production )
-// window.DUMMY_DTA_FOLDER = `${process.env.PUBLIC_URL}/assets/dummy_data`;
 
 
 export const store = createStore(reducers, { access_token: StorageService.getToken() }, compose(applyMiddleware(ReduxThunk)));
@@ -46,6 +43,8 @@ ReactDOM.render(
         </Fragment>
     </MuiThemeProvider>
 </Provider>, document.getElementById('root'));
+
+// registerServiceWorker(); // only if you're server uses HTTPS
 
 // perform tasks after app loads
 // ex: get sidebar notifications
