@@ -1,35 +1,37 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ROUTES } from './Routes';
-import AsyncLoader from '../components/utils/AsyncLoader';
 
-const MainDashboard = AsyncLoader.load({ importPath: import('../pages/dashboards/MainDashboard') });
-const UsersPage = AsyncLoader.load({ importPath: import('../pages/users/UsersPage') });
-const UserProfilePage = AsyncLoader.load({ importPath: import('../pages/user-single/UserProfilePage') });
-const EventsTimeline = AsyncLoader.load({ importPath: import('../pages/events/EventsTimeline') });
-const Invoices = AsyncLoader.load({ importPath: import('../pages/invoices/all/Invoices') });
-const NewInvoice = AsyncLoader.load({ importPath: import('../pages/invoices/new/NewInvoice') });
-const EditInvoice = AsyncLoader.load({ importPath: import('../pages/invoices/edit/EditInvoice') });
-const ViewInvoice = AsyncLoader.load({ importPath: import('../pages/invoices/view/ViewInvoice') });
-const Messenger = AsyncLoader.load({ importPath: import('../pages/messenger/Messenger') });
-const MessengerSingle = AsyncLoader.load({ importPath: import('../pages/messenger-single/MessengerSingle') });
-const Inbox = AsyncLoader.load({ importPath: import('../pages/email/Inbox') });
-const Sent = AsyncLoader.load({ importPath: import('../pages/email/Sent') });
-const StarredMessages = AsyncLoader.load({ importPath: import('../pages/email/Starred') });
-const DraftMessages = AsyncLoader.load({ importPath: import('../pages/email/DraftMessages') });
-const TrashMessages = AsyncLoader.load({ importPath: import('../pages/email/Trash') });
-const SpamMessages = AsyncLoader.load({ importPath: import('../pages/email/Spam') });
-const Compose = AsyncLoader.load({ importPath: import('../pages/email/Compose') });
-const EmailSingle = AsyncLoader.load({ importPath: import('../pages/email/EmailSingle') });
-const Shop = AsyncLoader.load({ importPath: import('../pages/shop/Shop') });
-const SingleProduct = AsyncLoader.load({ importPath: import('../pages/shop/SingleProduct') });
-const Cart = AsyncLoader.load({ importPath: import('../pages/shop/Cart') });
-const Charts = AsyncLoader.load({ importPath: import('../pages/charts/Charts') });
-const StoreLocator = AsyncLoader.load({ importPath: import('../pages/map-locations/StoreLocator') });
-const PricingPage = AsyncLoader.load({ importPath: import('../pages/pricing/PricingPage') });
-const ToDoAppPage = AsyncLoader.load({ importPath: import('../pages/todo/ToDoAppPage') });
-const ButtonsDemos = AsyncLoader.load({ importPath: import('../pages/elements/ButtonsDemos') });
-const PageNotFound = AsyncLoader.load({ importPath: import('../pages/404/PageNotFound') });
+import Loadable from 'react-loadable';
+import PageLoader from '../components/utils/PageLoader';
+
+const MainDashboard = Loadable({ loader: () => import('../pages/dashboards/MainDashboard'), loading: PageLoader });
+const UsersPage = Loadable({ loader: () => import('../pages/users/UsersPage'), loading: PageLoader });
+const UserProfilePage = Loadable({ loader: () => import('../pages/user-single/UserProfilePage'), loading: PageLoader });
+const EventsTimeline = Loadable({ loader: () => import('../pages/events/EventsTimeline'), loading: PageLoader });
+const Invoices = Loadable({ loader: () => import('../pages/invoices/all/Invoices'), loading: PageLoader });
+const NewInvoice = Loadable({ loader: () => import('../pages/invoices/new/NewInvoice'), loading: PageLoader });
+const EditInvoice = Loadable({ loader: () => import('../pages/invoices/edit/EditInvoice'), loading: PageLoader });
+const ViewInvoice = Loadable({ loader: () => import('../pages/invoices/view/ViewInvoice'), loading: PageLoader });
+const Messenger = Loadable({ loader: () => import('../pages/messenger/Messenger'), loading: PageLoader });
+const MessengerSingle = Loadable({ loader: () => import('../pages/messenger-single/MessengerSingle'), loading: PageLoader });
+const Inbox = Loadable({ loader: () => import('../pages/email/Inbox'), loading: PageLoader });
+const Sent = Loadable({ loader: () => import('../pages/email/Sent'), loading: PageLoader });
+const StarredMessages = Loadable({ loader: () => import('../pages/email/Starred'), loading: PageLoader });
+const DraftMessages = Loadable({ loader: () => import('../pages/email/DraftMessages'), loading: PageLoader });
+const TrashMessages = Loadable({ loader: () => import('../pages/email/Trash'), loading: PageLoader });
+const SpamMessages = Loadable({ loader: () => import('../pages/email/Spam'), loading: PageLoader });
+const Compose = Loadable({ loader: () => import('../pages/email/Compose'), loading: PageLoader });
+const EmailSingle = Loadable({ loader: () => import('../pages/email/EmailSingle'), loading: PageLoader });
+const Shop = Loadable({ loader: () => import('../pages/shop/Shop'), loading: PageLoader });
+const SingleProduct = Loadable({ loader: () => import('../pages/shop/SingleProduct'), loading: PageLoader });
+const Cart = Loadable({ loader: () => import('../pages/shop/Cart'), loading: PageLoader });
+const Charts = Loadable({ loader: () => import('../pages/charts/Charts'), loading: PageLoader });
+const StoreLocator = Loadable({ loader: () => import('../pages/map-locations/StoreLocator'), loading: PageLoader });
+const PricingPage = Loadable({ loader: () => import('../pages/pricing/PricingPage'), loading: PageLoader });
+const ToDoAppPage = Loadable({ loader: () => import('../pages/todo/ToDoAppPage'), loading: PageLoader });
+const ButtonsDemos = Loadable({ loader: () => import('../pages/elements/ButtonsDemos'), loading: PageLoader });
+const PageNotFound = Loadable({ loader: () => import('../pages/404/PageNotFound'), loading: PageLoader });
 
 
 export default props => {
@@ -71,6 +73,7 @@ export default props => {
             <Route exact path={ ROUTES.home.path } component={ MainDashboard } />
 
             <Route path={ ROUTES.notFound.path } component={ PageNotFound } />
+
 
         </Switch>
     )
