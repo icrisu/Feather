@@ -183,6 +183,20 @@
         font-size: 22px;
         display: inline-block;
     }
+    .trend-icon {
+        font-size: 22px;
+    }    
+    @media only screen and (max-width: 700px) {
+        .main-value {
+            font-size: 14px;
+        }
+        .trend {
+            font-size: 14px;
+        }
+        .trend-icon {
+            font-size: 14px;
+        }                    
+    }    
 }
 
 // custom paper 

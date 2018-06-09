@@ -10,7 +10,7 @@ import BalanceHistory from '../../components/common/lists/BalanceHistory';
 import StatsList from '../../components/common/lists/StatsList';
 import DocumentPaper from '../../components/common/paper/DocumentPaper';
 import NotificationWidget from '../../components/common/NotificationWidget';
-import ActivityCards from './ActivityCards';
+import ActivityCards from '../../components/common/ActivityCards';
 import { I18n } from 'react-redux-i18n';
 
 class MainDashboard extends Component {

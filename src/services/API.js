@@ -1,11 +1,19 @@
 import axios from 'axios';
-// import safe from 'undefsafe';
-// import _ from 'lodash';
 import { API_ROOT } from '../config/constants';
-
+import StorageService from './StorageService';
 
 let instance;
 const instanceKey = '@&^#*(';
+
+// add access token to axios interceptor
+// this way all request to the server have carry the access token
+// remember we've set up the token (user data) within the SignIn page and authenticate action
+axios.interceptors.request.use((config) => {
+        config.headers.x__authorization = StorageService.getToken(); 
+        return config;
+    }, (error) => {
+    return Promise.reject(error);
+});
 
 // FAKE API CALLS 
 // replace API_ROOT and implement your own

@@ -13,15 +13,15 @@ export default props => {
     
     const renderTrend = () => {
         if (trend) {
-            const trendStyle = { fontSize: 22, verticalAlign: 'bottom', marginLeft: 6 };
+            const trendStyle = { verticalAlign: 'bottom', marginLeft: 6 };
             if (trendUp) {
-                return <span className="trend trend-up"><TrendingUp style={trendStyle} /></span>
+                return <span className="trend trend-up"><TrendingUp className="trend-icon" style={trendStyle} /></span>
             }
             if (trendDown) {
-                return <span className="trend trend-down"><TrendingDown style={trendStyle} /></span>
+                return <span className="trend trend-down"><TrendingDown className="trend-icon" style={trendStyle} /></span>
             }
             if (trendFlat) {
-                return <span className="trend trend-flat"><TrendingFlat style={trendStyle} /></span>
+                return <span className="trend trend-flat"><TrendingFlat className="trend-icon" style={trendStyle} /></span>
             }                        
         }
     }

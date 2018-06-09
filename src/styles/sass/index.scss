@@ -132,6 +132,9 @@ body, html, #root, input {
                 }               
             }
             @media screen and (max-width: 700px) {
+                .page-title {
+                    font-size: 20px;
+                }
                 .nav {
                     display: none;
                 }
