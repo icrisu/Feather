@@ -1,6 +1,5 @@
 {
   "name": "feather",
-  "homepage": "http://sakuraplugins.com/spa-demos/feather/showcase",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

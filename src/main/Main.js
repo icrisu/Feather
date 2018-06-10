@@ -12,6 +12,7 @@ import AppBar from '../components/topbar/AppBar';
 import { DEFAULT_LANG, SMALL_SCREEN_MAIN_SIZE } from '../config/constants';
 import PrivateRoutes from '../routes/PrivateRoutes';
 import PublicRoutes from '../routes/PublicRoutes';
+import { isPublicRoute } from '../routes/Routes';
 import SimpleNotification from '../components/common/misc/SimpleNotification';
 
 const styles = appTransitions;
@@ -73,10 +74,12 @@ class Main extends Component {
 	}
 
 	render() {
+		const currentPathName = this.props.location.pathname;
 		// public routes
-		if (_.isNil(this.props.access_token)) {
+		if (_.isNil(this.props.access_token) || isPublicRoute(currentPathName)) {
 			return <PublicRoutes />;
 		}
+		
 		// private routes
 		const { classes } = this.props;
 		const { openedMenu, appWidth } = this.state;
