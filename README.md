@@ -1,4 +1,4 @@
-# AIRPUSH
+# Feather
 <P> Feather, a lighting fast React admin template, based on Material UI next, ready for the next React 17 release is a great solution to kickstart your future projects.
 
 ### Tech stack
