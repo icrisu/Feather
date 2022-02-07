@@ -1,3 +1,7 @@
+
+# Warning
+This project has been developed in 2019, since then the tech stack/frameworks/Third-party APIs might have changed.
+
 # Feather
 <P> Feather, a lighting fast React admin template, based on Material UI next, ready for the next React 17 release is a great solution to kickstart your future projects.
 
